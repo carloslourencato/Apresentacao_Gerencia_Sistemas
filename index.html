@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OXXO TI — Relatório Executivo 2024</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f5f4f0;
+      --surface: #ffffff;
+      --surface2: #f0ede8;
+      --border: rgba(0,0,0,0.1);
+      --border2: rgba(0,0,0,0.18);
+      --text: #1a1a18;
+      --text2: #6b6b67;
+      --text3: #9b9b96;
+      --radius: 10px;
+      --radius-lg: 14px;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: #0a1628;
+      color: #fff;
+      padding: 3rem 3rem 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 280px; height: 280px;
+      border-radius: 50%;
+      border: 50px solid rgba(255,82,41,0.12);
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -50px; right: 100px;
+      width: 150px; height: 150px;
+      border-radius: 50%;
+      border: 30px solid rgba(255,82,41,0.08);
+    }
+    .logo-bar {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 2rem;
+    }
+    .oxxo-badge {
+      background: #FF5229;
+      color: #fff;
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 24px;
+      padding: 5px 16px;
+      letter-spacing: 2px;
+    }
+    .ti-label {
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .hero h1 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 36px;
+      line-height: 1.15;
+      margin-bottom: 0.6rem;
+      position: relative;
+    }
+    .hero p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.55);
+      position: relative;
+    }
+
+    /* ── KPI BAR ── */
+    .kpi-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+    .kpi {
+      padding: 1.5rem 2rem;
+      border-right: 1px solid var(--border);
+    }
+    .kpi:last-child { border-right: none; }
+    .kpi-val {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 38px;
+      line-height: 1;
+    }
+    .kpi-val.red   { color: #FF5229; }
+    .kpi-val.green { color: #1D9E75; }
+    .kpi-val.blue  { color: #185FA5; }
+    .kpi-val.amber { color: #BA7517; }
+    .kpi-lbl {
+      font-size: 11px;
+      color: var(--text2);
+      margin-top: 5px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    /* ── SECTIONS ── */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem 4rem; }
+
+    .section {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      padding: 2rem 2rem 2rem;
+      margin-top: 2rem;
+      border: 1px solid var(--border);
+    }
+    .sec-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 1.75rem;
+    }
+    .sec-num {
+      background: #0a1628;
+      color: #fff;
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 13px;
+      width: 28px; height: 28px;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .sec-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+    }
+    .sec-tag {
+      margin-left: auto;
+      font-size: 11px;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-weight: 500;
+    }
+    .tag-orange { background: #FAECE7; color: #993C1D; }
+    .tag-blue   { background: #E6F1FB; color: #185FA5; }
+    .tag-green  { background: #EAF3DE; color: #3B6D11; }
+
+    /* ── CHARTS ── */
+    .chart-wrap { position: relative; width: 100%; }
+
+    .row2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 1.75rem;
+    }
+    .panel {
+      background: var(--surface2);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+    }
+    .panel-title {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--text2);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 1.1rem;
+    }
+
+    /* ── LEGEND ── */
+    .legend-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 14px;
+      font-size: 12px;
+      color: var(--text2);
+    }
+    .legend-dot {
+      width: 10px; height: 10px;
+      border-radius: 2px;
+      display: inline-block;
+      margin-right: 5px;
+      vertical-align: middle;
+    }
+
+    /* ── OFFENDERS ── */
+    .offender-list { display: flex; flex-direction: column; gap: 10px; }
+    .off-item { display: flex; align-items: center; gap: 10px; font-size: 13px; }
+    .off-label { min-width: 110px; color: var(--text2); font-size: 12px; }
+    .off-bar-wrap { flex: 1; height: 6px; background: var(--border); border-radius: 3px; overflow: hidden; }
+    .off-bar { height: 100%; border-radius: 3px; }
+    .off-val { font-size: 12px; color: var(--text2); min-width: 32px; text-align: right; }
+
+    /* ── TIMELINE ── */
+    .timeline-wrap { position: relative; padding: 0.5rem 0; margin-top: 2rem; }
+    .tl-line { position: absolute; left: 100px; top: 0; bottom: 0; width: 2px; background: var(--border); }
+    .tl-item { display: flex; align-items: flex-start; margin-bottom: 1.1rem; position: relative; }
+    .tl-date { width: 90px; font-size: 11px; color: var(--text2); padding-top: 8px; text-align: right; flex-shrink: 0; }
+    .tl-dot { width: 24px; display: flex; justify-content: center; padding-top: 10px; flex-shrink: 0; position: relative; z-index: 1; }
+    .tl-dot span { width: 11px; height: 11px; border-radius: 50%; display: block; border: 2.5px solid var(--surface); }
+    .tl-card { flex: 1; margin-left: 10px; }
+    .proj-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 12px 14px;
+    }
+    .proj-name { font-size: 14px; font-weight: 500; }
+    .proj-meta { font-size: 11px; color: var(--text2); margin-top: 4px; }
+    .phases { display: flex; gap: 5px; margin-top: 8px; flex-wrap: wrap; }
+    .phase { font-size: 10px; padding: 3px 9px; border-radius: 10px; font-weight: 500; }
+    .ph-dev    { background: #E6F1FB; color: #185FA5; }
+    .ph-hom    { background: #FAEEDA; color: #854F0B; }
+    .ph-prod   { background: #EAF3DE; color: #3B6D11; }
+    .ph-done   { background: #EAF3DE; color: #3B6D11; }
+    .ph-cancel { background: #FCEBEB; color: #A32D2D; }
+
+    .progress-bar { height: 4px; background: var(--border); border-radius: 2px; margin-top: 8px; overflow: hidden; }
+    .progress-fill { height: 100%; border-radius: 2px; }
+
+    /* ── MELHORIAS ── */
+    .mel-3col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.25rem; }
+    .mel-col-title {
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text2);
+      margin-bottom: 12px;
+      border-bottom: 2.5px solid;
+      padding-bottom: 7px;
+    }
+    .mel-col-title.delivered { border-color: #1D9E75; }
+    .mel-col-title.ongoing   { border-color: #185FA5; }
+    .mel-col-title.backlog   { border-color: #BA7517; }
+
+    .mel-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      background: var(--surface2);
+      border-radius: 8px;
+      margin-bottom: 6px;
+    }
+    .mel-icon { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+    .mel-text { font-size: 12px; flex: 1; line-height: 1.4; }
+    .mel-sys {
+      font-size: 10px;
+      color: var(--text2);
+      background: var(--surface);
+      padding: 2px 7px;
+      border-radius: 8px;
+      white-space: nowrap;
+    }
+    .mel-pct { font-size: 11px; color: var(--text2); white-space: nowrap; }
+    .mel-prio { font-size: 10px; padding: 2px 7px; border-radius: 8px; white-space: nowrap; }
+    .prio-high { background: #FCEBEB; color: #A32D2D; }
+    .prio-med  { background: #FAEEDA; color: #854F0B; }
+    .prio-low  { background: #E6F1FB; color: #185FA5; }
+    .mel-note { font-size: 11px; color: var(--text3); margin-top: 8px; padding: 0 2px; }
+
+    .mel-chart-row { margin-top: 2rem; }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: #0a1628;
+      color: rgba(255,255,255,0.4);
+      text-align: center;
+      font-size: 12px;
+      padding: 1.5rem;
+      margin-top: 3rem;
+      letter-spacing: 0.5px;
+    }
+
+    @media (max-width: 800px) {
+      .kpi-bar { grid-template-columns: repeat(2, 1fr); }
+      .row2, .mel-3col { grid-template-columns: 1fr; }
+      .hero { padding: 2rem 1.5rem; }
+      .hero h1 { font-size: 26px; }
+      .container { padding: 0 1rem 3rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="logo-bar">
+    <span class="oxxo-badge">OXXO</span>
+    <span class="ti-label">Gerência de TI — Relatório Executivo 2024</span>
+  </div>
+  <h1>Entregas &amp; Sustentação<br>Anual de TI</h1>
+  <p style="margin-top:10px;">Consolidado das frentes: Sustentação dos Sistemas, Projetos Estratégicos e Melhorias</p>
+</div>
+
+<!-- KPI BAR -->
+<div class="kpi-bar">
+  <div class="kpi">
+    <div class="kpi-val red">2.847</div>
+    <div class="kpi-lbl">Chamados recebidos</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-val green">94%</div>
+    <div class="kpi-lbl">Taxa de resolução N1/N2</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-val blue">12</div>
+    <div class="kpi-lbl">Projetos estratégicos</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-val amber">47</div>
+    <div class="kpi-lbl">Melhorias entregues</div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- ═══ SEÇÃO 1: SUSTENTAÇÃO ═══ -->
+  <div class="section">
+    <div class="sec-header">
+      <div class="sec-num">1</div>
+      <span class="sec-title">Frente de Sustentação dos Sistemas</span>
+      <span class="sec-tag tag-orange">Service Now · JIRA N3</span>
+    </div>
+
+    <div class="legend-row">
+      <span><span class="legend-dot" style="background:#FF5229;"></span>Chamados abertos</span>
+      <span><span class="legend-dot" style="background:#185FA5;"></span>Resolvidos N1/N2</span>
+      <span><span class="legend-dot" style="background:#1D9E75;"></span>Causas raiz resolvidas (eixo direito)</span>
+    </div>
+
+    <div class="chart-wrap" style="height:280px;">
+      <canvas id="chartSustentacao" role="img" aria-label="Volume mensal de chamados, resoluções e causas raiz ao longo de 2024">Volume mensal de chamados, resoluções e causas raiz ao longo de 2024.</canvas>
+    </div>
+
+    <div class="row2">
+      <div class="panel">
+        <div class="panel-title">Principais ofensores do volume</div>
+        <div class="offender-list">
+          <div class="off-item"><span class="off-label">Integração PDV</span><div class="off-bar-wrap"><div class="off-bar" style="width:78%;background:#FF5229;"></div></div><span class="off-val">312</span></div>
+          <div class="off-item"><span class="off-label">Fiscal / SPED</span><div class="off-bar-wrap"><div class="off-bar" style="width:62%;background:#FF5229;"></div></div><span class="off-val">248</span></div>
+          <div class="off-item"><span class="off-label">ERP Estoque</span><div class="off-bar-wrap"><div class="off-bar" style="width:48%;background:#EF9F27;"></div></div><span class="off-val">192</span></div>
+          <div class="off-item"><span class="off-label">Logística</span><div class="off-bar-wrap"><div class="off-bar" style="width:35%;background:#EF9F27;"></div></div><span class="off-val">138</span></div>
+          <div class="off-item"><span class="off-label">BI / Relatórios</span><div class="off-bar-wrap"><div class="off-bar" style="width:22%;background:#378ADD;"></div></div><span class="off-val">87</span></div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">Causas raiz resolvidas vs. redução de chamados</div>
+        <div class="chart-wrap" style="height:175px;">
+          <canvas id="chartCausas" role="img" aria-label="Causas raiz resolvidas e impacto na redução de chamados por sistema">Causas raiz resolvidas e impacto na redução de chamados por sistema.</canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ SEÇÃO 2: PROJETOS ═══ -->
+  <div class="section">
+    <div class="sec-header">
+      <div class="sec-num">2</div>
+      <span class="sec-title">Projetos Estratégicos</span>
+      <span class="sec-tag tag-blue">Linha do tempo 2024</span>
+    </div>
+
+    <div class="legend-row">
+      <span><span class="legend-dot" style="background:#1D9E75;"></span>Entregue</span>
+      <span><span class="legend-dot" style="background:#FF5229;"></span>Cancelado</span>
+      <span><span class="legend-dot" style="background:#185FA5;"></span>Em andamento</span>
+    </div>
+
+    <div class="chart-wrap" style="height:260px;">
+      <canvas id="chartProjetos" role="img" aria-label="Gantt simplificado dos projetos estratégicos 2024">Gantt simplificado dos projetos estratégicos 2024.</canvas>
+    </div>
+
+    <div class="timeline-wrap">
+      <div class="tl-line"></div>
+
+      <div class="tl-item">
+        <div class="tl-date">Mar 2024</div>
+        <div class="tl-dot"><span style="background:#1D9E75;"></span></div>
+        <div class="tl-card">
+          <div class="proj-card">
+            <div class="proj-name">Migração ERP — Módulo Fiscal</div>
+            <div class="proj-meta">Concluído em 22/03/2024 · Diretoria Fiscal &amp; Tributária</div>
+            <div class="phases"><span class="phase ph-done">Entregue</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">Jun 2024</div>
+        <div class="tl-dot"><span style="background:#1D9E75;"></span></div>
+        <div class="tl-card">
+          <div class="proj-card">
+            <div class="proj-name">Plataforma de BI Comercial</div>
+            <div class="proj-meta">Concluído em 14/06/2024 · Diretoria Comercial</div>
+            <div class="phases"><span class="phase ph-done">Entregue</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">Ago 2024</div>
+        <div class="tl-dot"><span style="background:#FF5229;"></span></div>
+        <div class="tl-card">
+          <div class="proj-card">
+            <div class="proj-name">App de Fidelidade (B2C)</div>
+            <div class="proj-meta">Cancelado em 10/08/2024 · Mudança estratégica de negócio</div>
+            <div class="phases"><span class="phase ph-cancel">Cancelado</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">Out — Dez</div>
+        <div class="tl-dot"><span style="background:#185FA5;"></span></div>
+        <div class="tl-card">
+          <div class="proj-card">
+            <div class="proj-name">Automação de Pedidos — Logística</div>
+            <div class="proj-meta">Em andamento · Diretoria de Logística &amp; Supply Chain</div>
+            <div class="phases">
+              <span class="phase ph-dev">Dev: Out–Nov</span>
+              <span class="phase ph-hom">Homol: Nov</span>
+              <span class="phase ph-prod">Prod: Dez</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" style="width:65%;background:#185FA5;"></div></div>
+            <div style="font-size:10px;color:var(--text2);margin-top:4px;">65% concluído</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">Nov — Fev</div>
+        <div class="tl-dot"><span style="background:#185FA5;"></span></div>
+        <div class="tl-card">
+          <div class="proj-card">
+            <div class="proj-name">Integração PDV com Gateway de Pagamento</div>
+            <div class="proj-meta">Em andamento · Diretoria de Operações</div>
+            <div class="phases">
+              <span class="phase ph-dev">Dev: Nov–Jan</span>
+              <span class="phase ph-hom">Homol: Jan</span>
+              <span class="phase ph-prod">Prod: Fev 2025</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" style="width:30%;background:#185FA5;"></div></div>
+            <div style="font-size:10px;color:var(--text2);margin-top:4px;">30% concluído</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ SEÇÃO 3: MELHORIAS ═══ -->
+  <div class="section">
+    <div class="sec-header">
+      <div class="sec-num">3</div>
+      <span class="sec-title">Melhorias de Sistemas</span>
+      <span class="sec-tag tag-green">JIRA · Por diretoria</span>
+    </div>
+
+    <div class="mel-3col">
+      <div>
+        <div class="mel-col-title delivered">Entregues (47)</div>
+        <div class="mel-item"><span class="mel-icon" style="background:#1D9E75;"></span><span class="mel-text">Relatório de ruptura automático</span><span class="mel-sys">Comercial</span></div>
+        <div class="mel-item"><span class="mel-icon" style="background:#1D9E75;"></span><span class="mel-text">Conciliação fiscal SPED</span><span class="mel-sys">Fiscal</span></div>
+        <div class="mel-item"><span class="mel-icon" style="background:#1D9E75;"></span><span class="mel-text">Dashboard de giro de estoque</span><span class="mel-sys">Logística</span></div>
+        <div class="mel-item"><span class="mel-icon" style="background:#1D9E75;"></span><span class="mel-text">Alertas de prazo de validade</span><span class="mel-sys">Operações</span></div>
+        <div class="mel-item"><span class="mel-icon" style="background:#1D9E75;"></span><span class="mel-text">Integração NF-e automática</span><span class="mel-sys">Fiscal</span></div>
+        <div class="mel-note">+ 42 melhorias entregues no ano</div>
+      </div>
+
+      <div>
+        <div class="mel-col-title ongoing">Em andamento (8)</div>
+        <div class="mel-item">
+          <span class="mel-icon" style="background:#185FA5;"></span>
+          <div style="flex:1;">
+            <div class="mel-text">Previsão de demanda com ML</div>
+            <div class="progress-bar"><div class="progress-fill" style="width:70%;background:#185FA5;"></div></div>
+          </div>
+          <span class="mel-pct">70%</span>
+        </div>
+        <div class="mel-item">
+          <span class="mel-icon" style="background:#185FA5;"></span>
+          <div style="flex:1;">
+            <div class="mel-text">Portal de fornecedores</div>
+            <div class="progress-bar"><div class="progress-fill" style="width:45%;background:#185FA5;"></div></div>
+          </div>
+          <span class="mel-pct">45%</span>
+        </div>
+        <div class="mel-item">
+          <span class="mel-icon" style="background:#185FA5;"></span>
+          <div style="flex:1;">
+            <div class="mel-text">Automação de inventário</div>
+            <div class="progress-bar"><div class="progress-fill" style="width:20%;background:#185FA5;"></div></div>
+          </div>
+          <span class="mel-pct">20%</span>
+        </div>
+        <div class="mel-item">
+          <span class="mel-icon" style="background:#185FA5;"></span>
+          <div style="flex:1;">
+            <div class="mel-text">Painel de performance de lojas</div>
+            <div class="progress-bar"><div class="progress-fill" style="width:55%;background:#185FA5;"></div></div>
+          </div>
+          <span class="mel-pct">55%</span>
+        </div>
+        <div class="mel-note">+ 4 demandas em desenvolvimento</div>
+      </div>
+
+      <div>
+        <div class="mel-col-title backlog">Backlog priorizado (23)</div>
+        <div class="mel-item"><span class="mel-icon" style="background:#BA7517;"></span><span class="mel-text">Cubo OLAP de vendas</span><span class="mel-prio prio-high">Alta</span></div>
+        <div class="mel-item"><span class="mel-icon" style="background:#BA7517;"></span><span class="mel-text">Integração marketplace</span><span class="mel-prio prio-high">Alta</span></div>
+        <div class="mel-item"><span class="mel-icon" style="background:#BA7517;"></span><span class="mel-text">Módulo RH — ponto digital</span><span class="mel-prio prio-med">Média</span></div>
+        <div class="mel-item"><span class="mel-icon" style="background:#BA7517;"></span><span class="mel-text">Conciliação bancária</span><span class="mel-prio prio-med">Média</span></div>
+        <div class="mel-item"><span class="mel-icon" style="background:#BA7517;"></span><span class="mel-text">App mobile operadores</span><span class="mel-prio prio-low">Baixa</span></div>
+        <div class="mel-note">+ 18 itens aguardando priorização</div>
+      </div>
+    </div>
+
+    <div class="mel-chart-row">
+      <div class="legend-row" style="margin-top:1.5rem;margin-bottom:8px;">
+        <span style="font-size:12px;font-weight:500;color:var(--text2);text-transform:uppercase;letter-spacing:0.5px;">Distribuição de melhorias por diretoria</span>
+      </div>
+      <div class="chart-wrap" style="height:200px;">
+        <canvas id="chartMelhorias" role="img" aria-label="Melhorias entregues distribuídas por diretoria de negócio">Melhorias entregues distribuídas por diretoria de negócio.</canvas>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  OXXO · Gerência de Tecnologia da Informação · Relatório Executivo 2024 · Gerado automaticamente
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+  const meses = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
+
+  // Chart 1 — Sustentação mensal
+  new Chart(document.getElementById('chartSustentacao'), {
+    type: 'bar',
+    data: {
+      labels: meses,
+      datasets: [
+        {
+          label: 'Chamados abertos',
+          data: [285,312,198,241,268,195,310,340,275,220,185,218],
+          backgroundColor: 'rgba(255,82,41,0.82)',
+          borderRadius: 4,
+          order: 1
+        },
+        {
+          label: 'Resolvidos N1/N2',
+          data: [261,290,188,230,255,185,285,310,258,208,175,205],
+          backgroundColor: 'rgba(24,95,165,0.65)',
+          borderRadius: 4,
+          order: 2
+        },
+        {
+          label: 'Causas raiz resolvidas',
+          data: [2,3,5,4,6,4,7,8,5,6,4,3],
+          type: 'line',
+          borderColor: '#1D9E75',
+          backgroundColor: 'rgba(29,158,117,0.08)',
+          borderWidth: 2.5,
+          pointRadius: 5,
+          pointBackgroundColor: '#1D9E75',
+          pointBorderColor: '#fff',
+          pointBorderWidth: 2,
+          yAxisID: 'y2',
+          tension: 0.35,
+          fill: true,
+          order: 0
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: { mode: 'index', intersect: false }
+      },
+      scales: {
+        x: {
+          grid: { display: false },
+          ticks: { font: { size: 12 } }
+        },
+        y: {
+          grid: { color: 'rgba(0,0,0,0.06)' },
+          ticks: { font: { size: 11 } },
+          title: { display: true, text: 'Qtd. chamados', font: { size: 11 }, color: '#6b6b67' }
+        },
+        y2: {
+          position: 'right',
+          grid: { display: false },
+          ticks: { font: { size: 11 }, stepSize: 2 },
+          title: { display: true, text: 'Causas raiz', font: { size: 11 }, color: '#1D9E75' }
+        }
+      }
+    }
+  });
+
+  // Chart 2 — Causas raiz vs redução
+  new Chart(document.getElementById('chartCausas'), {
+    type: 'bar',
+    data: {
+      labels: ['PDV','Fiscal','ERP','Logística','BI'],
+      datasets: [
+        {
+          label: 'Causas resolvidas',
+          data: [8,5,6,4,3],
+          backgroundColor: 'rgba(29,158,117,0.8)',
+          borderRadius: 4
+        },
+        {
+          label: 'Redução chamados (%)',
+          data: [31,24,18,15,9],
+          type: 'line',
+          borderColor: '#FF5229',
+          backgroundColor: 'transparent',
+          borderWidth: 2,
+          pointRadius: 4,
+          pointBackgroundColor: '#FF5229',
+          pointBorderColor: '#fff',
+          pointBorderWidth: 2,
+          yAxisID: 'y2',
+          tension: 0.3
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { grid: { display: false }, ticks: { font: { size: 11 } } },
+        y: { grid: { color: 'rgba(0,0,0,0.06)' }, ticks: { font: { size: 10 } } },
+        y2: {
+          position: 'right',
+          grid: { display: false },
+          ticks: { font: { size: 10 }, callback: v => v + '%' }
+        }
+      }
+    }
+  });
+
+  // Chart 3 — Projetos Gantt
+  new Chart(document.getElementById('chartProjetos'), {
+    type: 'bar',
+    data: {
+      labels: [
+        'Migração ERP Fiscal',
+        'BI Comercial',
+        'App Fidelidade (cancel.)',
+        'Automação Logística',
+        'Integração PDV Pagamento'
+      ],
+      datasets: [
+        {
+          label: 'Início (mês)',
+          data: [1,3,5,9,10],
+          backgroundColor: 'transparent',
+          borderWidth: 0
+        },
+        {
+          label: 'Duração (meses)',
+          data: [3,3,3,4,5],
+          backgroundColor: ['#1D9E75','#1D9E75','#FF5229','#185FA5','#185FA5'],
+          borderRadius: 5,
+          borderSkipped: false
+        }
+      ]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: {
+          stacked: true,
+          min: 0, max: 16,
+          grid: { color: 'rgba(0,0,0,0.06)' },
+          ticks: {
+            font: { size: 11 },
+            callback: v => ['','Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez','','',''][v] || ''
+          }
+        },
+        y: {
+          stacked: true,
+          grid: { display: false },
+          ticks: { font: { size: 12 } }
+        }
+      }
+    }
+  });
+
+  // Chart 4 — Melhorias por diretoria
+  new Chart(document.getElementById('chartMelhorias'), {
+    type: 'doughnut',
+    data: {
+      labels: ['Comercial','Fiscal','Logística','Operações','TI Interna','RH'],
+      datasets: [{
+        data: [14,11,9,7,4,2],
+        backgroundColor: ['#185FA5','#FF5229','#1D9E75','#BA7517','#534AB7','#D85A30'],
+        borderWidth: 2,
+        borderColor: '#ffffff',
+        hoverOffset: 6
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      cutout: '62%',
+      plugins: {
+        legend: {
+          position: 'right',
+          labels: { font: { size: 12 }, boxWidth: 14, padding: 14 }
+        }
+      }
+    }
+  });
+</script>
+</body>
+</html>
