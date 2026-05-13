@@ -6,19 +6,9 @@
   <title>OXXO | TI — Relatório Executivo 2024</title>
   <style>
     :root{
-      --red:#c1121f;
-      --red-strong:#8f0d18;
-      --yellow:#ffcc00;
-      --amber:#f59e0b;
-      --green:#047857;
-      --blue:#2563eb;
-      --ink:#1f1b18;
-      --muted:#5b5651;
-      --line:#ded7cf;
-      --paper:#f7f7f5;
-      --white:#ffffff;
-      --black:#13100f;
-      --shadow:0 18px 44px rgba(31,27,24,.12);
+      --red:#c1121f; --red-strong:#8f0d18; --yellow:#ffcc00; --amber:#f59e0b;
+      --green:#047857; --blue:#2563eb; --ink:#1f1b18; --muted:#5b5651;
+      --line:#ded7cf; --paper:#f7f7f5; --white:#fff; --shadow:0 18px 44px rgba(31,27,24,.12);
     }
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
@@ -27,182 +17,147 @@
 
     /* ── TOPBAR ── */
     .topbar{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(16px)}
-    .topbar-inner{max-width:1180px;margin:0 auto;padding:.75rem 1.2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
-    .brand-lockup{display:flex;align-items:center;gap:.85rem;min-width:0}
-    .oxxo-badge{background:var(--red);color:#fff;font-weight:900;font-size:1.2rem;padding:.3rem .9rem;letter-spacing:2px;border-radius:3px}
-    .divider{width:1px;height:28px;background:#cbc2b6}
-    .product-tag{font-weight:800;font-size:.92rem;color:#2a2521;white-space:nowrap}
-
-    /* ── TAB NAV ── */
-    .tab-nav{display:flex;gap:.25rem}
-    .tab-btn{
-      padding:.45rem .85rem;
-      border:1px solid transparent;
-      border-radius:4px;
-      font-size:.82rem;
-      color:#3d3732;
-      font-weight:700;
-      cursor:pointer;
-      background:transparent;
-      font-family:inherit;
-      transition:all .15s;
-      white-space:nowrap;
-    }
+    .topbar-inner{max-width:1180px;margin:0 auto;padding:.7rem 1.2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+    .brand{display:flex;align-items:center;gap:.75rem}
+    .oxxo-badge{background:var(--red);color:#fff;font-weight:900;font-size:1.1rem;padding:.28rem .85rem;letter-spacing:2px;border-radius:3px}
+    .brand-div{width:1px;height:24px;background:#cbc2b6}
+    .brand-name{font-weight:800;font-size:.88rem;color:#2a2521;white-space:nowrap}
+    .tab-nav{display:flex;gap:.25rem;flex-wrap:wrap}
+    .tab-btn{padding:.42rem .82rem;border:1px solid transparent;border-radius:4px;font-size:.82rem;color:#3d3732;font-weight:700;cursor:pointer;background:transparent;font-family:inherit;transition:all .15s;white-space:nowrap}
     .tab-btn:hover{border-color:#d6cec3;background:#fff8e5}
     .tab-btn.active{background:var(--red);color:#fff;border-color:var(--red)}
 
     /* ── HERO ── */
-    .hero{
-      background:linear-gradient(90deg,rgba(19,16,15,.94),rgba(70,12,16,.94) 50%,rgba(193,18,31,.94)),
-                 linear-gradient(135deg,#2d2521 0%,#8f0d18 100%);
-      color:#fff;
-      border-bottom:8px solid var(--yellow);
-      overflow:hidden;
-    }
-    .hero-inner{
-      max-width:1180px;margin:0 auto;
-      min-height:220px;
-      padding:2rem 1.2rem 1.8rem;
-      display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center;
-      position:relative;
-    }
-    .hero-inner::after{content:"";position:absolute;right:-120px;top:1rem;width:320px;height:320px;background:linear-gradient(135deg,rgba(255,204,0,.18),rgba(255,204,0,0) 60%);transform:rotate(18deg);border:1px solid rgba(255,255,255,.1)}
-    .eyebrow{display:inline-flex;align-items:center;gap:.55rem;font-size:.88rem;font-weight:800;color:#ffe680;text-transform:uppercase;margin-bottom:.8rem}
-    .eyebrow::before{content:"";width:28px;height:4px;background:var(--yellow)}
-    .hero h1{font-size:clamp(1.6rem,4vw,2.8rem);line-height:1.05;font-weight:900;margin-bottom:.6rem}
-    .hero-lead{font-size:1rem;color:#fff7db;line-height:1.45;max-width:580px}
-    .hero-kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:0;background:rgba(255,255,255,.08);border-radius:8px;border:1px solid rgba(255,255,255,.18);overflow:hidden;min-width:280px}
-    .hkpi{padding:1rem 1.2rem;border-right:1px solid rgba(255,255,255,.12);border-bottom:1px solid rgba(255,255,255,.12)}
+    .hero{background:linear-gradient(90deg,rgba(19,16,15,.94),rgba(70,12,16,.94) 50%,rgba(193,18,31,.94)),linear-gradient(135deg,#2d2521 0%,#8f0d18 100%);color:#fff;border-bottom:8px solid var(--yellow);overflow:hidden}
+    .hero-inner{max-width:1180px;margin:0 auto;min-height:200px;padding:1.8rem 1.2rem 1.6rem;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center;position:relative}
+    .hero-inner::after{content:"";position:absolute;right:-120px;top:1rem;width:300px;height:300px;background:linear-gradient(135deg,rgba(255,204,0,.18),rgba(255,204,0,0) 60%);transform:rotate(18deg);border:1px solid rgba(255,255,255,.1)}
+    .eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-size:.85rem;font-weight:800;color:#ffe680;text-transform:uppercase;margin-bottom:.7rem}
+    .eyebrow::before{content:"";width:26px;height:4px;background:var(--yellow)}
+    .hero h1{font-size:clamp(1.5rem,3.5vw,2.6rem);line-height:1.08;font-weight:900;margin-bottom:.5rem}
+    .hero-lead{font-size:.96rem;color:#fff7db;line-height:1.45;max-width:560px}
+    .hero-kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:0;background:rgba(255,255,255,.08);border-radius:8px;border:1px solid rgba(255,255,255,.18);overflow:hidden;min-width:260px}
+    .hkpi{padding:.9rem 1.1rem;border-right:1px solid rgba(255,255,255,.12);border-bottom:1px solid rgba(255,255,255,.12)}
     .hkpi:nth-child(2n){border-right:none}
     .hkpi:nth-last-child(-n+2){border-bottom:none}
-    .hkpi strong{display:block;font-size:1.8rem;line-height:1;font-weight:900;color:#fff}
-    .hkpi span{display:block;font-size:.75rem;color:#ffe680;margin-top:.3rem;text-transform:uppercase;font-weight:700}
+    .hkpi strong{display:block;font-size:1.65rem;line-height:1;font-weight:900;color:#fff}
+    .hkpi span{display:block;font-size:.7rem;color:#ffe680;margin-top:.28rem;text-transform:uppercase;font-weight:700}
 
-    /* ── PAGE SECTIONS ── */
+    /* ── PAGES ── */
     .page{display:none}
     .page.active{display:block}
 
     /* ── SECTION ── */
-    .section{padding:3rem 1.2rem;border-bottom:1px solid var(--line)}
+    .section{padding:2.5rem 1.2rem;border-bottom:1px solid var(--line)}
     .section.white{background:#fff}
     .section.dark{background:#1d1917;color:#fff;border-bottom:0}
     .section-inner{max-width:1180px;margin:0 auto}
-    .section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;margin-bottom:1.8rem;flex-wrap:wrap}
-    .section-head h2{margin:0;font-size:1.85rem;line-height:1.08}
-    .section-head p{margin:0;color:var(--muted);line-height:1.45;max-width:560px}
+    .section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:1.5rem;margin-bottom:1.6rem;flex-wrap:wrap}
+    .section-head h2{margin:0;font-size:1.75rem;line-height:1.08}
+    .section-head p{margin:0;color:var(--muted);line-height:1.45;max-width:540px;font-size:.93rem}
     .dark .section-head p{color:#d9d1c6}
 
     /* ── KPI ROW ── */
     .kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:2rem}
-    .kpi-card{background:#fff;border:1px solid #e3dbd2;border-radius:8px;padding:1.1rem 1.25rem;min-height:110px;display:flex;flex-direction:column;justify-content:space-between}
-    .kpi-card strong{display:block;font-size:2rem;line-height:1;font-weight:900;color:var(--ink)}
-    .kpi-card strong.red{color:var(--red)} .kpi-card strong.green{color:var(--green)} .kpi-card strong.blue{color:var(--blue)} .kpi-card strong.amber{color:#b45309}
-    .kpi-card span{display:block;font-size:.8rem;color:var(--muted);text-transform:uppercase;font-weight:700;letter-spacing:.04em}
-    .mini-bar{height:6px;border-radius:3px;background:#eee6da;overflow:hidden;margin-top:.7rem}
+    .kpi-card{background:#fff;border:1px solid #e3dbd2;border-radius:8px;padding:1rem 1.2rem;display:flex;flex-direction:column;justify-content:space-between;min-height:100px}
+    .kpi-card strong{display:block;font-size:1.9rem;line-height:1;font-weight:900}
+    .kpi-card strong.red{color:var(--red)} .kpi-card strong.green{color:var(--green)}
+    .kpi-card strong.blue{color:var(--blue)} .kpi-card strong.amber{color:#b45309}
+    .kpi-card strong.purple{color:#7c3aed} .kpi-card strong.teal{color:#0f766e}
+    .kpi-card span{display:block;font-size:.76rem;color:var(--muted);text-transform:uppercase;font-weight:700;letter-spacing:.04em;margin-top:.35rem}
+    .mini-bar{height:5px;border-radius:3px;background:#eee6da;overflow:hidden;margin-top:.6rem}
     .mini-bar i{display:block;height:100%;border-radius:3px}
 
-    /* ── CARDS ── */
-    .card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
-    .card-grid.col2{grid-template-columns:repeat(2,1fr)}
-    .card{background:#fff;border:1px solid #e4ddd5;border-radius:8px;padding:1.35rem;display:flex;flex-direction:column;gap:.7rem}
-    .card.red{border-top:6px solid var(--red)} .card.amber{border-top:6px solid var(--amber)}
-    .card.green{border-top:6px solid var(--green)} .card.blue{border-top:6px solid var(--blue)}
-    .card small{display:block;color:var(--muted);font-weight:900;text-transform:uppercase;font-size:.76rem}
-    .card h3{margin:0;font-size:1.3rem;line-height:1.15}
-    .card p{margin:0;color:#4c4640;line-height:1.5;font-size:.92rem}
-    .callout{padding:.75rem;background:#fff7db;border-left:4px solid var(--yellow);font-weight:800;color:#302821;font-size:.88rem}
+    /* ── STATUS GRID ── */
+    .status-summary{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:2rem}
+    .status-card{border-radius:8px;padding:1.1rem 1.25rem;display:flex;flex-direction:column;gap:.4rem;border:1px solid}
+    .status-card .sc-val{font-size:2.2rem;line-height:1;font-weight:900}
+    .status-card .sc-lbl{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+    .status-card .sc-pct{font-size:.8rem;font-weight:600}
+    .sc-concluido{background:#d1fae5;border-color:#6ee7b7;color:#064e3b} .sc-concluido .sc-val{color:#047857}
+    .sc-backlog{background:#fef9c3;border-color:#fde047;color:#713f12} .sc-backlog .sc-val{color:#a16207}
+    .sc-andamento{background:#dbeafe;border-color:#93c5fd;color:#1e3a5f} .sc-andamento .sc-val{color:#1d4ed8}
+    .sc-bloqueado{background:#fee2e2;border-color:#fca5a5;color:#7f1d1d} .sc-bloqueado .sc-val{color:#b91c1c}
 
     /* ── TAG ── */
     .tag{display:inline-flex;align-self:flex-start;border-radius:3px;padding:.28rem .45rem;font-size:.72rem;font-weight:900;text-transform:uppercase}
     .tag.red{background:#fee2e2;color:#8f0d18} .tag.amber{background:#fff4c2;color:#7a4b00}
     .tag.green{background:#d1fae5;color:#047857} .tag.blue{background:#dbeafe;color:#1d4ed8}
+    .tag.purple{background:#ede9fe;color:#5b21b6}
 
-    /* ── GANTT / TIMELINE ── */
-    .gantt-wrap{overflow-x:auto;padding-bottom:.5rem}
-    .gantt{width:100%;border-collapse:collapse;min-width:700px;font-size:.88rem}
-    .gantt th{background:#2c2621;color:#fff;padding:.6rem .75rem;text-align:left;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;font-weight:700}
-    .gantt td{border-bottom:1px solid #eee4d9;padding:.75rem;vertical-align:middle;color:#39332e}
+    /* ── CHART PANELS ── */
+    .chart-row{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+    .chart-panel{background:#fff;border:1px solid var(--line);border-radius:8px;padding:1.35rem;box-shadow:var(--shadow)}
+    .chart-panel.full{grid-column:1/-1}
+    .cp-head{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:1.1rem;flex-wrap:wrap}
+    .cp-title{font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+    .cp-sub{font-size:.78rem;color:var(--muted);margin-top:.2rem}
+    .chart-wrap{position:relative;width:100%}
+
+    /* ── GANTT ── */
+    .gantt-wrap{overflow-x:auto}
+    .gantt{width:100%;border-collapse:collapse;min-width:680px;font-size:.87rem}
+    .gantt th{background:#2c2621;color:#fff;padding:.6rem .75rem;text-align:left;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;font-weight:700;white-space:nowrap}
+    .gantt td{border-bottom:1px solid #eee4d9;padding:.7rem .75rem;vertical-align:middle;color:#39332e}
     .gantt tbody tr:nth-child(even){background:#fffcf7}
-    .gantt .proj-name{font-weight:700;font-size:.9rem}
-    .gantt .proj-dir{font-size:.78rem;color:var(--muted)}
-    .pill{display:inline-flex;align-items:center;border-radius:99px;padding:.22rem .6rem;font-size:.74rem;font-weight:800;white-space:nowrap}
+    .pill{display:inline-flex;align-items:center;border-radius:99px;padding:.2rem .6rem;font-size:.73rem;font-weight:800;white-space:nowrap}
     .pill.done{background:#d1fae5;color:#065f46} .pill.cancel{background:#fee2e2;color:#8f0d18}
     .pill.ongoing{background:#dbeafe;color:#1e40af} .pill.dev{background:#ede9fe;color:#5b21b6}
     .pill.hom{background:#fff4c2;color:#7a4b00} .pill.prod{background:#d1fae5;color:#065f46}
     .phases-row{display:flex;gap:4px;flex-wrap:wrap}
-    .progress-wrap{width:120px}
-    .progress-track{height:6px;background:#eee4d9;border-radius:3px;overflow:hidden;margin-top:4px}
-    .progress-fill{height:100%;border-radius:3px;background:var(--blue)}
-    .progress-lbl{font-size:.74rem;color:var(--muted)}
+    .prog-wrap{min-width:100px}
+    .prog-track{height:5px;background:#eee4d9;border-radius:3px;overflow:hidden;margin-top:4px}
+    .prog-fill{height:100%;border-radius:3px;background:var(--blue)}
+    .prog-lbl{font-size:.73rem;color:var(--muted)}
 
-    /* ── TIMELINE VERTICAL ── */
+    /* ── TIMELINE ── */
     .tl{position:relative;padding:.5rem 0;margin-top:1rem}
-    .tl-line{position:absolute;left:90px;top:0;bottom:0;width:2px;background:var(--line)}
+    .tl-line{position:absolute;left:88px;top:0;bottom:0;width:2px;background:var(--line)}
     .tl-item{display:flex;align-items:flex-start;margin-bottom:.9rem;position:relative}
-    .tl-date{width:82px;font-size:.78rem;color:var(--muted);padding-top:8px;text-align:right;flex-shrink:0}
+    .tl-date{width:80px;font-size:.76rem;color:var(--muted);padding-top:8px;text-align:right;flex-shrink:0}
     .tl-dot{width:20px;display:flex;justify-content:center;padding-top:9px;flex-shrink:0;position:relative;z-index:1}
     .tl-dot span{width:10px;height:10px;border-radius:50%;display:block;border:2px solid #fff;box-shadow:0 0 0 1px #ccc}
     .tl-card{flex:1;margin-left:8px;background:#fff;border:1px solid #e4ddd5;border-radius:8px;padding:.85rem 1rem}
-    .tl-card .proj-name{font-size:.92rem;font-weight:700}
-    .tl-card .proj-meta{font-size:.78rem;color:var(--muted);margin-top:3px}
+    .tl-card .pn{font-size:.9rem;font-weight:700}
+    .tl-card .pm{font-size:.76rem;color:var(--muted);margin-top:3px}
 
-    /* ── OFFENDER BARS ── */
-    .off-list{display:flex;flex-direction:column;gap:.7rem}
-    .off-item{display:flex;align-items:center;gap:.75rem;font-size:.88rem}
-    .off-label{min-width:120px;color:var(--muted);font-size:.82rem;flex-shrink:0}
-    .off-track{flex:1;height:7px;background:#eee6da;border-radius:3px;overflow:hidden}
-    .off-bar{height:100%;border-radius:3px}
-    .off-val{font-size:.82rem;color:var(--muted);min-width:28px;text-align:right;font-weight:700}
-
-    /* ── CHART ROW ── */
-    .chart-row{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1.5rem}
-    .chart-panel{background:#fff;border:1px solid var(--line);border-radius:8px;padding:1.25rem;box-shadow:var(--shadow)}
-    .chart-panel-title{font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:1rem}
-    .chart-wrap{position:relative;width:100%}
-
-    /* ── MELHORIAS ── */
-    .mel-cols{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.25rem}
-    .mel-col-head{font-size:.78rem;font-weight:900;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);border-bottom:3px solid;padding-bottom:.5rem;margin-bottom:.85rem}
-    .mel-col-head.delivered{border-color:var(--green)} .mel-col-head.ongoing{border-color:var(--blue)} .mel-col-head.backlog{border-color:var(--amber)}
-    .mel-item{display:flex;align-items:center;gap:.6rem;padding:.6rem .75rem;background:#faf6ef;border-radius:6px;margin-bottom:.5rem;border:1px solid #eadfd1}
-    .mel-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
-    .mel-text{font-size:.84rem;flex:1;min-width:0;line-height:1.35}
-    .mel-sys{font-size:.72rem;color:var(--muted);background:#fff;padding:2px 7px;border-radius:20px;border:1px solid #e4ddd5;white-space:nowrap}
-    .mel-pct{font-size:.78rem;color:var(--muted);white-space:nowrap;font-weight:700}
-    .mel-prio{font-size:.72rem;padding:2px 7px;border-radius:3px;font-weight:900;white-space:nowrap}
-    .prio-high{background:#fee2e2;color:#8f0d18} .prio-med{background:#fff4c2;color:#7a4b00} .prio-low{background:#dbeafe;color:#1e40af}
-    .mel-note{font-size:.78rem;color:#9b9b96;margin-top:.5rem;padding:0 2px}
-
-    /* ── DARK LANES ── */
+    /* ── LANES ── */
     .lanes{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
-    .lane{border-radius:8px;border:1px solid rgba(255,255,255,.1);background:#28221f;padding:1.1rem;min-height:280px}
+    .lane{border-radius:8px;border:1px solid rgba(255,255,255,.1);background:#28221f;padding:1.05rem;min-height:240px}
     .lane.red{border-top:6px solid #ef4444} .lane.amber{border-top:6px solid var(--amber)}
     .lane.blue{border-top:6px solid #60a5fa} .lane.green{border-top:6px solid var(--green)}
-    .lane h3{margin:0 0 .45rem;font-size:1.05rem;line-height:1.15}
-    .lane p{margin:0 0 .85rem;color:#ddd4c9;line-height:1.4;font-size:.88rem}
+    .lane h3{margin:0 0 .4rem;font-size:1rem;line-height:1.15}
+    .lane p{margin:0 0 .75rem;color:#ddd4c9;line-height:1.4;font-size:.87rem}
     .lane ul{margin:0;padding:0;list-style:none;display:grid;gap:.5rem}
-    .lane li{position:relative;padding-left:.9rem;color:#fff8ed;line-height:1.38;font-size:.88rem}
-    .lane li::before{content:"";position:absolute;left:0;top:.44rem;width:.38rem;height:.38rem;border-radius:50%;background:var(--yellow)}
+    .lane li{position:relative;padding-left:.85rem;color:#fff8ed;line-height:1.38;font-size:.87rem}
+    .lane li::before{content:"";position:absolute;left:0;top:.44rem;width:.36rem;height:.36rem;border-radius:50%;background:var(--yellow)}
 
-    /* ── EVIDENCE ── */
+    /* ── OFF BARS ── */
+    .off-list{display:flex;flex-direction:column;gap:.65rem}
+    .off-item{display:flex;align-items:center;gap:.7rem}
+    .off-label{min-width:110px;color:var(--muted);font-size:.8rem;flex-shrink:0}
+    .off-track{flex:1;height:7px;background:#eee6da;border-radius:3px;overflow:hidden}
+    .off-fill{height:100%;border-radius:3px}
+    .off-val{font-size:.8rem;color:var(--muted);min-width:30px;text-align:right;font-weight:700}
+
+    /* ── SUSTENTACAO CHART ── */
     .evidence{background:#fff;padding:1rem 1.2rem;border-top:1px solid var(--line);color:#655e57;font-size:.82rem}
     .evidence-inner{max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 
     /* ── RESPONSIVE ── */
-    @media(max-width:900px){
+    @media(max-width:960px){
       .kpi-row{grid-template-columns:repeat(2,1fr)}
-      .card-grid{grid-template-columns:1fr}
-      .card-grid.col2{grid-template-columns:1fr}
+      .status-summary{grid-template-columns:repeat(2,1fr)}
       .chart-row{grid-template-columns:1fr}
-      .mel-cols{grid-template-columns:1fr}
+      .chart-panel.full{grid-column:auto}
       .lanes{grid-template-columns:1fr 1fr}
       .hero-inner{grid-template-columns:1fr}
       .hero-kpis{display:none}
     }
     @media(max-width:600px){
-      .tab-nav{flex-wrap:wrap;gap:.35rem}
-      .tab-btn{font-size:.78rem;padding:.4rem .65rem}
+      .topbar-inner{gap:.5rem}
+      .tab-btn{font-size:.75rem;padding:.35rem .6rem}
       .kpi-row{grid-template-columns:repeat(2,1fr)}
+      .status-summary{grid-template-columns:1fr 1fr}
       .lanes{grid-template-columns:1fr}
       .tl-line{left:8px}
       .tl-item{padding-left:22px;flex-direction:column;margin-bottom:1rem}
@@ -217,10 +172,10 @@
 <!-- ══ TOPBAR ══ -->
 <header class="topbar">
   <div class="topbar-inner">
-    <div class="brand-lockup">
+    <div class="brand">
       <span class="oxxo-badge">OXXO</span>
-      <div class="divider"></div>
-      <span class="product-tag">Gerência de TI — Relatório Executivo 2024</span>
+      <div class="brand-div"></div>
+      <span class="brand-name">Gerência de TI — Relatório Executivo 2024</span>
     </div>
     <nav class="tab-nav" role="tablist">
       <button class="tab-btn active" role="tab" onclick="showTab('projetos',this)">Projetos Estratégicos</button>
@@ -247,88 +202,293 @@
   </div>
 </div>
 
-<!-- ══════════════════════════════════════
-     PÁGINA 1 — PROJETOS ESTRATÉGICOS
-══════════════════════════════════════ -->
+<!-- ══════════════════════════════════
+     PROJETOS ESTRATÉGICOS
+══════════════════════════════════ -->
 <div id="page-projetos" class="page active">
 
-  <!-- Linha do tempo / Gantt -->
   <div class="section white">
     <div class="section-inner">
       <div class="section-head">
-        <div>
-          <h2>Linha do Tempo 2024</h2>
-          <p>Visão Gantt dos projetos com status, fases e percentual de execução.</p>
-        </div>
+        <div><h2>Linha do Tempo 2024</h2><p>Visão Gantt dos projetos com status, fases e percentual de execução.</p></div>
         <div style="display:flex;gap:.5rem;flex-wrap:wrap">
           <span class="tag green">2 Entregues</span>
           <span class="tag blue">2 Em andamento</span>
           <span class="tag red">1 Cancelado</span>
         </div>
       </div>
-
       <div class="gantt-wrap">
         <table class="gantt">
+          <thead><tr><th style="min-width:200px">Projeto</th><th>Diretoria</th><th>Período</th><th>Fases</th><th>Status</th><th>Progresso</th></tr></thead>
+          <tbody>
+            <tr><td><strong style="font-size:.9rem">Migração ERP — Módulo Fiscal</strong></td><td style="font-size:.8rem;color:var(--muted)">Fiscal &amp; Tributária</td><td style="font-size:.8rem;white-space:nowrap">Jan → Mar 2024</td><td><span class="pill done">Concluído</span></td><td><span class="pill done">✓ Entregue</span></td><td><div class="prog-wrap"><div class="prog-lbl">22/03/2024</div></div></td></tr>
+            <tr><td><strong style="font-size:.9rem">Plataforma de BI Comercial</strong></td><td style="font-size:.8rem;color:var(--muted)">Comercial</td><td style="font-size:.8rem;white-space:nowrap">Mar → Jun 2024</td><td><span class="pill done">Concluído</span></td><td><span class="pill done">✓ Entregue</span></td><td><div class="prog-wrap"><div class="prog-lbl">14/06/2024</div></div></td></tr>
+            <tr><td><strong style="font-size:.9rem">App de Fidelidade (B2C)</strong></td><td style="font-size:.8rem;color:var(--muted)">Marketing</td><td style="font-size:.8rem;white-space:nowrap">Mai → Ago 2024</td><td><span class="pill cancel">Cancelado</span></td><td><span class="pill cancel">✕ Cancelado</span></td><td><div class="prog-wrap"><div class="prog-lbl">10/08/2024</div></div></td></tr>
+            <tr><td><strong style="font-size:.9rem">Automação de Pedidos — Logística</strong></td><td style="font-size:.8rem;color:var(--muted)">Logística &amp; Supply Chain</td><td style="font-size:.8rem;white-space:nowrap">Out → Dez 2024</td><td><div class="phases-row"><span class="pill dev">Dev</span><span class="pill hom">Homol</span><span class="pill prod">Prod</span></div></td><td><span class="pill ongoing">Em andamento</span></td><td><div class="prog-wrap"><div class="prog-lbl">65%</div><div class="prog-track"><div class="prog-fill" style="width:65%"></div></div></div></td></tr>
+            <tr><td><strong style="font-size:.9rem">Integração PDV — Gateway de Pagamento</strong></td><td style="font-size:.8rem;color:var(--muted)">Operações</td><td style="font-size:.8rem;white-space:nowrap">Nov 2024 → Fev 2025</td><td><div class="phases-row"><span class="pill dev">Dev</span><span class="pill hom">Homol</span><span class="pill prod">Prod</span></div></td><td><span class="pill ongoing">Em andamento</span></td><td><div class="prog-wrap"><div class="prog-lbl">30%</div><div class="prog-track"><div class="prog-fill" style="width:30%"></div></div></div></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-inner">
+      <div class="section-head"><div><h2>Detalhamento por Projeto</h2><p>Marcos, datas e contexto de cada iniciativa estratégica.</p></div></div>
+      <div class="tl">
+        <div class="tl-line"></div>
+        <div class="tl-item"><div class="tl-date">Mar 2024</div><div class="tl-dot"><span style="background:#047857"></span></div><div class="tl-card"><div class="pn">Migração ERP — Módulo Fiscal</div><div class="pm">Concluído em 22/03/2024 · Diretoria Fiscal &amp; Tributária</div><div class="phases-row" style="margin-top:.5rem"><span class="pill done">Entregue</span></div></div></div>
+        <div class="tl-item"><div class="tl-date">Jun 2024</div><div class="tl-dot"><span style="background:#047857"></span></div><div class="tl-card"><div class="pn">Plataforma de BI Comercial</div><div class="pm">Concluído em 14/06/2024 · Diretoria Comercial</div><div class="phases-row" style="margin-top:.5rem"><span class="pill done">Entregue</span></div></div></div>
+        <div class="tl-item"><div class="tl-date">Ago 2024</div><div class="tl-dot"><span style="background:#c1121f"></span></div><div class="tl-card"><div class="pn">App de Fidelidade (B2C)</div><div class="pm">Cancelado em 10/08/2024 · Mudança estratégica de negócio</div><div class="phases-row" style="margin-top:.5rem"><span class="pill cancel">Cancelado</span></div></div></div>
+        <div class="tl-item"><div class="tl-date">Out–Dez</div><div class="tl-dot"><span style="background:#2563eb"></span></div><div class="tl-card"><div class="pn">Automação de Pedidos — Logística</div><div class="pm">Em andamento · 65% concluído</div><div class="phases-row" style="margin-top:.5rem"><span class="pill dev">Dev: Out–Nov</span><span class="pill hom">Homol: Nov</span><span class="pill prod">Prod: Dez</span></div><div class="prog-track" style="max-width:180px;margin-top:.6rem"><div class="prog-fill" style="width:65%"></div></div></div></div>
+        <div class="tl-item"><div class="tl-date">Nov–Fev/25</div><div class="tl-dot"><span style="background:#2563eb"></span></div><div class="tl-card"><div class="pn">Integração PDV com Gateway de Pagamento</div><div class="pm">Em andamento · 30% concluído</div><div class="phases-row" style="margin-top:.5rem"><span class="pill dev">Dev: Nov–Jan</span><span class="pill hom">Homol: Jan</span><span class="pill prod">Prod: Fev 2025</span></div><div class="prog-track" style="max-width:180px;margin-top:.6rem"><div class="prog-fill" style="width:30%"></div></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section dark">
+    <div class="section-inner">
+      <div class="section-head"><div><h2>Destaques &amp; Riscos</h2><p>Principais alertas e conquistas da frente de projetos.</p></div></div>
+      <div class="lanes">
+        <div class="lane green"><h3>Entregas Concluídas</h3><p>Projetos finalizados no prazo em 2024.</p><ul><li>Migração ERP Fiscal — estabilizado em produção</li><li>BI Comercial — em uso pela diretoria desde jun/24</li></ul></div>
+        <div class="lane blue"><h3>Projetos em Curso</h3><p>Iniciativas com entrega prevista até fev/2025.</p><ul><li>Automação Pedidos: homologação em nov/24</li><li>Integração PDV: fase de desenvolvimento ativa</li></ul></div>
+        <div class="lane amber"><h3>Atenção</h3><p>Pontos que requerem acompanhamento executivo.</p><ul><li>PDV: dependência de homologação bancária</li><li>Recurso QA compartilhado entre 2 projetos</li></ul></div>
+        <div class="lane red"><h3>Cancelamento</h3><p>Projeto descontinuado por decisão estratégica.</p><ul><li>App Fidelidade: cancelado em ago/24</li><li>Escopo absorvido pelo programa nacional de CRM</li></ul></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════
+     MELHORIAS  (dados reais do JIRA)
+══════════════════════════════════ -->
+<div id="page-melhorias" class="page">
+
+  <!-- 1. RESUMO QUANTITATIVO DE STATUS -->
+  <div class="section white">
+    <div class="section-inner">
+      <div class="section-head">
+        <div>
+          <h2>Resumo de Status</h2>
+          <p>Distribuição quantitativa de todas as 764 demandas de melhoria registradas no JIRA.</p>
+        </div>
+        <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+          <span class="tag green">764 Demandas</span>
+          <span class="tag blue">5 Diretorias</span>
+          <span class="tag purple">4 Sistemas</span>
+        </div>
+      </div>
+
+      <!-- Cards de status -->
+      <div class="status-summary">
+        <div class="status-card sc-concluido">
+          <div class="sc-val">560</div>
+          <div class="sc-lbl">Concluído</div>
+          <div class="sc-pct">73,3% do total</div>
+        </div>
+        <div class="status-card sc-backlog">
+          <div class="sc-val">126</div>
+          <div class="sc-lbl">Backlog</div>
+          <div class="sc-pct">16,5% do total</div>
+        </div>
+        <div class="status-card sc-andamento">
+          <div class="sc-val">64</div>
+          <div class="sc-lbl">Em andamento</div>
+          <div class="sc-pct" style="font-size:.72rem">Planejamento · Desenvolvimento · Teste · Pronto PRD · Rollout</div>
+        </div>
+        <div class="status-card sc-bloqueado">
+          <div class="sc-val">14</div>
+          <div class="sc-lbl">Congelado / Bloqueado</div>
+          <div class="sc-pct">1,8% do total</div>
+        </div>
+      </div>
+
+      <!-- KPI detalhe linha -->
+      <div class="kpi-row" style="margin-bottom:0">
+        <div class="kpi-card">
+          <div><strong class="green">560</strong><span>Concluído</span></div>
+          <div class="mini-bar"><i style="width:73%;background:#047857"></i></div>
+        </div>
+        <div class="kpi-card">
+          <div><strong class="amber">126</strong><span>Backlog</span></div>
+          <div class="mini-bar"><i style="width:16%;background:#b45309"></i></div>
+        </div>
+        <div class="kpi-card">
+          <div><strong class="blue">21</strong><span>Planejamento</span></div>
+          <div class="mini-bar"><i style="width:21%;background:#2563eb"></i></div>
+        </div>
+        <div class="kpi-card">
+          <div><strong class="blue">16</strong><span>Desenvolvimento</span></div>
+          <div class="mini-bar"><i style="width:16%;background:#3b82f6"></i></div>
+        </div>
+        <div class="kpi-card">
+          <div><strong class="blue">16</strong><span>Teste</span></div>
+          <div class="mini-bar"><i style="width:16%;background:#60a5fa"></i></div>
+        </div>
+        <div class="kpi-card">
+          <div><strong class="blue">10</strong><span>Pronto para PRD</span></div>
+          <div class="mini-bar"><i style="width:10%;background:#93c5fd"></i></div>
+        </div>
+        <div class="kpi-card">
+          <div><strong class="red">14</strong><span>Congelado / Bloqueado</span></div>
+          <div class="mini-bar"><i style="width:14%;background:#c1121f"></i></div>
+        </div>
+        <div class="kpi-card">
+          <div><strong style="color:#7c3aed">1</strong><span>Rollout</span></div>
+          <div class="mini-bar"><i style="width:1%;background:#7c3aed"></i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2 + 3. GRÁFICOS: Diretoria e Sistema -->
+  <div class="section">
+    <div class="section-inner">
+      <div class="section-head">
+        <div><h2>Entregas por Diretoria e por Sistema</h2><p>Volume total de demandas registradas por diretoria de negócio e por sistema JIRA.</p></div>
+      </div>
+      <div class="chart-row">
+
+        <!-- Gráfico 2 — Diretoria -->
+        <div class="chart-panel">
+          <div class="cp-head">
+            <div>
+              <div class="cp-title">Entregas por Diretoria de Negócio</div>
+              <div class="cp-sub">Total de demandas por área · 764 registros</div>
+            </div>
+          </div>
+          <div class="chart-wrap" style="height:260px">
+            <canvas id="chartDiretoria"></canvas>
+          </div>
+        </div>
+
+        <!-- Gráfico 3 — Sistema -->
+        <div class="chart-panel">
+          <div class="cp-head">
+            <div>
+              <div class="cp-title">Entregas por Sistema</div>
+              <div class="cp-sub">Volume por plataforma · 4 sistemas ativos</div>
+            </div>
+          </div>
+          <div class="chart-wrap" style="height:260px">
+            <canvas id="chartSistema"></canvas>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. GRÁFICO DE TORRE — Diretoria x Status -->
+  <div class="section white">
+    <div class="section-inner">
+      <div class="section-head">
+        <div>
+          <h2>Status das Melhorias por Diretoria de Negócio</h2>
+          <p>Gráfico de barras empilhadas (torre) detalhando a composição de status dentro de cada diretoria.</p>
+        </div>
+      </div>
+
+      <!-- Legenda de cores dos status -->
+      <div style="display:flex;flex-wrap:wrap;gap:14px;margin-bottom:1.4rem;font-size:.8rem;color:var(--muted)">
+        <span><span style="display:inline-block;width:11px;height:11px;border-radius:2px;background:#047857;margin-right:5px;vertical-align:middle"></span>Concluído</span>
+        <span><span style="display:inline-block;width:11px;height:11px;border-radius:2px;background:#a16207;margin-right:5px;vertical-align:middle"></span>Backlog</span>
+        <span><span style="display:inline-block;width:11px;height:11px;border-radius:2px;background:#2563eb;margin-right:5px;vertical-align:middle"></span>Planejamento</span>
+        <span><span style="display:inline-block;width:11px;height:11px;border-radius:2px;background:#7c3aed;margin-right:5px;vertical-align:middle"></span>Desenvolvimento</span>
+        <span><span style="display:inline-block;width:11px;height:11px;border-radius:2px;background:#0891b2;margin-right:5px;vertical-align:middle"></span>Teste</span>
+        <span><span style="display:inline-block;width:11px;height:11px;border-radius:2px;background:#0f766e;margin-right:5px;vertical-align:middle"></span>Pronto para PRD</span>
+        <span><span style="display:inline-block;width:11px;height:11px;border-radius:2px;background:#c1121f;margin-right:5px;vertical-align:middle"></span>Congelado/Bloqueado</span>
+      </div>
+
+      <div class="chart-panel" style="box-shadow:none;border:1px solid var(--line)">
+        <div class="chart-wrap" style="height:340px">
+          <canvas id="chartTorre"></canvas>
+        </div>
+      </div>
+
+      <!-- Tabela resumo -->
+      <div style="margin-top:1.5rem;overflow-x:auto">
+        <table style="width:100%;border-collapse:collapse;font-size:.83rem;min-width:600px">
           <thead>
-            <tr>
-              <th style="min-width:200px">Projeto</th>
-              <th>Diretoria</th>
-              <th>Período</th>
-              <th>Fases</th>
-              <th>Status</th>
-              <th>Progresso</th>
+            <tr style="background:#2c2621;color:#fff">
+              <th style="padding:.6rem .8rem;text-align:left;font-size:.72rem;text-transform:uppercase;letter-spacing:.04em">Diretoria</th>
+              <th style="padding:.6rem .8rem;text-align:right;color:#6ee7b7">Concluído</th>
+              <th style="padding:.6rem .8rem;text-align:right;color:#fde047">Backlog</th>
+              <th style="padding:.6rem .8rem;text-align:right;color:#93c5fd">Planej.</th>
+              <th style="padding:.6rem .8rem;text-align:right;color:#c4b5fd">Desenv.</th>
+              <th style="padding:.6rem .8rem;text-align:right;color:#67e8f9">Teste</th>
+              <th style="padding:.6rem .8rem;text-align:right;color:#5eead4">Pronto PRD</th>
+              <th style="padding:.6rem .8rem;text-align:right;color:#fca5a5">Bloqueado</th>
+              <th style="padding:.6rem .8rem;text-align:right;color:#e5e7eb">Total</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td><div class="proj-name">Migração ERP — Módulo Fiscal</div></td>
-              <td><div class="proj-dir">Fiscal &amp; Tributária</div></td>
-              <td style="white-space:nowrap;font-size:.82rem">Jan → Mar 2024</td>
-              <td><div class="phases-row"><span class="pill done">Concluído</span></div></td>
-              <td><span class="pill done">✓ Entregue</span></td>
-              <td><div class="progress-wrap"><div class="progress-lbl">Conclusão: 22/03/2024</div></div></td>
+            <tr style="border-bottom:1px solid #eee4d9">
+              <td style="padding:.6rem .8rem;font-weight:600">Comercial | Finanças | Supply</td>
+              <td style="padding:.6rem .8rem;text-align:right;color:#047857;font-weight:700">197</td>
+              <td style="padding:.6rem .8rem;text-align:right;color:#a16207;font-weight:700">63</td>
+              <td style="padding:.6rem .8rem;text-align:right">10</td>
+              <td style="padding:.6rem .8rem;text-align:right">7</td>
+              <td style="padding:.6rem .8rem;text-align:right">10</td>
+              <td style="padding:.6rem .8rem;text-align:right">4</td>
+              <td style="padding:.6rem .8rem;text-align:right">—</td>
+              <td style="padding:.6rem .8rem;text-align:right;font-weight:700">291</td>
             </tr>
-            <tr>
-              <td><div class="proj-name">Plataforma de BI Comercial</div></td>
-              <td><div class="proj-dir">Comercial</div></td>
-              <td style="white-space:nowrap;font-size:.82rem">Mar → Jun 2024</td>
-              <td><div class="phases-row"><span class="pill done">Concluído</span></div></td>
-              <td><span class="pill done">✓ Entregue</span></td>
-              <td><div class="progress-wrap"><div class="progress-lbl">Conclusão: 14/06/2024</div></div></td>
+            <tr style="border-bottom:1px solid #eee4d9;background:#fffcf7">
+              <td style="padding:.6rem .8rem;font-weight:600">Operações | Prevenção e Perdas</td>
+              <td style="padding:.6rem .8rem;text-align:right;color:#047857;font-weight:700">214</td>
+              <td style="padding:.6rem .8rem;text-align:right;color:#a16207;font-weight:700">15</td>
+              <td style="padding:.6rem .8rem;text-align:right">8</td>
+              <td style="padding:.6rem .8rem;text-align:right">4</td>
+              <td style="padding:.6rem .8rem;text-align:right">—</td>
+              <td style="padding:.6rem .8rem;text-align:right">5</td>
+              <td style="padding:.6rem .8rem;text-align:right">—</td>
+              <td style="padding:.6rem .8rem;text-align:right;font-weight:700">247</td>
             </tr>
-            <tr>
-              <td><div class="proj-name">App de Fidelidade (B2C)</div></td>
-              <td><div class="proj-dir">Marketing</div></td>
-              <td style="white-space:nowrap;font-size:.82rem">Mai → Ago 2024</td>
-              <td><div class="phases-row"><span class="pill cancel">Cancelado</span></div></td>
-              <td><span class="pill cancel">✕ Cancelado</span></td>
-              <td><div class="progress-wrap"><div class="progress-lbl">Cancelamento: 10/08/2024</div></div></td>
+            <tr style="border-bottom:1px solid #eee4d9">
+              <td style="padding:.6rem .8rem;font-weight:600">Finanças</td>
+              <td style="padding:.6rem .8rem;text-align:right;color:#047857;font-weight:700">63</td>
+              <td style="padding:.6rem .8rem;text-align:right;color:#a16207;font-weight:700">4</td>
+              <td style="padding:.6rem .8rem;text-align:right">1</td>
+              <td style="padding:.6rem .8rem;text-align:right">3</td>
+              <td style="padding:.6rem .8rem;text-align:right">—</td>
+              <td style="padding:.6rem .8rem;text-align:right">—</td>
+              <td style="padding:.6rem .8rem;text-align:right;color:#c1121f;font-weight:700">9</td>
+              <td style="padding:.6rem .8rem;text-align:right;font-weight:700">80</td>
             </tr>
-            <tr>
-              <td><div class="proj-name">Automação de Pedidos — Logística</div></td>
-              <td><div class="proj-dir">Logística &amp; Supply Chain</div></td>
-              <td style="white-space:nowrap;font-size:.82rem">Out 2024 → Dez 2024</td>
-              <td><div class="phases-row"><span class="pill dev">Dev: Out–Nov</span><span class="pill hom">Homol: Nov</span><span class="pill prod">Prod: Dez</span></div></td>
-              <td><span class="pill ongoing">Em andamento</span></td>
-              <td>
-                <div class="progress-wrap">
-                  <div class="progress-lbl">65%</div>
-                  <div class="progress-track"><div class="progress-fill" style="width:65%"></div></div>
-                </div>
-              </td>
+            <tr style="border-bottom:1px solid #eee4d9;background:#fffcf7">
+              <td style="padding:.6rem .8rem;font-weight:600">RH</td>
+              <td style="padding:.6rem .8rem;text-align:right;color:#047857;font-weight:700">33</td>
+              <td style="padding:.6rem .8rem;text-align:right;color:#a16207;font-weight:700">38</td>
+              <td style="padding:.6rem .8rem;text-align:right">—</td>
+              <td style="padding:.6rem .8rem;text-align:right">—</td>
+              <td style="padding:.6rem .8rem;text-align:right">—</td>
+              <td style="padding:.6rem .8rem;text-align:right">—</td>
+              <td style="padding:.6rem .8rem;text-align:right;color:#c1121f;font-weight:700">5</td>
+              <td style="padding:.6rem .8rem;text-align:right;font-weight:700">76</td>
             </tr>
-            <tr>
-              <td><div class="proj-name">Integração PDV — Gateway de Pagamento</div></td>
-              <td><div class="proj-dir">Operações</div></td>
-              <td style="white-space:nowrap;font-size:.82rem">Nov 2024 → Fev 2025</td>
-              <td><div class="phases-row"><span class="pill dev">Dev: Nov–Jan</span><span class="pill hom">Homol: Jan</span><span class="pill prod">Prod: Fev/25</span></div></td>
-              <td><span class="pill ongoing">Em andamento</span></td>
-              <td>
-                <div class="progress-wrap">
-                  <div class="progress-lbl">30%</div>
-                  <div class="progress-track"><div class="progress-fill" style="width:30%"></div></div>
-                </div>
-              </td>
+            <tr style="border-bottom:1px solid #eee4d9">
+              <td style="padding:.6rem .8rem;font-weight:600">Comercial</td>
+              <td style="padding:.6rem .8rem;text-align:right;color:#047857;font-weight:700">52</td>
+              <td style="padding:.6rem .8rem;text-align:right;color:#a16207;font-weight:700">5</td>
+              <td style="padding:.6rem .8rem;text-align:right">2</td>
+              <td style="padding:.6rem .8rem;text-align:right">1</td>
+              <td style="padding:.6rem .8rem;text-align:right">6</td>
+              <td style="padding:.6rem .8rem;text-align:right">1</td>
+              <td style="padding:.6rem .8rem;text-align:right">—</td>
+              <td style="padding:.6rem .8rem;text-align:right;font-weight:700">67</td>
+            </tr>
+            <tr style="background:#f7f7f5;font-weight:700">
+              <td style="padding:.6rem .8rem;color:#2c2621">TOTAL</td>
+              <td style="padding:.6rem .8rem;text-align:right;color:#047857">560</td>
+              <td style="padding:.6rem .8rem;text-align:right;color:#a16207">126</td>
+              <td style="padding:.6rem .8rem;text-align:right">21</td>
+              <td style="padding:.6rem .8rem;text-align:right">16</td>
+              <td style="padding:.6rem .8rem;text-align:right">16</td>
+              <td style="padding:.6rem .8rem;text-align:right">10</td>
+              <td style="padding:.6rem .8rem;text-align:right;color:#c1121f">14</td>
+              <td style="padding:.6rem .8rem;text-align:right;color:#2c2621">761</td>
             </tr>
           </tbody>
         </table>
@@ -336,495 +496,277 @@
     </div>
   </div>
 
-  <!-- Linha do tempo visual -->
-  <div class="section">
-    <div class="section-inner">
-      <div class="section-head">
-        <div><h2>Detalhamento por Projeto</h2><p>Marcos, datas e contexto de cada iniciativa estratégica.</p></div>
-      </div>
-      <div class="tl">
-        <div class="tl-line"></div>
-
-        <div class="tl-item">
-          <div class="tl-date">Mar 2024</div>
-          <div class="tl-dot"><span style="background:#047857"></span></div>
-          <div class="tl-card">
-            <div class="proj-name">Migração ERP — Módulo Fiscal</div>
-            <div class="proj-meta">Concluído em 22/03/2024 · Diretoria Fiscal &amp; Tributária</div>
-            <div class="phases-row" style="margin-top:.5rem"><span class="pill done">Entregue</span></div>
-          </div>
-        </div>
-
-        <div class="tl-item">
-          <div class="tl-date">Jun 2024</div>
-          <div class="tl-dot"><span style="background:#047857"></span></div>
-          <div class="tl-card">
-            <div class="proj-name">Plataforma de BI Comercial</div>
-            <div class="proj-meta">Concluído em 14/06/2024 · Diretoria Comercial</div>
-            <div class="phases-row" style="margin-top:.5rem"><span class="pill done">Entregue</span></div>
-          </div>
-        </div>
-
-        <div class="tl-item">
-          <div class="tl-date">Ago 2024</div>
-          <div class="tl-dot"><span style="background:#c1121f"></span></div>
-          <div class="tl-card">
-            <div class="proj-name">App de Fidelidade (B2C)</div>
-            <div class="proj-meta">Cancelado em 10/08/2024 · Mudança estratégica de negócio</div>
-            <div class="phases-row" style="margin-top:.5rem"><span class="pill cancel">Cancelado</span></div>
-          </div>
-        </div>
-
-        <div class="tl-item">
-          <div class="tl-date">Out–Dez</div>
-          <div class="tl-dot"><span style="background:#2563eb"></span></div>
-          <div class="tl-card">
-            <div class="proj-name">Automação de Pedidos — Logística</div>
-            <div class="proj-meta">Em andamento · Diretoria de Logística &amp; Supply Chain · 65% concluído</div>
-            <div class="phases-row" style="margin-top:.5rem">
-              <span class="pill dev">Dev: Out–Nov</span>
-              <span class="pill hom">Homol: Nov</span>
-              <span class="pill prod">Prod: Dez</span>
-            </div>
-            <div class="progress-track" style="max-width:200px;margin-top:.6rem"><div class="progress-fill" style="width:65%"></div></div>
-          </div>
-        </div>
-
-        <div class="tl-item">
-          <div class="tl-date">Nov–Fev/25</div>
-          <div class="tl-dot"><span style="background:#2563eb"></span></div>
-          <div class="tl-card">
-            <div class="proj-name">Integração PDV com Gateway de Pagamento</div>
-            <div class="proj-meta">Em andamento · Diretoria de Operações · 30% concluído</div>
-            <div class="phases-row" style="margin-top:.5rem">
-              <span class="pill dev">Dev: Nov–Jan</span>
-              <span class="pill hom">Homol: Jan</span>
-              <span class="pill prod">Prod: Fev 2025</span>
-            </div>
-            <div class="progress-track" style="max-width:200px;margin-top:.6rem"><div class="progress-fill" style="width:30%"></div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Destaques -->
-  <div class="section dark">
-    <div class="section-inner">
-      <div class="section-head"><div><h2>Destaques &amp; Riscos</h2><p>Principais alertas e conquistas da frente de projetos.</p></div></div>
-      <div class="lanes">
-        <div class="lane green">
-          <h3>Entregas Concluídas</h3>
-          <p>Projetos finalizados dentro do prazo em 2024.</p>
-          <ul>
-            <li>Migração ERP Fiscal — Módulo estabilizado em produção</li>
-            <li>BI Comercial — Dashboard em uso pela diretoria desde jun/24</li>
-          </ul>
-        </div>
-        <div class="lane blue">
-          <h3>Projetos em Curso</h3>
-          <p>Iniciativas com entrega prevista até fev/2025.</p>
-          <ul>
-            <li>Automação de Pedidos: homologação em nov/24</li>
-            <li>Integração PDV: fase de desenvolvimento ativa</li>
-            <li>Testes de carga agendados para jan/25</li>
-          </ul>
-        </div>
-        <div class="lane amber">
-          <h3>Atenção</h3>
-          <p>Pontos que requerem acompanhamento executivo.</p>
-          <ul>
-            <li>PDV Pagamento com dependência de homologação do banco parceiro</li>
-            <li>Recurso de QA compartilhado entre 2 projetos em nov/24</li>
-          </ul>
-        </div>
-        <div class="lane red">
-          <h3>Cancelamento</h3>
-          <p>Projeto descontinuado por decisão estratégica.</p>
-          <ul>
-            <li>App Fidelidade: cancelado após revisão de portfólio em ago/24</li>
-            <li>Escopo parcial absorvido pelo programa nacional de CRM</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-
-</div><!-- /page projetos -->
-
-
-<!-- ══════════════════════════════════════
-     PÁGINA 2 — MELHORIAS
-══════════════════════════════════════ -->
-<div id="page-melhorias" class="page">
-
-  <!-- KPIs -->
-  <div class="section white">
-    <div class="section-inner">
-      <div class="kpi-row">
-        <div class="kpi-card">
-          <div><strong class="green">47</strong><span>Melhorias entregues</span></div>
-          <div class="mini-bar"><i style="width:90%;background:#047857"></i></div>
-        </div>
-        <div class="kpi-card">
-          <div><strong class="blue">8</strong><span>Em andamento</span></div>
-          <div class="mini-bar"><i style="width:40%;background:#2563eb"></i></div>
-        </div>
-        <div class="kpi-card">
-          <div><strong class="amber">23</strong><span>Backlog priorizado</span></div>
-          <div class="mini-bar"><i style="width:55%;background:#b45309"></i></div>
-        </div>
-        <div class="kpi-card">
-          <div><strong>6</strong><span>Diretorias atendidas</span></div>
-          <div class="mini-bar"><i style="width:75%;background:#1f1b18"></i></div>
-        </div>
-      </div>
-
-      <!-- 3 colunas -->
-      <div class="section-head" style="margin-top:0">
-        <div><h2>Painel de Melhorias</h2><p>Acompanhamento por status e diretoria de negócio via JIRA.</p></div>
-      </div>
-
-      <div class="mel-cols">
-        <div>
-          <div class="mel-col-head delivered">Entregues (47)</div>
-          <div class="mel-item"><span class="mel-dot" style="background:#047857"></span><span class="mel-text">Relatório de ruptura automático</span><span class="mel-sys">Comercial</span></div>
-          <div class="mel-item"><span class="mel-dot" style="background:#047857"></span><span class="mel-text">Conciliação fiscal SPED</span><span class="mel-sys">Fiscal</span></div>
-          <div class="mel-item"><span class="mel-dot" style="background:#047857"></span><span class="mel-text">Dashboard de giro de estoque</span><span class="mel-sys">Logística</span></div>
-          <div class="mel-item"><span class="mel-dot" style="background:#047857"></span><span class="mel-text">Alertas de prazo de validade</span><span class="mel-sys">Operações</span></div>
-          <div class="mel-item"><span class="mel-dot" style="background:#047857"></span><span class="mel-text">Integração NF-e automática</span><span class="mel-sys">Fiscal</span></div>
-          <div class="mel-item"><span class="mel-dot" style="background:#047857"></span><span class="mel-text">Painel de margem por categoria</span><span class="mel-sys">Comercial</span></div>
-          <div class="mel-item"><span class="mel-dot" style="background:#047857"></span><span class="mel-text">Automação de transferência entre CDs</span><span class="mel-sys">Logística</span></div>
-          <div class="mel-note">+ 40 melhorias adicionais entregues no ano</div>
-        </div>
-
-        <div>
-          <div class="mel-col-head ongoing">Em andamento (8)</div>
-          <div class="mel-item">
-            <span class="mel-dot" style="background:#2563eb"></span>
-            <div style="flex:1;min-width:0">
-              <div class="mel-text">Previsão de demanda com ML</div>
-              <div class="progress-track" style="margin-top:4px"><div class="progress-fill" style="width:70%"></div></div>
-            </div>
-            <span class="mel-pct">70%</span>
-          </div>
-          <div class="mel-item">
-            <span class="mel-dot" style="background:#2563eb"></span>
-            <div style="flex:1;min-width:0">
-              <div class="mel-text">Portal de fornecedores</div>
-              <div class="progress-track" style="margin-top:4px"><div class="progress-fill" style="width:45%"></div></div>
-            </div>
-            <span class="mel-pct">45%</span>
-          </div>
-          <div class="mel-item">
-            <span class="mel-dot" style="background:#2563eb"></span>
-            <div style="flex:1;min-width:0">
-              <div class="mel-text">Automação de inventário físico</div>
-              <div class="progress-track" style="margin-top:4px"><div class="progress-fill" style="width:20%"></div></div>
-            </div>
-            <span class="mel-pct">20%</span>
-          </div>
-          <div class="mel-item">
-            <span class="mel-dot" style="background:#2563eb"></span>
-            <div style="flex:1;min-width:0">
-              <div class="mel-text">Painel de performance de lojas</div>
-              <div class="progress-track" style="margin-top:4px"><div class="progress-fill" style="width:55%"></div></div>
-            </div>
-            <span class="mel-pct">55%</span>
-          </div>
-          <div class="mel-item">
-            <span class="mel-dot" style="background:#2563eb"></span>
-            <div style="flex:1;min-width:0">
-              <div class="mel-text">Relatório de devolução de mercadorias</div>
-              <div class="progress-track" style="margin-top:4px"><div class="progress-fill" style="width:35%"></div></div>
-            </div>
-            <span class="mel-pct">35%</span>
-          </div>
-          <div class="mel-note">+ 3 demandas em fases iniciais</div>
-        </div>
-
-        <div>
-          <div class="mel-col-head backlog">Backlog priorizado (23)</div>
-          <div class="mel-item"><span class="mel-dot" style="background:#b45309"></span><span class="mel-text">Cubo OLAP de vendas por região</span><span class="mel-prio prio-high">Alta</span></div>
-          <div class="mel-item"><span class="mel-dot" style="background:#b45309"></span><span class="mel-text">Integração com marketplace digital</span><span class="mel-prio prio-high">Alta</span></div>
-          <div class="mel-item"><span class="mel-dot" style="background:#b45309"></span><span class="mel-text">Módulo RH — controle de ponto digital</span><span class="mel-prio prio-med">Média</span></div>
-          <div class="mel-item"><span class="mel-dot" style="background:#b45309"></span><span class="mel-text">Conciliação bancária automática</span><span class="mel-prio prio-med">Média</span></div>
-          <div class="mel-item"><span class="mel-dot" style="background:#b45309"></span><span class="mel-text">App mobile para operadores de loja</span><span class="mel-prio prio-low">Baixa</span></div>
-          <div class="mel-item"><span class="mel-dot" style="background:#b45309"></span><span class="mel-text">Relatório fiscal DIFAL automatizado</span><span class="mel-prio prio-med">Média</span></div>
-          <div class="mel-item"><span class="mel-dot" style="background:#b45309"></span><span class="mel-text">Dashboard executivo de RH</span><span class="mel-prio prio-low">Baixa</span></div>
-          <div class="mel-note">+ 16 itens aguardando priorização</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Gráfico por diretoria -->
-  <div class="section">
-    <div class="section-inner">
-      <div class="section-head">
-        <div><h2>Distribuição por Diretoria</h2><p>Melhorias entregues classificadas por área de negócio atendida.</p></div>
-      </div>
-      <div class="chart-row">
-        <div class="chart-panel">
-          <div class="chart-panel-title">Melhorias entregues por diretoria</div>
-          <div class="chart-wrap" style="height:220px"><canvas id="chartMelhorias"></canvas></div>
-        </div>
-        <div class="chart-panel">
-          <div class="chart-panel-title">Volume por diretoria (barras)</div>
-          <div class="off-list" style="margin-top:.5rem">
-            <div class="off-item"><span class="off-label">Comercial</span><div class="off-track"><div class="off-bar" style="width:90%;background:#2563eb"></div></div><span class="off-val">14</span></div>
-            <div class="off-item"><span class="off-label">Fiscal</span><div class="off-track"><div class="off-bar" style="width:72%;background:#c1121f"></div></div><span class="off-val">11</span></div>
-            <div class="off-item"><span class="off-label">Logística</span><div class="off-track"><div class="off-bar" style="width:58%;background:#047857"></div></div><span class="off-val">9</span></div>
-            <div class="off-item"><span class="off-label">Operações</span><div class="off-track"><div class="off-bar" style="width:45%;background:#b45309"></div></div><span class="off-val">7</span></div>
-            <div class="off-item"><span class="off-label">TI Interna</span><div class="off-track"><div class="off-bar" style="width:28%;background:#7c3aed"></div></div><span class="off-val">4</span></div>
-            <div class="off-item"><span class="off-label">RH</span><div class="off-track"><div class="off-bar" style="width:16%;background:#db7c26"></div></div><span class="off-val">2</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
 </div><!-- /page melhorias -->
 
 
-<!-- ══════════════════════════════════════
-     PÁGINA 3 — SUSTENTAÇÃO
-══════════════════════════════════════ -->
+<!-- ══════════════════════════════════
+     SUSTENTAÇÃO
+══════════════════════════════════ -->
 <div id="page-sustentacao" class="page">
 
-  <!-- KPIs -->
   <div class="section white">
     <div class="section-inner">
       <div class="kpi-row">
-        <div class="kpi-card">
-          <div><strong class="red">2.847</strong><span>Chamados recebidos</span></div>
-          <div class="mini-bar"><i style="width:85%;background:var(--red)"></i></div>
-        </div>
-        <div class="kpi-card">
-          <div><strong class="green">94%</strong><span>Taxa resolução N1/N2</span></div>
-          <div class="mini-bar"><i style="width:94%;background:#047857"></i></div>
-        </div>
-        <div class="kpi-card">
-          <div><strong class="blue">57</strong><span>Causas raiz resolvidas</span></div>
-          <div class="mini-bar"><i style="width:60%;background:#2563eb"></i></div>
-        </div>
-        <div class="kpi-card">
-          <div><strong class="amber">-22%</strong><span>Redução de volume YoY</span></div>
-          <div class="mini-bar"><i style="width:22%;background:#b45309"></i></div>
-        </div>
+        <div class="kpi-card"><div><strong class="red">2.847</strong><span>Chamados recebidos</span></div><div class="mini-bar"><i style="width:85%;background:var(--red)"></i></div></div>
+        <div class="kpi-card"><div><strong class="green">94%</strong><span>Taxa resolução N1/N2</span></div><div class="mini-bar"><i style="width:94%;background:#047857"></i></div></div>
+        <div class="kpi-card"><div><strong class="blue">57</strong><span>Causas raiz resolvidas</span></div><div class="mini-bar"><i style="width:60%;background:#2563eb"></i></div></div>
+        <div class="kpi-card"><div><strong class="amber">-22%</strong><span>Redução de volume YoY</span></div><div class="mini-bar"><i style="width:22%;background:#b45309"></i></div></div>
       </div>
     </div>
   </div>
 
-  <!-- Gráfico mensal -->
   <div class="section white" style="padding-top:0;border-top:none">
     <div class="section-inner">
-      <div class="section-head">
-        <div><h2>Volume Mensal de Chamados</h2><p>Chamados abertos vs. resolvidos N1/N2 e evolução das causas raiz resolvidas ao longo de 2024.</p></div>
-      </div>
-      <div style="display:flex;gap:1.2rem;margin-bottom:1rem;flex-wrap:wrap;font-size:.84rem;color:var(--muted)">
+      <div class="section-head"><div><h2>Volume Mensal de Chamados</h2><p>Chamados abertos vs. resolvidos N1/N2 e evolução das causas raiz ao longo de 2024.</p></div></div>
+      <div style="display:flex;gap:1rem;margin-bottom:1rem;flex-wrap:wrap;font-size:.82rem;color:var(--muted)">
         <span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#c1121f;margin-right:4px;vertical-align:middle"></span>Chamados abertos</span>
         <span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#2563eb;margin-right:4px;vertical-align:middle"></span>Resolvidos N1/N2</span>
         <span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#047857;margin-right:4px;vertical-align:middle"></span>Causas raiz (eixo direito)</span>
       </div>
-      <div class="chart-wrap" style="height:clamp(200px,35vw,280px)">
-        <canvas id="chartSustentacao"></canvas>
-      </div>
+      <div class="chart-wrap" style="height:clamp(200px,35vw,280px)"><canvas id="chartSustentacao"></canvas></div>
     </div>
   </div>
 
-  <!-- Ofensores + causas raiz -->
   <div class="section">
     <div class="section-inner">
-      <div class="section-head">
-        <div><h2>Análise de Ofensores e Causas Raiz</h2><p>Sistemas com maior volume de incidentes e impacto das soluções de causa raiz aplicadas.</p></div>
-      </div>
+      <div class="section-head"><div><h2>Análise de Ofensores e Causas Raiz</h2><p>Sistemas com maior volume de incidentes e impacto das soluções aplicadas.</p></div></div>
       <div class="chart-row">
         <div class="chart-panel">
-          <div class="chart-panel-title">Principais sistemas ofensores</div>
+          <div class="cp-title" style="margin-bottom:1rem">Principais sistemas ofensores</div>
           <div class="off-list">
-            <div class="off-item"><span class="off-label">Integração PDV</span><div class="off-track"><div class="off-bar" style="width:78%;background:#c1121f"></div></div><span class="off-val">312</span></div>
-            <div class="off-item"><span class="off-label">Fiscal / SPED</span><div class="off-track"><div class="off-bar" style="width:62%;background:#c1121f"></div></div><span class="off-val">248</span></div>
-            <div class="off-item"><span class="off-label">ERP Estoque</span><div class="off-track"><div class="off-bar" style="width:48%;background:#f59e0b"></div></div><span class="off-val">192</span></div>
-            <div class="off-item"><span class="off-label">Logística</span><div class="off-track"><div class="off-bar" style="width:35%;background:#f59e0b"></div></div><span class="off-val">138</span></div>
-            <div class="off-item"><span class="off-label">BI / Relatórios</span><div class="off-track"><div class="off-bar" style="width:22%;background:#2563eb"></div></div><span class="off-val">87</span></div>
+            <div class="off-item"><span class="off-label">Integração PDV</span><div class="off-track"><div class="off-fill" style="width:78%;background:#c1121f"></div></div><span class="off-val">312</span></div>
+            <div class="off-item"><span class="off-label">Fiscal / SPED</span><div class="off-track"><div class="off-fill" style="width:62%;background:#c1121f"></div></div><span class="off-val">248</span></div>
+            <div class="off-item"><span class="off-label">ERP Estoque</span><div class="off-track"><div class="off-fill" style="width:48%;background:#f59e0b"></div></div><span class="off-val">192</span></div>
+            <div class="off-item"><span class="off-label">Logística</span><div class="off-track"><div class="off-fill" style="width:35%;background:#f59e0b"></div></div><span class="off-val">138</span></div>
+            <div class="off-item"><span class="off-label">BI / Relatórios</span><div class="off-track"><div class="off-fill" style="width:22%;background:#2563eb"></div></div><span class="off-val">87</span></div>
           </div>
         </div>
         <div class="chart-panel">
-          <div class="chart-panel-title">Causas raiz resolvidas vs. redução de chamados (%)</div>
-          <div class="chart-wrap" style="height:200px">
-            <canvas id="chartCausas"></canvas>
-          </div>
+          <div class="cp-title" style="margin-bottom:1rem">Causas raiz resolvidas vs. redução de chamados</div>
+          <div class="chart-wrap" style="height:200px"><canvas id="chartCausas"></canvas></div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Destaques sustentação -->
   <div class="section dark">
     <div class="section-inner">
       <div class="section-head"><div><h2>Análise do Ano</h2><p>Principais eventos e conquistas da frente de sustentação em 2024.</p></div></div>
       <div class="lanes">
-        <div class="lane green">
-          <h3>Conquistas</h3>
-          <p>Resultados positivos alcançados no ano.</p>
-          <ul>
-            <li>94% de resolução no primeiro ou segundo nível</li>
-            <li>57 causas raiz eliminadas, evitando reincidência</li>
-            <li>Redução de 22% no volume vs. 2023</li>
-          </ul>
-        </div>
-        <div class="lane red">
-          <h3>Pico de Incidentes</h3>
-          <p>Meses com maior volume: Fev, Jul e Ago.</p>
-          <ul>
-            <li>Fev: falha de integração PDV (312 chamados)</li>
-            <li>Ago: instabilidade SPED após atualização fiscal</li>
-            <li>Jul: indisponibilidade do módulo de logística</li>
-          </ul>
-        </div>
-        <div class="lane blue">
-          <h3>Ações N3 / JIRA</h3>
-          <p>Problemas abertos e resolvidos via squad N3.</p>
-          <ul>
-            <li>31 problemas abertos no JIRA ao longo do ano</li>
-            <li>28 encerrados com solução definitiva</li>
-            <li>3 em acompanhamento no final do período</li>
-          </ul>
-        </div>
-        <div class="lane amber">
-          <h3>Próximos Passos</h3>
-          <p>Iniciativas de melhoria contínua para 2025.</p>
-          <ul>
-            <li>Implantar monitoramento proativo (Zabbix + alertas)</li>
-            <li>Criar runbook para top 10 ofensores recorrentes</li>
-            <li>Revisão do SLA de atendimento N2</li>
-          </ul>
-        </div>
+        <div class="lane green"><h3>Conquistas</h3><p>Resultados positivos alcançados no ano.</p><ul><li>94% de resolução no primeiro ou segundo nível</li><li>57 causas raiz eliminadas, evitando reincidência</li><li>Redução de 22% no volume vs. 2023</li></ul></div>
+        <div class="lane red"><h3>Pico de Incidentes</h3><p>Meses com maior volume: Fev, Jul e Ago.</p><ul><li>Fev: falha de integração PDV (312 chamados)</li><li>Ago: instabilidade SPED após atualização fiscal</li><li>Jul: indisponibilidade do módulo de logística</li></ul></div>
+        <div class="lane blue"><h3>Ações N3 / JIRA</h3><p>Problemas abertos e resolvidos via squad N3.</p><ul><li>31 problemas abertos no JIRA ao longo do ano</li><li>28 encerrados com solução definitiva</li><li>3 em acompanhamento no final do período</li></ul></div>
+        <div class="lane amber"><h3>Próximos Passos</h3><p>Iniciativas de melhoria contínua para 2025.</p><ul><li>Monitoramento proativo (Zabbix + alertas)</li><li>Runbook para top 10 ofensores recorrentes</li><li>Revisão do SLA de atendimento N2</li></ul></div>
       </div>
     </div>
   </div>
 
 </div><!-- /page sustentacao -->
 
-<!-- ══ FOOTER ══ -->
 <div class="evidence">
   <div class="evidence-inner">
     <span>OXXO · Gerência de Tecnologia da Informação · Relatório Executivo 2024</span>
-    <span>Fontes: Service Now · JIRA · Registros internos de TI</span>
+    <span>Fontes: Relatório Gerencial Sistemas (JIRA) · Service Now · Registros internos de TI</span>
   </div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <script>
-  /* ── TAB NAVIGATION ── */
-  const heroContent = {
-    projetos: {
-      title: 'Projetos Estratégicos',
-      lead: 'Visão consolidada dos projetos entregues, em andamento e cancelados durante o ano de 2024.',
-      kpis: [
-        {val:'5',  lbl:'Projetos'},
-        {val:'2',  lbl:'Entregues'},
-        {val:'2',  lbl:'Em andamento'},
-        {val:'1',  lbl:'Cancelado'},
-      ]
-    },
-    melhorias: {
-      title: 'Melhorias de Sistemas',
-      lead: 'Demandas de melhoria por diretoria de negócio, acompanhadas via JIRA. Entregas, progresso e backlog priorizado.',
-      kpis: [
-        {val:'47', lbl:'Entregues'},
-        {val:'8',  lbl:'Em andamento'},
-        {val:'23', lbl:'Backlog'},
-        {val:'6',  lbl:'Diretorias'},
-      ]
-    },
-    sustentacao: {
-      title: 'Sustentação dos Sistemas',
-      lead: 'Gestão de incidentes via Service Now e resolução de causas raiz pelo squad N3 com acompanhamento no JIRA.',
-      kpis: [
-        {val:'2.847', lbl:'Chamados'},
-        {val:'94%',   lbl:'Resolução N1/N2'},
-        {val:'57',    lbl:'Causas raiz'},
-        {val:'-22%',  lbl:'Redução YoY'},
-      ]
-    }
-  };
-
-  function showTab(id, btn) {
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-    document.getElementById('page-' + id).classList.add('active');
-    btn.classList.add('active');
-
-    const h = heroContent[id];
-    document.getElementById('heroTitle').textContent = h.title;
-    document.getElementById('heroLead').textContent = h.lead;
-    const kpisEl = document.getElementById('heroKpis');
-    kpisEl.innerHTML = h.kpis.map(k => `<div class="hkpi"><strong>${k.val}</strong><span>${k.lbl}</span></div>`).join('');
-
-    window.scrollTo({top: 0, behavior: 'smooth'});
+/* ── HERO CONTENT PER TAB ── */
+const HERO = {
+  projetos: {
+    title:'Projetos Estratégicos',
+    lead:'Visão consolidada dos projetos entregues, em andamento e cancelados durante o ano de 2024.',
+    kpis:[{v:'5',l:'Projetos'},{v:'2',l:'Entregues'},{v:'2',l:'Em andamento'},{v:'1',l:'Cancelado'}]
+  },
+  melhorias: {
+    title:'Melhorias de Sistemas',
+    lead:'764 demandas registradas no JIRA por 5 diretorias de negócio. Dados extraídos do Relatório Gerencial de Sistemas.',
+    kpis:[{v:'764',l:'Demandas'},{v:'560',l:'Concluídas'},{v:'73,3%',l:'Taxa conclusão'},{v:'4',l:'Sistemas'}]
+  },
+  sustentacao: {
+    title:'Sustentação dos Sistemas',
+    lead:'Gestão de incidentes via Service Now e resolução de causas raiz pelo squad N3 com acompanhamento no JIRA.',
+    kpis:[{v:'2.847',l:'Chamados'},{v:'94%',l:'Resolução N1/N2'},{v:'57',l:'Causas raiz'},{v:'-22%',l:'Redução YoY'}]
   }
+};
 
-  /* ── CHARTS ── */
-  const meses = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
-  const mob = window.innerWidth <= 600;
+function showTab(id, btn) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('page-'+id).classList.add('active');
+  btn.classList.add('active');
+  const h = HERO[id];
+  document.getElementById('heroTitle').textContent = h.title;
+  document.getElementById('heroLead').textContent = h.lead;
+  document.getElementById('heroKpis').innerHTML = h.kpis.map(k=>`<div class="hkpi"><strong>${k.v}</strong><span>${k.l}</span></div>`).join('');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
 
-  // Chart sustentação
-  new Chart(document.getElementById('chartSustentacao'), {
-    type: 'bar',
-    data: {
-      labels: meses,
-      datasets: [
-        { label:'Chamados abertos', data:[285,312,198,241,268,195,310,340,275,220,185,218], backgroundColor:'rgba(193,18,31,0.80)', borderRadius:3, order:1 },
-        { label:'Resolvidos N1/N2', data:[261,290,188,230,255,185,285,310,258,208,175,205], backgroundColor:'rgba(37,99,235,0.60)', borderRadius:3, order:2 },
-        { label:'Causas raiz', data:[2,3,5,4,6,4,7,8,5,6,4,3], type:'line', borderColor:'#047857', backgroundColor:'rgba(4,120,87,0.08)', borderWidth:2.5, pointRadius:mob?3:5, pointBackgroundColor:'#047857', pointBorderColor:'#fff', pointBorderWidth:2, yAxisID:'y2', tension:0.35, fill:true, order:0 }
-      ]
+const mob = window.innerWidth <= 600;
+
+/* ══ MELHORIAS CHARTS ══ */
+
+/* Gráfico 2 — Entregas por Diretoria (barras horizontais) */
+new Chart(document.getElementById('chartDiretoria'), {
+  type: 'bar',
+  data: {
+    labels: ['Comercial | Finanças | Supply','Operações | Prevenção e Perdas','Finanças','RH','Comercial'],
+    datasets: [{
+      label: 'Demandas',
+      data: [291, 247, 80, 76, 67],
+      backgroundColor: ['#c1121f','#2563eb','#047857','#b45309','#7c3aed'],
+      borderRadius: 5,
+      borderSkipped: false
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        callbacks: {
+          label: ctx => ` ${ctx.raw} demandas (${((ctx.raw/764)*100).toFixed(1)}%)`
+        }
+      }
     },
-    options: {
-      responsive:true, maintainAspectRatio:false,
-      plugins:{ legend:{display:false}, tooltip:{mode:'index',intersect:false} },
-      scales:{
-        x:{ grid:{display:false}, ticks:{font:{size:mob?9:11}, maxRotation:mob?45:0} },
-        y:{ grid:{color:'rgba(0,0,0,0.05)'}, ticks:{font:{size:10}}, title:{display:!mob, text:'Chamados', font:{size:10}, color:'#5b5651'} },
-        y2:{ position:'right', grid:{display:false}, ticks:{font:{size:10}, stepSize:2}, title:{display:!mob, text:'Causas raiz', font:{size:10}, color:'#047857'} }
+    scales: {
+      x: { grid:{ color:'rgba(0,0,0,0.05)' }, ticks:{ font:{size:11} } },
+      y: { grid:{ display:false }, ticks:{ font:{size:mob?9:11} } }
+    }
+  }
+});
+
+/* Gráfico 3 — Entregas por Sistema (doughnut) */
+new Chart(document.getElementById('chartSistema'), {
+  type: 'doughnut',
+  data: {
+    labels: ['Oracle Retail','PDV','SAP','Canais Digitais'],
+    datasets: [{
+      data: [291, 247, 80, 67],
+      backgroundColor: ['#c1121f','#2563eb','#047857','#7c3aed'],
+      borderWidth: 3,
+      borderColor: '#fff',
+      hoverOffset: 8
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    cutout: '60%',
+    plugins: {
+      legend: {
+        position: mob ? 'bottom' : 'right',
+        labels: { font:{size:12}, boxWidth:13, padding:13 }
+      },
+      tooltip: {
+        callbacks: {
+          label: ctx => ` ${ctx.label}: ${ctx.raw} (${((ctx.raw/685)*100).toFixed(1)}%)`
+        }
       }
     }
-  });
+  }
+});
 
-  // Chart causas raiz
-  new Chart(document.getElementById('chartCausas'), {
-    type: 'bar',
-    data: {
-      labels:['PDV','Fiscal','ERP','Logística','BI'],
-      datasets:[
-        { label:'Causas resolvidas', data:[8,5,6,4,3], backgroundColor:'rgba(4,120,87,0.80)', borderRadius:3 },
-        { label:'Redução (%)', data:[31,24,18,15,9], type:'line', borderColor:'#c1121f', backgroundColor:'transparent', borderWidth:2, pointRadius:4, pointBackgroundColor:'#c1121f', pointBorderColor:'#fff', pointBorderWidth:2, yAxisID:'y2', tension:0.3 }
-      ]
+/* Gráfico 4 — Torre: Diretoria x Status (barras empilhadas) */
+const torreLabels = ['Comercial | Finanças | Supply','Operações | Prevenção e Perdas','Finanças','RH','Comercial'];
+const torreLabelsShort = ['Com. | Fin. | Supply','Operações | PP','Finanças','RH','Comercial'];
+
+new Chart(document.getElementById('chartTorre'), {
+  type: 'bar',
+  data: {
+    labels: mob ? torreLabelsShort : torreLabels,
+    datasets: [
+      { label:'Concluído',         data:[197,214,63,33,52],  backgroundColor:'#047857', borderRadius:0 },
+      { label:'Backlog',           data:[63,15,4,38,5],       backgroundColor:'#a16207', borderRadius:0 },
+      { label:'Planejamento',      data:[10,8,1,0,2],          backgroundColor:'#2563eb', borderRadius:0 },
+      { label:'Desenvolvimento',   data:[7,4,3,0,1],           backgroundColor:'#7c3aed', borderRadius:0 },
+      { label:'Teste',             data:[10,0,0,0,6],           backgroundColor:'#0891b2', borderRadius:0 },
+      { label:'Pronto para PRD',   data:[4,5,0,0,1],            backgroundColor:'#0f766e', borderRadius:0 },
+      { label:'Congelado/Bloq.',   data:[0,0,9,5,0],            backgroundColor:'#c1121f', borderRadius:0 }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        mode: 'index',
+        intersect: false,
+        callbacks: {
+          footer: items => {
+            const total = items.reduce((s,i) => s + i.raw, 0);
+            return `Total: ${total}`;
+          }
+        }
+      }
     },
-    options:{
-      responsive:true, maintainAspectRatio:false,
-      plugins:{legend:{display:false}},
-      scales:{
-        x:{grid:{display:false},ticks:{font:{size:10}}},
-        y:{grid:{color:'rgba(0,0,0,0.05)'},ticks:{font:{size:10}}},
-        y2:{position:'right',grid:{display:false},ticks:{font:{size:10},callback:v=>v+'%'}}
+    scales: {
+      x: {
+        stacked: true,
+        grid: { display: false },
+        ticks: {
+          font: { size: mob ? 8 : 11 },
+          maxRotation: mob ? 35 : 0,
+          autoSkip: false
+        }
+      },
+      y: {
+        stacked: true,
+        grid: { color: 'rgba(0,0,0,0.05)' },
+        ticks: { font: { size: 11 } },
+        title: { display: !mob, text: 'Quantidade de demandas', font: { size: 11 }, color: '#5b5651' }
       }
     }
-  });
+  }
+});
 
-  // Chart melhorias donut
-  new Chart(document.getElementById('chartMelhorias'), {
-    type:'doughnut',
-    data:{
-      labels:['Comercial','Fiscal','Logística','Operações','TI Interna','RH'],
-      datasets:[{ data:[14,11,9,7,4,2], backgroundColor:['#2563eb','#c1121f','#047857','#b45309','#7c3aed','#db7c26'], borderWidth:2, borderColor:'#fff', hoverOffset:6 }]
-    },
-    options:{
-      responsive:true, maintainAspectRatio:false, cutout:'62%',
-      plugins:{ legend:{ position:mob?'bottom':'right', labels:{font:{size:11},boxWidth:12,padding:12} } }
+/* ══ SUSTENTAÇÃO CHARTS ══ */
+const meses = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
+
+new Chart(document.getElementById('chartSustentacao'), {
+  type: 'bar',
+  data: {
+    labels: meses,
+    datasets: [
+      { label:'Chamados abertos', data:[285,312,198,241,268,195,310,340,275,220,185,218], backgroundColor:'rgba(193,18,31,0.8)', borderRadius:3, order:1 },
+      { label:'Resolvidos N1/N2', data:[261,290,188,230,255,185,285,310,258,208,175,205], backgroundColor:'rgba(37,99,235,0.6)', borderRadius:3, order:2 },
+      { label:'Causas raiz', data:[2,3,5,4,6,4,7,8,5,6,4,3], type:'line', borderColor:'#047857', backgroundColor:'rgba(4,120,87,0.08)', borderWidth:2.5, pointRadius:mob?3:5, pointBackgroundColor:'#047857', pointBorderColor:'#fff', pointBorderWidth:2, yAxisID:'y2', tension:0.35, fill:true, order:0 }
+    ]
+  },
+  options: {
+    responsive:true, maintainAspectRatio:false,
+    plugins:{ legend:{display:false}, tooltip:{mode:'index',intersect:false} },
+    scales:{
+      x:{ grid:{display:false}, ticks:{font:{size:mob?9:11},maxRotation:mob?45:0} },
+      y:{ grid:{color:'rgba(0,0,0,0.05)'}, ticks:{font:{size:10}}, title:{display:!mob,text:'Chamados',font:{size:10},color:'#5b5651'} },
+      y2:{ position:'right', grid:{display:false}, ticks:{font:{size:10},stepSize:2}, title:{display:!mob,text:'Causas raiz',font:{size:10},color:'#047857'} }
     }
-  });
+  }
+});
+
+new Chart(document.getElementById('chartCausas'), {
+  type:'bar',
+  data:{
+    labels:['PDV','Fiscal','ERP','Logística','BI'],
+    datasets:[
+      { label:'Causas resolvidas', data:[8,5,6,4,3], backgroundColor:'rgba(4,120,87,0.8)', borderRadius:4 },
+      { label:'Redução (%)', data:[31,24,18,15,9], type:'line', borderColor:'#c1121f', backgroundColor:'transparent', borderWidth:2, pointRadius:4, pointBackgroundColor:'#c1121f', pointBorderColor:'#fff', pointBorderWidth:2, yAxisID:'y2', tension:0.3 }
+    ]
+  },
+  options:{
+    responsive:true, maintainAspectRatio:false,
+    plugins:{legend:{display:false}},
+    scales:{
+      x:{grid:{display:false},ticks:{font:{size:10}}},
+      y:{grid:{color:'rgba(0,0,0,0.05)'},ticks:{font:{size:10}}},
+      y2:{position:'right',grid:{display:false},ticks:{font:{size:10},callback:v=>v+'%'}}
+    }
+  }
+});
 </script>
 </body>
 </html>
