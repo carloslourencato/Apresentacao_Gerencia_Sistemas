@@ -3,769 +3,796 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>OXXO | TI — Relatório Executivo 2024</title>
+  <title>OXXO | TI Sistemas — Report Executivo 2025·26</title>
   <style>
     :root{
-      --red:#c1121f; --red-strong:#8f0d18; --yellow:#ffcc00; --amber:#f59e0b;
-      --green:#047857; --blue:#2563eb; --ink:#1f1b18; --muted:#5b5651;
-      --line:#ded7cf; --paper:#f7f7f5; --white:#fff; --shadow:0 18px 44px rgba(31,27,24,.12);
+      --red:#c1121f;--yellow:#ffcc00;--amber:#f59e0b;--green:#047857;
+      --blue:#2563eb;--ink:#1f1b18;--muted:#5b5651;--line:#ded7cf;
+      --paper:#f7f7f5;--white:#fff;--shadow:0 12px 36px rgba(31,27,24,.1);
     }
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
     body{font-family:"Aptos","Segoe UI",Arial,sans-serif;color:var(--ink);background:var(--paper);line-height:1.5}
-    a{color:inherit;text-decoration:none}
 
     /* ── TOPBAR ── */
     .topbar{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(16px)}
-    .topbar-inner{max-width:1180px;margin:0 auto;padding:.7rem 1.2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
-    .brand{display:flex;align-items:center;gap:.75rem}
-    .oxxo-badge{background:var(--red);color:#fff;font-weight:900;font-size:1.1rem;padding:.28rem .85rem;letter-spacing:2px;border-radius:3px}
-    .brand-div{width:1px;height:24px;background:#cbc2b6}
-    .brand-name{font-weight:800;font-size:.88rem;color:#2a2521;white-space:nowrap}
-    .tab-nav{display:flex;gap:.25rem;flex-wrap:wrap}
-    .tab-btn{padding:.42rem .82rem;border:1px solid transparent;border-radius:4px;font-size:.82rem;color:#3d3732;font-weight:700;cursor:pointer;background:transparent;font-family:inherit;transition:all .15s;white-space:nowrap}
+    .topbar-inner{max-width:1200px;margin:0 auto;padding:.65rem 1.2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+    .brand{display:flex;align-items:center;gap:.7rem}
+    .oxxo-badge{background:var(--red);color:#fff;font-weight:900;font-size:1.05rem;padding:.25rem .8rem;letter-spacing:2px;border-radius:3px;flex-shrink:0}
+    .brand-div{width:1px;height:22px;background:#cbc2b6}
+    .brand-name{font-weight:800;font-size:.84rem;color:#2a2521;white-space:nowrap}
+    .tab-nav{display:flex;gap:.2rem;flex-wrap:wrap}
+    .tab-btn{padding:.38rem .78rem;border:1px solid transparent;border-radius:4px;font-size:.8rem;color:#3d3732;font-weight:700;cursor:pointer;background:transparent;font-family:inherit;transition:all .15s;white-space:nowrap}
     .tab-btn:hover{border-color:#d6cec3;background:#fff8e5}
     .tab-btn.active{background:var(--red);color:#fff;border-color:var(--red)}
 
     /* ── HERO ── */
-    .hero{background:linear-gradient(90deg,rgba(19,16,15,.94),rgba(70,12,16,.94) 50%,rgba(193,18,31,.94)),linear-gradient(135deg,#2d2521 0%,#8f0d18 100%);color:#fff;border-bottom:8px solid var(--yellow);overflow:hidden}
-    .hero-inner{max-width:1180px;margin:0 auto;min-height:200px;padding:1.8rem 1.2rem 1.6rem;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center;position:relative}
-    .hero-inner::after{content:"";position:absolute;right:-120px;top:1rem;width:300px;height:300px;background:linear-gradient(135deg,rgba(255,204,0,.18),rgba(255,204,0,0) 60%);transform:rotate(18deg);border:1px solid rgba(255,255,255,.1)}
-    .eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-size:.85rem;font-weight:800;color:#ffe680;text-transform:uppercase;margin-bottom:.7rem}
-    .eyebrow::before{content:"";width:26px;height:4px;background:var(--yellow)}
-    .hero h1{font-size:clamp(1.5rem,3.5vw,2.6rem);line-height:1.08;font-weight:900;margin-bottom:.5rem}
-    .hero-lead{font-size:.96rem;color:#fff7db;line-height:1.45;max-width:560px}
-    .hero-kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:0;background:rgba(255,255,255,.08);border-radius:8px;border:1px solid rgba(255,255,255,.18);overflow:hidden;min-width:260px}
-    .hkpi{padding:.9rem 1.1rem;border-right:1px solid rgba(255,255,255,.12);border-bottom:1px solid rgba(255,255,255,.12)}
+    .hero{background:linear-gradient(90deg,rgba(19,16,15,.95),rgba(70,12,16,.95) 50%,rgba(193,18,31,.93)),linear-gradient(135deg,#2d2521,#8f0d18);color:#fff;border-bottom:7px solid var(--yellow);overflow:hidden}
+    .hero-inner{max-width:1200px;margin:0 auto;padding:1.8rem 1.2rem 1.6rem;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center;position:relative}
+    .hero-inner::after{content:"";position:absolute;right:-100px;top:0;width:280px;height:280px;background:linear-gradient(135deg,rgba(255,204,0,.15),transparent 60%);transform:rotate(18deg);border:1px solid rgba(255,255,255,.08)}
+    .eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-size:.82rem;font-weight:800;color:#ffe680;text-transform:uppercase;margin-bottom:.65rem}
+    .eyebrow::before{content:"";width:24px;height:3px;background:var(--yellow)}
+    .hero h1{font-size:clamp(1.45rem,3.5vw,2.55rem);line-height:1.08;font-weight:900;margin-bottom:.45rem}
+    .hero-lead{font-size:.93rem;color:#fff7db;line-height:1.45;max-width:540px}
+    .hero-kpis{display:grid;grid-template-columns:repeat(2,1fr);background:rgba(255,255,255,.08);border-radius:8px;border:1px solid rgba(255,255,255,.18);overflow:hidden;min-width:240px}
+    .hkpi{padding:.85rem 1rem;border-right:1px solid rgba(255,255,255,.12);border-bottom:1px solid rgba(255,255,255,.12)}
     .hkpi:nth-child(2n){border-right:none}
     .hkpi:nth-last-child(-n+2){border-bottom:none}
-    .hkpi strong{display:block;font-size:1.65rem;line-height:1;font-weight:900;color:#fff}
-    .hkpi span{display:block;font-size:.7rem;color:#ffe680;margin-top:.28rem;text-transform:uppercase;font-weight:700}
+    .hkpi strong{display:block;font-size:1.55rem;line-height:1;font-weight:900}
+    .hkpi span{display:block;font-size:.68rem;color:#ffe680;margin-top:.25rem;text-transform:uppercase;font-weight:700}
 
     /* ── PAGES ── */
     .page{display:none}
     .page.active{display:block}
 
     /* ── SECTION ── */
-    .section{padding:2.5rem 1.2rem;border-bottom:1px solid var(--line)}
+    .section{padding:2.2rem 1.2rem;border-bottom:1px solid var(--line)}
     .section.white{background:#fff}
+    .section.tinted{background:#f7f7f5}
     .section.dark{background:#1d1917;color:#fff;border-bottom:0}
-    .section-inner{max-width:1180px;margin:0 auto}
-    .section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:1.5rem;margin-bottom:1.6rem;flex-wrap:wrap}
-    .section-head h2{margin:0;font-size:1.75rem;line-height:1.08}
-    .section-head p{margin:0;color:var(--muted);line-height:1.45;max-width:540px;font-size:.93rem}
-    .dark .section-head p{color:#d9d1c6}
+    .section-inner{max-width:1200px;margin:0 auto}
+    .section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:1.5rem;margin-bottom:1.5rem;flex-wrap:wrap}
+    .section-head h2{margin:0;font-size:1.6rem;line-height:1.1}
+    .section-head p{margin:0;color:var(--muted);line-height:1.45;max-width:540px;font-size:.9rem}
+
+    /* ── STATUS PILLS ── */
+    .pill{display:inline-flex;align-items:center;gap:.3rem;border-radius:99px;padding:.2rem .6rem;font-size:.72rem;font-weight:800;white-space:nowrap}
+    .pill-sm{padding:.16rem .45rem;font-size:.68rem}
+    .p-done{background:#d1fae5;color:#065f46}
+    .p-andamento{background:#dbeafe;color:#1e40af}
+    .p-cancel{background:#fee2e2;color:#8f0d18}
+    .p-atraso{background:#fff4c2;color:#7a4b00}
+    .p-risco{background:#ffedd5;color:#9a3412}
+    .p-prazo{background:#d1fae5;color:#065f46}
+    .p-enc{background:#e0e7ff;color:#3730a3}
+
+    .tag{display:inline-flex;border-radius:3px;padding:.25rem .45rem;font-size:.72rem;font-weight:900;text-transform:uppercase}
+    .tag.green{background:#d1fae5;color:#047857}
+    .tag.blue{background:#dbeafe;color:#1d4ed8}
+    .tag.red{background:#fee2e2;color:#8f0d18}
+    .tag.amber{background:#fff4c2;color:#7a4b00}
 
     /* ── KPI ROW ── */
-    .kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:2rem}
-    .kpi-card{background:#fff;border:1px solid #e3dbd2;border-radius:8px;padding:1rem 1.2rem;display:flex;flex-direction:column;justify-content:space-between;min-height:100px}
-    .kpi-card strong{display:block;font-size:1.9rem;line-height:1;font-weight:900}
+    .kpi-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:.85rem;margin-bottom:2rem}
+    .kpi-card{background:#fff;border:1px solid #e3dbd2;border-radius:8px;padding:.95rem 1.1rem;display:flex;flex-direction:column;justify-content:space-between}
+    .kpi-card strong{display:block;font-size:1.8rem;line-height:1;font-weight:900}
     .kpi-card strong.red{color:var(--red)} .kpi-card strong.green{color:var(--green)}
     .kpi-card strong.blue{color:var(--blue)} .kpi-card strong.amber{color:#b45309}
-    .kpi-card strong.purple{color:#7c3aed} .kpi-card strong.teal{color:#0f766e}
-    .kpi-card span{display:block;font-size:.76rem;color:var(--muted);text-transform:uppercase;font-weight:700;letter-spacing:.04em;margin-top:.35rem}
-    .mini-bar{height:5px;border-radius:3px;background:#eee6da;overflow:hidden;margin-top:.6rem}
-    .mini-bar i{display:block;height:100%;border-radius:3px}
+    .kpi-card strong.purple{color:#7c3aed}
+    .kpi-card span{display:block;font-size:.74rem;color:var(--muted);text-transform:uppercase;font-weight:700;letter-spacing:.04em;margin-top:.3rem}
+    .mini-bar{height:4px;border-radius:2px;background:#eee6da;overflow:hidden;margin-top:.55rem}
+    .mini-bar i{display:block;height:100%;border-radius:2px}
 
-    /* ── STATUS GRID ── */
-    .status-summary{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:2rem}
-    .status-card{border-radius:8px;padding:1.1rem 1.25rem;display:flex;flex-direction:column;gap:.4rem;border:1px solid}
-    .status-card .sc-val{font-size:2.2rem;line-height:1;font-weight:900}
-    .status-card .sc-lbl{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
-    .status-card .sc-pct{font-size:.8rem;font-weight:600}
-    .sc-concluido{background:#d1fae5;border-color:#6ee7b7;color:#064e3b} .sc-concluido .sc-val{color:#047857}
-    .sc-backlog{background:#fef9c3;border-color:#fde047;color:#713f12} .sc-backlog .sc-val{color:#a16207}
-    .sc-andamento{background:#dbeafe;border-color:#93c5fd;color:#1e3a5f} .sc-andamento .sc-val{color:#1d4ed8}
-    .sc-bloqueado{background:#fee2e2;border-color:#fca5a5;color:#7f1d1d} .sc-bloqueado .sc-val{color:#b91c1c}
+    /* ── PROJECT CARDS ── */
+    .proj-grid{display:grid;gap:1rem}
 
-    /* ── TAG ── */
-    .tag{display:inline-flex;align-self:flex-start;border-radius:3px;padding:.28rem .45rem;font-size:.72rem;font-weight:900;text-transform:uppercase}
-    .tag.red{background:#fee2e2;color:#8f0d18} .tag.amber{background:#fff4c2;color:#7a4b00}
-    .tag.green{background:#d1fae5;color:#047857} .tag.blue{background:#dbeafe;color:#1d4ed8}
-    .tag.purple{background:#ede9fe;color:#5b21b6}
+    /* Timeline row for project */
+    .proj-card{background:#fff;border:1px solid #e4ddd5;border-radius:10px;padding:1.2rem 1.4rem;display:grid;grid-template-columns:1fr auto;gap:1rem 2rem;align-items:start}
+    .proj-card.border-done{border-left:5px solid #047857}
+    .proj-card.border-andamento{border-left:5px solid #2563eb}
+    .proj-card.border-cancel{border-left:5px solid #c1121f}
+    .proj-card.border-atraso{border-left:5px solid #f59e0b}
 
-    /* ── CHART PANELS ── */
+    .proj-name{font-size:.98rem;font-weight:800;margin-bottom:.4rem;line-height:1.25}
+    .proj-meta{font-size:.78rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:.5rem .85rem;margin-bottom:.7rem;align-items:center}
+    .proj-meta span{display:flex;align-items:center;gap:.3rem}
+
+    /* Progress bars */
+    .prog-group{display:flex;flex-direction:column;gap:.45rem}
+    .prog-row{display:flex;align-items:center;gap:.6rem}
+    .prog-label{font-size:.72rem;color:var(--muted);font-weight:700;width:60px;flex-shrink:0}
+    .prog-track{flex:1;height:8px;background:#eee6da;border-radius:4px;overflow:hidden}
+    .prog-fill{height:100%;border-radius:4px;transition:width .3s}
+    .prog-pct{font-size:.75rem;font-weight:800;width:38px;text-align:right;flex-shrink:0}
+
+    /* IGP badge */
+    .igp-badge{display:flex;flex-direction:column;align-items:center;justify-content:center;width:72px;height:72px;border-radius:50%;font-size:1.25rem;font-weight:900;flex-shrink:0;border:3px solid}
+    .igp-good{background:#d1fae5;color:#047857;border-color:#6ee7b7}
+    .igp-risk{background:#fff4c2;color:#a16207;border-color:#fde047}
+    .igp-bad{background:#fee2e2;color:#8f0d18;border-color:#fca5a5}
+    .igp-label{font-size:.6rem;text-transform:uppercase;font-weight:700;margin-top:2px;letter-spacing:.04em}
+
+    /* Resumo executivo */
+    .resumo-box{background:#fffbeb;border-left:4px solid var(--yellow);border-radius:0 6px 6px 0;padding:.6rem .85rem;font-size:.82rem;color:#39332e;line-height:1.5;margin-top:.65rem;grid-column:1/-1}
+    .resumo-label{font-size:.7rem;font-weight:900;text-transform:uppercase;color:#b45309;letter-spacing:.05em;margin-bottom:.25rem}
+
+    /* ── STATUS SUMMARY CARDS ── */
+    .status-summary{display:grid;grid-template-columns:repeat(4,1fr);gap:.85rem;margin-bottom:2rem}
+    .sc{border-radius:8px;padding:1rem 1.15rem;border:1px solid;display:flex;flex-direction:column;gap:.3rem}
+    .sc-val{font-size:2rem;line-height:1;font-weight:900}
+    .sc-lbl{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+    .sc-sub{font-size:.74rem;font-weight:500;opacity:.7}
+    .sc-done{background:#d1fae5;border-color:#6ee7b7;color:#064e3b} .sc-done .sc-val{color:#047857}
+    .sc-and{background:#dbeafe;border-color:#93c5fd;color:#1e3a5f} .sc-and .sc-val{color:#1d4ed8}
+    .sc-enc{background:#e0e7ff;border-color:#c7d2fe;color:#312e81} .sc-enc .sc-val{color:#4338ca}
+    .sc-can{background:#fee2e2;border-color:#fca5a5;color:#7f1d1d} .sc-can .sc-val{color:#b91c1c}
+    .sc-tot{background:#f1f5f9;border-color:#cbd5e1;color:#1e293b} .sc-tot .sc-val{color:#1e293b}
+
+    /* ── MELHORIAS ── */
+    .status-mel{display:grid;grid-template-columns:repeat(4,1fr);gap:.85rem;margin-bottom:2rem}
+    .scm{border-radius:8px;padding:1rem 1.15rem;border:1px solid;display:flex;flex-direction:column;gap:.3rem}
+    .scm-done{background:#d1fae5;border-color:#6ee7b7;color:#064e3b} .scm-done .sc-val{color:#047857}
+    .scm-back{background:#fef9c3;border-color:#fde047;color:#713f12} .scm-back .sc-val{color:#a16207}
+    .scm-and{background:#dbeafe;border-color:#93c5fd;color:#1e3a5f} .scm-and .sc-val{color:#1d4ed8}
+    .scm-blk{background:#fee2e2;border-color:#fca5a5;color:#7f1d1d} .scm-blk .sc-val{color:#b91c1c}
+
     .chart-row{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
-    .chart-panel{background:#fff;border:1px solid var(--line);border-radius:8px;padding:1.35rem;box-shadow:var(--shadow)}
+    .chart-panel{background:#fff;border:1px solid var(--line);border-radius:8px;padding:1.25rem;box-shadow:var(--shadow)}
     .chart-panel.full{grid-column:1/-1}
-    .cp-head{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:1.1rem;flex-wrap:wrap}
-    .cp-title{font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
-    .cp-sub{font-size:.78rem;color:var(--muted);margin-top:.2rem}
+    .cp-title{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:1rem}
+    .cp-sub{font-size:.76rem;color:var(--muted);margin-top:.18rem;margin-bottom:1rem}
     .chart-wrap{position:relative;width:100%}
-
-    /* ── GANTT ── */
-    .gantt-wrap{overflow-x:auto}
-    .gantt{width:100%;border-collapse:collapse;min-width:680px;font-size:.87rem}
-    .gantt th{background:#2c2621;color:#fff;padding:.6rem .75rem;text-align:left;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;font-weight:700;white-space:nowrap}
-    .gantt td{border-bottom:1px solid #eee4d9;padding:.7rem .75rem;vertical-align:middle;color:#39332e}
-    .gantt tbody tr:nth-child(even){background:#fffcf7}
-    .pill{display:inline-flex;align-items:center;border-radius:99px;padding:.2rem .6rem;font-size:.73rem;font-weight:800;white-space:nowrap}
-    .pill.done{background:#d1fae5;color:#065f46} .pill.cancel{background:#fee2e2;color:#8f0d18}
-    .pill.ongoing{background:#dbeafe;color:#1e40af} .pill.dev{background:#ede9fe;color:#5b21b6}
-    .pill.hom{background:#fff4c2;color:#7a4b00} .pill.prod{background:#d1fae5;color:#065f46}
-    .phases-row{display:flex;gap:4px;flex-wrap:wrap}
-    .prog-wrap{min-width:100px}
-    .prog-track{height:5px;background:#eee4d9;border-radius:3px;overflow:hidden;margin-top:4px}
-    .prog-fill{height:100%;border-radius:3px;background:var(--blue)}
-    .prog-lbl{font-size:.73rem;color:var(--muted)}
-
-    /* ── TIMELINE ── */
-    .tl{position:relative;padding:.5rem 0;margin-top:1rem}
-    .tl-line{position:absolute;left:88px;top:0;bottom:0;width:2px;background:var(--line)}
-    .tl-item{display:flex;align-items:flex-start;margin-bottom:.9rem;position:relative}
-    .tl-date{width:80px;font-size:.76rem;color:var(--muted);padding-top:8px;text-align:right;flex-shrink:0}
-    .tl-dot{width:20px;display:flex;justify-content:center;padding-top:9px;flex-shrink:0;position:relative;z-index:1}
-    .tl-dot span{width:10px;height:10px;border-radius:50%;display:block;border:2px solid #fff;box-shadow:0 0 0 1px #ccc}
-    .tl-card{flex:1;margin-left:8px;background:#fff;border:1px solid #e4ddd5;border-radius:8px;padding:.85rem 1rem}
-    .tl-card .pn{font-size:.9rem;font-weight:700}
-    .tl-card .pm{font-size:.76rem;color:var(--muted);margin-top:3px}
 
     /* ── LANES ── */
     .lanes{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
-    .lane{border-radius:8px;border:1px solid rgba(255,255,255,.1);background:#28221f;padding:1.05rem;min-height:240px}
-    .lane.red{border-top:6px solid #ef4444} .lane.amber{border-top:6px solid var(--amber)}
-    .lane.blue{border-top:6px solid #60a5fa} .lane.green{border-top:6px solid var(--green)}
-    .lane h3{margin:0 0 .4rem;font-size:1rem;line-height:1.15}
-    .lane p{margin:0 0 .75rem;color:#ddd4c9;line-height:1.4;font-size:.87rem}
-    .lane ul{margin:0;padding:0;list-style:none;display:grid;gap:.5rem}
-    .lane li{position:relative;padding-left:.85rem;color:#fff8ed;line-height:1.38;font-size:.87rem}
-    .lane li::before{content:"";position:absolute;left:0;top:.44rem;width:.36rem;height:.36rem;border-radius:50%;background:var(--yellow)}
+    .lane{border-radius:8px;background:#28221f;padding:1rem;border:1px solid rgba(255,255,255,.08)}
+    .lane.green{border-top:5px solid #34d399}.lane.blue{border-top:5px solid #60a5fa}
+    .lane.amber{border-top:5px solid var(--amber)}.lane.red{border-top:5px solid #f87171}
+    .lane h3{margin:0 0 .4rem;font-size:.95rem}.lane p{margin:0 0 .7rem;color:#ddd4c9;font-size:.84rem}
+    .lane ul{margin:0;padding:0;list-style:none;display:grid;gap:.45rem}
+    .lane li{position:relative;padding-left:.8rem;color:#fff8ed;font-size:.84rem;line-height:1.38}
+    .lane li::before{content:"";position:absolute;left:0;top:.43rem;width:.35rem;height:.35rem;border-radius:50%;background:var(--yellow)}
 
-    /* ── OFF BARS ── */
-    .off-list{display:flex;flex-direction:column;gap:.65rem}
-    .off-item{display:flex;align-items:center;gap:.7rem}
-    .off-label{min-width:110px;color:var(--muted);font-size:.8rem;flex-shrink:0}
-    .off-track{flex:1;height:7px;background:#eee6da;border-radius:3px;overflow:hidden}
-    .off-fill{height:100%;border-radius:3px}
-    .off-val{font-size:.8rem;color:var(--muted);min-width:30px;text-align:right;font-weight:700}
+    .evidence{background:#fff;padding:.9rem 1.2rem;border-top:1px solid var(--line);color:#655e57;font-size:.8rem}
+    .evidence-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 
-    /* ── SUSTENTACAO CHART ── */
-    .evidence{background:#fff;padding:1rem 1.2rem;border-top:1px solid var(--line);color:#655e57;font-size:.82rem}
-    .evidence-inner{max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+    /* ── GANTT ── */
+    .gantt-wrap{overflow-x:auto;padding-bottom:.5rem}
+    .gantt-container{min-width:860px}
+    .gantt-legend{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:1.1rem;font-size:.78rem;color:var(--muted)}
+    .gantt-legend span{display:flex;align-items:center;gap:5px}
+    .gantt-legend i{display:inline-block;width:12px;height:12px;border-radius:3px;flex-shrink:0}
+    /* header row */
+    .gantt-header{display:grid;background:#2c2621;color:#fff;border-radius:7px 7px 0 0;padding:.45rem 0;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em}
+    .gantt-header-left{padding:0 .85rem;display:flex;align-items:center}
+    .gantt-months{display:flex}
+    .gantt-month{flex:1;text-align:center;padding:.2rem .1rem;border-left:1px solid rgba(255,255,255,.1);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    /* rows */
+    .gantt-row{display:grid;align-items:center;border-bottom:1px solid #eee4d9;min-height:44px;transition:background .12s}
+    .gantt-row:hover{background:#fdfaf5}
+    .gantt-row:last-child{border-bottom:none;border-radius:0 0 7px 7px}
+    .gantt-row-label{padding:.45rem .85rem;display:flex;flex-direction:column;gap:.18rem;overflow:hidden}
+    .gantt-row-name{font-size:.8rem;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--ink)}
+    .gantt-row-sub{font-size:.68rem;color:var(--muted);display:flex;align-items:center;gap:.4rem;flex-wrap:wrap}
+    .gantt-timeline{position:relative;height:44px}
+    /* today line */
+    .gantt-today-line{position:absolute;top:0;bottom:0;width:2px;background:rgba(193,18,31,.7);z-index:5;pointer-events:none}
+    .gantt-today-line::before{content:"Hoje";position:absolute;top:2px;left:3px;font-size:.62rem;font-weight:800;color:#c1121f;white-space:nowrap}
+    /* bar */
+    .gantt-bar{position:absolute;top:50%;transform:translateY(-50%);height:18px;border-radius:4px;display:flex;align-items:center;justify-content:flex-start;overflow:hidden;z-index:2;cursor:default}
+    .gantt-bar-inner{height:100%;border-radius:4px;position:relative;flex-shrink:0}
+    .gantt-bar-label{font-size:.62rem;font-weight:800;color:#fff;padding:0 5px;white-space:nowrap;text-shadow:0 1px 2px rgba(0,0,0,.3);overflow:hidden;text-overflow:ellipsis;z-index:1;position:relative}
+    /* group separator */
+    .gantt-group-header{background:#f0ede8;padding:.35rem .85rem;font-size:.72rem;font-weight:900;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);border-bottom:1px solid #e4ddd5;display:flex;align-items:center;gap:.5rem}
+    .gantt-group-dot{width:8px;height:8px;border-radius:50%}
+    /* tooltip */
+    .gantt-tooltip{position:fixed;z-index:100;background:#1d1917;color:#fff;border-radius:7px;padding:.6rem .85rem;font-size:.78rem;pointer-events:none;opacity:0;transition:opacity .15s;max-width:280px;box-shadow:0 8px 24px rgba(0,0,0,.3);line-height:1.5}
+    .gantt-tooltip strong{display:block;font-size:.82rem;margin-bottom:.3rem;color:#ffe680}
+    .gantt-tooltip-row{display:flex;justify-content:space-between;gap:.85rem;margin-top:.15rem}
+    .gantt-tooltip-row span:last-child{font-weight:700;color:#93c5fd}
 
     /* ── RESPONSIVE ── */
     @media(max-width:960px){
-      .kpi-row{grid-template-columns:repeat(2,1fr)}
+      .kpi-strip{grid-template-columns:repeat(3,1fr)}
       .status-summary{grid-template-columns:repeat(2,1fr)}
+      .status-mel{grid-template-columns:repeat(2,1fr)}
       .chart-row{grid-template-columns:1fr}
-      .chart-panel.full{grid-column:auto}
       .lanes{grid-template-columns:1fr 1fr}
       .hero-inner{grid-template-columns:1fr}
       .hero-kpis{display:none}
+      .proj-card{grid-template-columns:1fr}
     }
     @media(max-width:600px){
-      .topbar-inner{gap:.5rem}
-      .tab-btn{font-size:.75rem;padding:.35rem .6rem}
-      .kpi-row{grid-template-columns:repeat(2,1fr)}
-      .status-summary{grid-template-columns:1fr 1fr}
+      .kpi-strip{grid-template-columns:repeat(2,1fr)}
+      .status-summary{grid-template-columns:repeat(2,1fr)}
+      .status-mel{grid-template-columns:1fr 1fr}
       .lanes{grid-template-columns:1fr}
-      .tl-line{left:8px}
-      .tl-item{padding-left:22px;flex-direction:column;margin-bottom:1rem}
-      .tl-date{width:auto;text-align:left;padding-top:0;margin-bottom:3px}
-      .tl-dot{position:absolute;left:0;top:1px;width:14px;padding-top:0}
-      .tl-card{margin-left:0;width:100%}
+      .tab-btn{font-size:.75rem;padding:.33rem .56rem}
     }
   </style>
 </head>
 <body>
 
-<!-- ══ TOPBAR ══ -->
+<!-- TOPBAR -->
 <header class="topbar">
   <div class="topbar-inner">
     <div class="brand">
       <span class="oxxo-badge">OXXO</span>
       <div class="brand-div"></div>
-      <span class="brand-name">Gerência de TI — Relatório Executivo 2024</span>
+      <span class="brand-name">Gerência de TI Sistemas — Report Executivo 2025·26</span>
     </div>
     <nav class="tab-nav" role="tablist">
-      <button class="tab-btn active" role="tab" onclick="showTab('projetos',this)">Projetos Estratégicos</button>
-      <button class="tab-btn" role="tab" onclick="showTab('melhorias',this)">Melhorias</button>
-      <button class="tab-btn" role="tab" onclick="showTab('sustentacao',this)">Sustentação</button>
+      <button class="tab-btn active" onclick="showTab('projetos',this)">Projetos Estratégicos</button>
+      <button class="tab-btn" onclick="showTab('melhorias',this)">Melhorias</button>
     </nav>
   </div>
 </header>
 
-<!-- ══ HERO ══ -->
+<!-- HERO -->
 <div class="hero">
   <div class="hero-inner">
     <div>
-      <div class="eyebrow">Relatório Executivo</div>
       <h1 id="heroTitle">Projetos Estratégicos</h1>
-      <p class="hero-lead" id="heroLead">Visão consolidada dos projetos entregues, em andamento e cancelados durante o ano de 2024.</p>
+      <p class="hero-lead" id="heroLead">Portfólio TI consolidado: 14 projetos Safra 25·26 e 9 projetos 2026.</p>
     </div>
     <div class="hero-kpis" id="heroKpis">
-      <div class="hkpi"><strong>5</strong><span>Projetos</span></div>
-      <div class="hkpi"><strong>2</strong><span>Entregues</span></div>
-      <div class="hkpi"><strong>2</strong><span>Em andamento</span></div>
+      <div class="hkpi"><strong>17</strong><span>Projetos únicos</span></div>
+      <div class="hkpi"><strong>7</strong><span>Finalizados</span></div>
+      <div class="hkpi"><strong>9</strong><span>Em andamento</span></div>
       <div class="hkpi"><strong>1</strong><span>Cancelado</span></div>
     </div>
   </div>
 </div>
 
-<!-- ══════════════════════════════════
+
+<!-- ══════════════════════════════
      PROJETOS ESTRATÉGICOS
-══════════════════════════════════ -->
+══════════════════════════════ -->
 <div id="page-projetos" class="page active">
 
+  <!-- KPIs gerais -->
   <div class="section white">
     <div class="section-inner">
       <div class="section-head">
-        <div><h2>Linha do Tempo 2024</h2><p>Visão Gantt dos projetos com status, fases e percentual de execução.</p></div>
+        <div><h2>Resumo do Portfólio TI</h2></div>
+      </div>
+
+      <div class="status-summary">
+        <div class="sc sc-tot"><div class="sc-val">17</div><div class="sc-lbl">Total Projetos TI</div><div class="sc-sub">Únicos · sem dupla contagem</div></div>
+        <div class="sc sc-done"><div class="sc-val">7</div><div class="sc-lbl">Finalizado</div><div class="sc-sub">Inclui 1 finalizado c/ atraso</div></div>
+        <div class="sc sc-and"><div class="sc-val">9</div><div class="sc-lbl">Em andamento</div><div class="sc-sub">Execução ativa</div></div>
+        <div class="sc sc-can"><div class="sc-val">1</div><div class="sc-lbl">Cancelado</div><div class="sc-sub">OMS – Fase 2</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 1. GANTT 2026 -->
+  <div class="section tinted">
+    <div class="section-inner">
+      <div class="section-head">
+        <div>
+          <h2>Cronograma — Projetos Estratégicos 2026</h2>
+          <p>Linha do tempo dos 9 projetos em execução em 2026. Passe o mouse sobre as barras para mais detalhes.</p>
+        </div>
+      </div>
+      <div class="gantt-legend">
+        <span><i style="background:#047857"></i>Finalizado</span>
+        <span><i style="background:#f59e0b"></i>Finalizado c/ Atraso</span>
+        <span><i style="background:#2563eb"></i>Em andamento · No Prazo</span>
+        <span><i style="background:#f97316"></i>Em andamento · Com Risco</span>
+        <span><i style="background:#c1121f"></i>Atrasado / Cancelado</span>
+        <span><i style="background:#e2e8f0;border:1px solid #c7d2fe"></i>% Previsto (faixa)</span>
+      </div>
+      <div class="gantt-wrap">
+        <div class="gantt-container" id="gantt26"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. PROJETOS ESTRATÉGICOS 2026 -->
+  <div class="section white">
+    <div class="section-inner">
+      <div class="section-head">
+        <div>
+          <h2>Projetos Estratégicos 2026</h2>
+          <p>9 projetos TI em 2026 — 6 projetos compartilhados com Safra 25·26</p>
+        </div>
         <div style="display:flex;gap:.5rem;flex-wrap:wrap">
-          <span class="tag green">2 Entregues</span>
-          <span class="tag blue">2 Em andamento</span>
+          <span class="tag blue">9 Em andamento</span>
+        </div>
+      </div>
+      <div class="proj-grid" id="grid26"></div>
+    </div>
+  </div>
+
+  <!-- 3. GANTT 25·26 -->
+  <div class="section tinted">
+    <div class="section-inner">
+      <div class="section-head">
+        <div>
+          <h2>Cronograma — Projetos Estratégicos Safra 25·26</h2>
+          <p>Linha do tempo dos 14 projetos com envolvimento de TI em 2025–2026. Passe o mouse sobre as barras para mais detalhes.</p>
+        </div>
+      </div>
+      <div class="gantt-legend">
+        <span><i style="background:#047857"></i>Finalizado</span>
+        <span><i style="background:#f59e0b"></i>Finalizado c/ Atraso</span>
+        <span><i style="background:#2563eb"></i>Em andamento · No Prazo</span>
+        <span><i style="background:#f97316"></i>Em andamento · Com Risco</span>
+        <span><i style="background:#c1121f"></i>Atrasado / Cancelado</span>
+        <span><i style="background:#e2e8f0;border:1px solid #c7d2fe"></i>% Previsto (faixa)</span>
+      </div>
+      <div class="gantt-wrap">
+        <div class="gantt-container" id="gantt2526"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. PROJETOS ESTRATÉGICOS SAFRA 25·26 -->
+  <div class="section white">
+    <div class="section-inner">
+      <div class="section-head">
+        <div>
+          <h2>Projetos Estratégicos Safra 25·26</h2>
+          <p>14 projetos com envolvimento de TI em 2025–2026</p>
+        </div>
+        <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+          <span class="tag green">7 Finalizados</span>
+          <span class="tag blue">6 Em andamento</span>
           <span class="tag red">1 Cancelado</span>
         </div>
       </div>
-      <div class="gantt-wrap">
-        <table class="gantt">
-          <thead><tr><th style="min-width:200px">Projeto</th><th>Diretoria</th><th>Período</th><th>Fases</th><th>Status</th><th>Progresso</th></tr></thead>
-          <tbody>
-            <tr><td><strong style="font-size:.9rem">Migração ERP — Módulo Fiscal</strong></td><td style="font-size:.8rem;color:var(--muted)">Fiscal &amp; Tributária</td><td style="font-size:.8rem;white-space:nowrap">Jan → Mar 2024</td><td><span class="pill done">Concluído</span></td><td><span class="pill done">✓ Entregue</span></td><td><div class="prog-wrap"><div class="prog-lbl">22/03/2024</div></div></td></tr>
-            <tr><td><strong style="font-size:.9rem">Plataforma de BI Comercial</strong></td><td style="font-size:.8rem;color:var(--muted)">Comercial</td><td style="font-size:.8rem;white-space:nowrap">Mar → Jun 2024</td><td><span class="pill done">Concluído</span></td><td><span class="pill done">✓ Entregue</span></td><td><div class="prog-wrap"><div class="prog-lbl">14/06/2024</div></div></td></tr>
-            <tr><td><strong style="font-size:.9rem">App de Fidelidade (B2C)</strong></td><td style="font-size:.8rem;color:var(--muted)">Marketing</td><td style="font-size:.8rem;white-space:nowrap">Mai → Ago 2024</td><td><span class="pill cancel">Cancelado</span></td><td><span class="pill cancel">✕ Cancelado</span></td><td><div class="prog-wrap"><div class="prog-lbl">10/08/2024</div></div></td></tr>
-            <tr><td><strong style="font-size:.9rem">Automação de Pedidos — Logística</strong></td><td style="font-size:.8rem;color:var(--muted)">Logística &amp; Supply Chain</td><td style="font-size:.8rem;white-space:nowrap">Out → Dez 2024</td><td><div class="phases-row"><span class="pill dev">Dev</span><span class="pill hom">Homol</span><span class="pill prod">Prod</span></div></td><td><span class="pill ongoing">Em andamento</span></td><td><div class="prog-wrap"><div class="prog-lbl">65%</div><div class="prog-track"><div class="prog-fill" style="width:65%"></div></div></div></td></tr>
-            <tr><td><strong style="font-size:.9rem">Integração PDV — Gateway de Pagamento</strong></td><td style="font-size:.8rem;color:var(--muted)">Operações</td><td style="font-size:.8rem;white-space:nowrap">Nov 2024 → Fev 2025</td><td><div class="phases-row"><span class="pill dev">Dev</span><span class="pill hom">Homol</span><span class="pill prod">Prod</span></div></td><td><span class="pill ongoing">Em andamento</span></td><td><div class="prog-wrap"><div class="prog-lbl">30%</div><div class="prog-track"><div class="prog-fill" style="width:30%"></div></div></div></td></tr>
-          </tbody>
-        </table>
-      </div>
+      <div class="proj-grid" id="grid2526"></div>
     </div>
   </div>
 
-  <div class="section">
-    <div class="section-inner">
-      <div class="section-head"><div><h2>Detalhamento por Projeto</h2><p>Marcos, datas e contexto de cada iniciativa estratégica.</p></div></div>
-      <div class="tl">
-        <div class="tl-line"></div>
-        <div class="tl-item"><div class="tl-date">Mar 2024</div><div class="tl-dot"><span style="background:#047857"></span></div><div class="tl-card"><div class="pn">Migração ERP — Módulo Fiscal</div><div class="pm">Concluído em 22/03/2024 · Diretoria Fiscal &amp; Tributária</div><div class="phases-row" style="margin-top:.5rem"><span class="pill done">Entregue</span></div></div></div>
-        <div class="tl-item"><div class="tl-date">Jun 2024</div><div class="tl-dot"><span style="background:#047857"></span></div><div class="tl-card"><div class="pn">Plataforma de BI Comercial</div><div class="pm">Concluído em 14/06/2024 · Diretoria Comercial</div><div class="phases-row" style="margin-top:.5rem"><span class="pill done">Entregue</span></div></div></div>
-        <div class="tl-item"><div class="tl-date">Ago 2024</div><div class="tl-dot"><span style="background:#c1121f"></span></div><div class="tl-card"><div class="pn">App de Fidelidade (B2C)</div><div class="pm">Cancelado em 10/08/2024 · Mudança estratégica de negócio</div><div class="phases-row" style="margin-top:.5rem"><span class="pill cancel">Cancelado</span></div></div></div>
-        <div class="tl-item"><div class="tl-date">Out–Dez</div><div class="tl-dot"><span style="background:#2563eb"></span></div><div class="tl-card"><div class="pn">Automação de Pedidos — Logística</div><div class="pm">Em andamento · 65% concluído</div><div class="phases-row" style="margin-top:.5rem"><span class="pill dev">Dev: Out–Nov</span><span class="pill hom">Homol: Nov</span><span class="pill prod">Prod: Dez</span></div><div class="prog-track" style="max-width:180px;margin-top:.6rem"><div class="prog-fill" style="width:65%"></div></div></div></div>
-        <div class="tl-item"><div class="tl-date">Nov–Fev/25</div><div class="tl-dot"><span style="background:#2563eb"></span></div><div class="tl-card"><div class="pn">Integração PDV com Gateway de Pagamento</div><div class="pm">Em andamento · 30% concluído</div><div class="phases-row" style="margin-top:.5rem"><span class="pill dev">Dev: Nov–Jan</span><span class="pill hom">Homol: Jan</span><span class="pill prod">Prod: Fev 2025</span></div><div class="prog-track" style="max-width:180px;margin-top:.6rem"><div class="prog-fill" style="width:30%"></div></div></div></div>
-      </div>
-    </div>
-  </div>
+  <div class="gantt-tooltip" id="ganttTooltip"></div>
 
-  <div class="section dark">
-    <div class="section-inner">
-      <div class="section-head"><div><h2>Destaques &amp; Riscos</h2><p>Principais alertas e conquistas da frente de projetos.</p></div></div>
-      <div class="lanes">
-        <div class="lane green"><h3>Entregas Concluídas</h3><p>Projetos finalizados no prazo em 2024.</p><ul><li>Migração ERP Fiscal — estabilizado em produção</li><li>BI Comercial — em uso pela diretoria desde jun/24</li></ul></div>
-        <div class="lane blue"><h3>Projetos em Curso</h3><p>Iniciativas com entrega prevista até fev/2025.</p><ul><li>Automação Pedidos: homologação em nov/24</li><li>Integração PDV: fase de desenvolvimento ativa</li></ul></div>
-        <div class="lane amber"><h3>Atenção</h3><p>Pontos que requerem acompanhamento executivo.</p><ul><li>PDV: dependência de homologação bancária</li><li>Recurso QA compartilhado entre 2 projetos</li></ul></div>
-        <div class="lane red"><h3>Cancelamento</h3><p>Projeto descontinuado por decisão estratégica.</p><ul><li>App Fidelidade: cancelado em ago/24</li><li>Escopo absorvido pelo programa nacional de CRM</li></ul></div>
-      </div>
-    </div>
-  </div>
-</div>
+</div><!-- /projetos -->
 
 
-<!-- ══════════════════════════════════
-     MELHORIAS  (dados reais do JIRA)
-══════════════════════════════════ -->
+<!-- ══════════════════════════════
+     MELHORIAS
+══════════════════════════════ -->
 <div id="page-melhorias" class="page">
 
-  <!-- 1. RESUMO QUANTITATIVO DE STATUS -->
   <div class="section white">
     <div class="section-inner">
       <div class="section-head">
-        <div>
-          <h2>Resumo de Status</h2>
-          <p>Distribuição quantitativa de todas as 764 demandas de melhoria registradas no JIRA.</p>
-        </div>
-        <div style="display:flex;gap:.5rem;flex-wrap:wrap">
-          <span class="tag green">764 Demandas</span>
-          <span class="tag blue">5 Diretorias</span>
-          <span class="tag purple">4 Sistemas</span>
-        </div>
+        <div><h2>Resumo de Status</h2><p>764 demandas de melhoria registradas no JIRA, distribuídas por status e diretoria de negócio.</p></div>
+        <div style="display:flex;gap:.5rem;flex-wrap:wrap"><span class="tag green">764 Demandas</span><span class="tag blue">5 Diretorias</span></div>
       </div>
 
-      <!-- Cards de status -->
-      <div class="status-summary">
-        <div class="status-card sc-concluido">
-          <div class="sc-val">560</div>
-          <div class="sc-lbl">Concluído</div>
-          <div class="sc-pct">73,3% do total</div>
-        </div>
-        <div class="status-card sc-backlog">
-          <div class="sc-val">126</div>
-          <div class="sc-lbl">Backlog</div>
-          <div class="sc-pct">16,5% do total</div>
-        </div>
-        <div class="status-card sc-andamento">
-          <div class="sc-val">64</div>
-          <div class="sc-lbl">Em andamento</div>
-          <div class="sc-pct" style="font-size:.72rem">Planejamento · Desenvolvimento · Teste · Pronto PRD · Rollout</div>
-        </div>
-        <div class="status-card sc-bloqueado">
-          <div class="sc-val">14</div>
-          <div class="sc-lbl">Congelado / Bloqueado</div>
-          <div class="sc-pct">1,8% do total</div>
-        </div>
+      <div class="status-mel">
+        <div class="scm scm-done"><div class="sc-val">560</div><div class="sc-lbl">Concluído</div><div class="sc-sub">73,3% do total</div></div>
+        <div class="scm scm-back"><div class="sc-val">126</div><div class="sc-lbl">Backlog</div><div class="sc-sub">16,5% do total</div></div>
+        <div class="scm scm-and"><div class="sc-val">64</div><div class="sc-lbl">Em andamento</div><div class="sc-sub">Plan · Dev · Teste · PRD</div></div>
+        <div class="scm scm-blk"><div class="sc-val">14</div><div class="sc-lbl">Congelado/Bloqueado</div><div class="sc-sub">1,8% do total</div></div>
       </div>
 
-      <!-- KPI detalhe linha -->
-      <div class="kpi-row" style="margin-bottom:0">
-        <div class="kpi-card">
-          <div><strong class="green">560</strong><span>Concluído</span></div>
-          <div class="mini-bar"><i style="width:73%;background:#047857"></i></div>
-        </div>
-        <div class="kpi-card">
-          <div><strong class="amber">126</strong><span>Backlog</span></div>
-          <div class="mini-bar"><i style="width:16%;background:#b45309"></i></div>
-        </div>
-        <div class="kpi-card">
-          <div><strong class="blue">21</strong><span>Planejamento</span></div>
-          <div class="mini-bar"><i style="width:21%;background:#2563eb"></i></div>
-        </div>
-        <div class="kpi-card">
-          <div><strong class="blue">16</strong><span>Desenvolvimento</span></div>
-          <div class="mini-bar"><i style="width:16%;background:#3b82f6"></i></div>
-        </div>
-        <div class="kpi-card">
-          <div><strong class="blue">16</strong><span>Teste</span></div>
-          <div class="mini-bar"><i style="width:16%;background:#60a5fa"></i></div>
-        </div>
-        <div class="kpi-card">
-          <div><strong class="blue">10</strong><span>Pronto para PRD</span></div>
-          <div class="mini-bar"><i style="width:10%;background:#93c5fd"></i></div>
-        </div>
-        <div class="kpi-card">
-          <div><strong class="red">14</strong><span>Congelado / Bloqueado</span></div>
-          <div class="mini-bar"><i style="width:14%;background:#c1121f"></i></div>
-        </div>
-        <div class="kpi-card">
-          <div><strong style="color:#7c3aed">1</strong><span>Rollout</span></div>
-          <div class="mini-bar"><i style="width:1%;background:#7c3aed"></i></div>
-        </div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem;margin-bottom:2rem">
+        <div class="kpi-card"><strong class="blue">21</strong><span>Planejamento</span><div class="mini-bar"><i style="width:21%;background:#2563eb"></i></div></div>
+        <div class="kpi-card"><strong class="blue">16</strong><span>Desenvolvimento</span><div class="mini-bar"><i style="width:16%;background:#3b82f6"></i></div></div>
+        <div class="kpi-card"><strong class="blue">16</strong><span>Teste</span><div class="mini-bar"><i style="width:16%;background:#60a5fa"></i></div></div>
+        <div class="kpi-card"><strong class="blue">10</strong><span>Pronto para PRD</span><div class="mini-bar"><i style="width:10%;background:#93c5fd"></i></div></div>
       </div>
     </div>
   </div>
 
-  <!-- 2 + 3. GRÁFICOS: Diretoria e Sistema -->
-  <div class="section">
+  <div class="section tinted">
     <div class="section-inner">
-      <div class="section-head">
-        <div><h2>Entregas por Diretoria e por Sistema</h2><p>Volume total de demandas registradas por diretoria de negócio e por sistema JIRA.</p></div>
-      </div>
+      <div class="section-head"><div><h2>Entregas por Diretoria e por Sistema</h2><p>Volume de demandas por área de negócio e por plataforma tecnológica.</p></div></div>
       <div class="chart-row">
-
-        <!-- Gráfico 2 — Diretoria -->
         <div class="chart-panel">
-          <div class="cp-head">
-            <div>
-              <div class="cp-title">Entregas por Diretoria de Negócio</div>
-              <div class="cp-sub">Total de demandas por área · 764 registros</div>
-            </div>
-          </div>
-          <div class="chart-wrap" style="height:260px">
-            <canvas id="chartDiretoria"></canvas>
-          </div>
+          <div class="cp-title">Demandas por Diretoria de Negócio</div>
+          <div class="chart-wrap" style="height:250px"><canvas id="chartDiretoria"></canvas></div>
         </div>
-
-        <!-- Gráfico 3 — Sistema -->
         <div class="chart-panel">
-          <div class="cp-head">
-            <div>
-              <div class="cp-title">Entregas por Sistema</div>
-              <div class="cp-sub">Volume por plataforma · 4 sistemas ativos</div>
-            </div>
-          </div>
-          <div class="chart-wrap" style="height:260px">
-            <canvas id="chartSistema"></canvas>
-          </div>
+          <div class="cp-title">Demandas por Sistema · 685 com sistema definido</div>
+          <div class="chart-wrap" style="height:250px"><canvas id="chartSistema"></canvas></div>
         </div>
-
       </div>
     </div>
   </div>
 
-  <!-- 4. GRÁFICO DE TORRE — Diretoria x Status -->
   <div class="section white">
     <div class="section-inner">
-      <div class="section-head">
-        <div>
-          <h2>Status das Melhorias por Diretoria de Negócio</h2>
-          <p>Gráfico de barras empilhadas (torre) detalhando a composição de status dentro de cada diretoria.</p>
-        </div>
+      <div class="section-head"><div><h2>Status por Diretoria de Negócio</h2><p>Composição de status empilhada (torre) por diretoria, com tabela de referência.</p></div></div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:1.2rem;font-size:.78rem;color:var(--muted)">
+        <span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#047857;margin-right:4px;vertical-align:middle"></span>Concluído</span>
+        <span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#a16207;margin-right:4px;vertical-align:middle"></span>Backlog</span>
+        <span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#2563eb;margin-right:4px;vertical-align:middle"></span>Planejamento</span>
+        <span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#7c3aed;margin-right:4px;vertical-align:middle"></span>Desenvolvimento</span>
+        <span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#0891b2;margin-right:4px;vertical-align:middle"></span>Teste</span>
+        <span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#0f766e;margin-right:4px;vertical-align:middle"></span>Pronto PRD</span>
+        <span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#c1121f;margin-right:4px;vertical-align:middle"></span>Bloqueado</span>
       </div>
-
-      <!-- Legenda de cores dos status -->
-      <div style="display:flex;flex-wrap:wrap;gap:14px;margin-bottom:1.4rem;font-size:.8rem;color:var(--muted)">
-        <span><span style="display:inline-block;width:11px;height:11px;border-radius:2px;background:#047857;margin-right:5px;vertical-align:middle"></span>Concluído</span>
-        <span><span style="display:inline-block;width:11px;height:11px;border-radius:2px;background:#a16207;margin-right:5px;vertical-align:middle"></span>Backlog</span>
-        <span><span style="display:inline-block;width:11px;height:11px;border-radius:2px;background:#2563eb;margin-right:5px;vertical-align:middle"></span>Planejamento</span>
-        <span><span style="display:inline-block;width:11px;height:11px;border-radius:2px;background:#7c3aed;margin-right:5px;vertical-align:middle"></span>Desenvolvimento</span>
-        <span><span style="display:inline-block;width:11px;height:11px;border-radius:2px;background:#0891b2;margin-right:5px;vertical-align:middle"></span>Teste</span>
-        <span><span style="display:inline-block;width:11px;height:11px;border-radius:2px;background:#0f766e;margin-right:5px;vertical-align:middle"></span>Pronto para PRD</span>
-        <span><span style="display:inline-block;width:11px;height:11px;border-radius:2px;background:#c1121f;margin-right:5px;vertical-align:middle"></span>Congelado/Bloqueado</span>
+      <div class="chart-panel" style="box-shadow:none;margin-bottom:1.5rem">
+        <div class="chart-wrap" style="height:300px"><canvas id="chartTorre"></canvas></div>
       </div>
-
-      <div class="chart-panel" style="box-shadow:none;border:1px solid var(--line)">
-        <div class="chart-wrap" style="height:340px">
-          <canvas id="chartTorre"></canvas>
-        </div>
-      </div>
-
-      <!-- Tabela resumo -->
-      <div style="margin-top:1.5rem;overflow-x:auto">
-        <table style="width:100%;border-collapse:collapse;font-size:.83rem;min-width:600px">
-          <thead>
-            <tr style="background:#2c2621;color:#fff">
-              <th style="padding:.6rem .8rem;text-align:left;font-size:.72rem;text-transform:uppercase;letter-spacing:.04em">Diretoria</th>
-              <th style="padding:.6rem .8rem;text-align:right;color:#6ee7b7">Concluído</th>
-              <th style="padding:.6rem .8rem;text-align:right;color:#fde047">Backlog</th>
-              <th style="padding:.6rem .8rem;text-align:right;color:#93c5fd">Planej.</th>
-              <th style="padding:.6rem .8rem;text-align:right;color:#c4b5fd">Desenv.</th>
-              <th style="padding:.6rem .8rem;text-align:right;color:#67e8f9">Teste</th>
-              <th style="padding:.6rem .8rem;text-align:right;color:#5eead4">Pronto PRD</th>
-              <th style="padding:.6rem .8rem;text-align:right;color:#fca5a5">Bloqueado</th>
-              <th style="padding:.6rem .8rem;text-align:right;color:#e5e7eb">Total</th>
-            </tr>
-          </thead>
+      <div style="overflow-x:auto">
+        <table style="width:100%;border-collapse:collapse;font-size:.8rem;min-width:600px">
+          <thead><tr style="background:#2c2621;color:#fff">
+            <th style="padding:.55rem .75rem;text-align:left;font-size:.7rem;text-transform:uppercase">Diretoria</th>
+            <th style="padding:.55rem .75rem;text-align:right;color:#6ee7b7">Concluído</th>
+            <th style="padding:.55rem .75rem;text-align:right;color:#fde047">Backlog</th>
+            <th style="padding:.55rem .75rem;text-align:right;color:#93c5fd">Planej.</th>
+            <th style="padding:.55rem .75rem;text-align:right;color:#c4b5fd">Desenv.</th>
+            <th style="padding:.55rem .75rem;text-align:right;color:#67e8f9">Teste</th>
+            <th style="padding:.55rem .75rem;text-align:right;color:#5eead4">Pronto PRD</th>
+            <th style="padding:.55rem .75rem;text-align:right;color:#fca5a5">Bloqueado</th>
+            <th style="padding:.55rem .75rem;text-align:right;color:#e5e7eb">Total</th>
+          </tr></thead>
           <tbody>
-            <tr style="border-bottom:1px solid #eee4d9">
-              <td style="padding:.6rem .8rem;font-weight:600">Comercial | Finanças | Supply</td>
-              <td style="padding:.6rem .8rem;text-align:right;color:#047857;font-weight:700">197</td>
-              <td style="padding:.6rem .8rem;text-align:right;color:#a16207;font-weight:700">63</td>
-              <td style="padding:.6rem .8rem;text-align:right">10</td>
-              <td style="padding:.6rem .8rem;text-align:right">7</td>
-              <td style="padding:.6rem .8rem;text-align:right">10</td>
-              <td style="padding:.6rem .8rem;text-align:right">4</td>
-              <td style="padding:.6rem .8rem;text-align:right">—</td>
-              <td style="padding:.6rem .8rem;text-align:right;font-weight:700">291</td>
-            </tr>
-            <tr style="border-bottom:1px solid #eee4d9;background:#fffcf7">
-              <td style="padding:.6rem .8rem;font-weight:600">Operações | Prevenção e Perdas</td>
-              <td style="padding:.6rem .8rem;text-align:right;color:#047857;font-weight:700">214</td>
-              <td style="padding:.6rem .8rem;text-align:right;color:#a16207;font-weight:700">15</td>
-              <td style="padding:.6rem .8rem;text-align:right">8</td>
-              <td style="padding:.6rem .8rem;text-align:right">4</td>
-              <td style="padding:.6rem .8rem;text-align:right">—</td>
-              <td style="padding:.6rem .8rem;text-align:right">5</td>
-              <td style="padding:.6rem .8rem;text-align:right">—</td>
-              <td style="padding:.6rem .8rem;text-align:right;font-weight:700">247</td>
-            </tr>
-            <tr style="border-bottom:1px solid #eee4d9">
-              <td style="padding:.6rem .8rem;font-weight:600">Finanças</td>
-              <td style="padding:.6rem .8rem;text-align:right;color:#047857;font-weight:700">63</td>
-              <td style="padding:.6rem .8rem;text-align:right;color:#a16207;font-weight:700">4</td>
-              <td style="padding:.6rem .8rem;text-align:right">1</td>
-              <td style="padding:.6rem .8rem;text-align:right">3</td>
-              <td style="padding:.6rem .8rem;text-align:right">—</td>
-              <td style="padding:.6rem .8rem;text-align:right">—</td>
-              <td style="padding:.6rem .8rem;text-align:right;color:#c1121f;font-weight:700">9</td>
-              <td style="padding:.6rem .8rem;text-align:right;font-weight:700">80</td>
-            </tr>
-            <tr style="border-bottom:1px solid #eee4d9;background:#fffcf7">
-              <td style="padding:.6rem .8rem;font-weight:600">RH</td>
-              <td style="padding:.6rem .8rem;text-align:right;color:#047857;font-weight:700">33</td>
-              <td style="padding:.6rem .8rem;text-align:right;color:#a16207;font-weight:700">38</td>
-              <td style="padding:.6rem .8rem;text-align:right">—</td>
-              <td style="padding:.6rem .8rem;text-align:right">—</td>
-              <td style="padding:.6rem .8rem;text-align:right">—</td>
-              <td style="padding:.6rem .8rem;text-align:right">—</td>
-              <td style="padding:.6rem .8rem;text-align:right;color:#c1121f;font-weight:700">5</td>
-              <td style="padding:.6rem .8rem;text-align:right;font-weight:700">76</td>
-            </tr>
-            <tr style="border-bottom:1px solid #eee4d9">
-              <td style="padding:.6rem .8rem;font-weight:600">Comercial</td>
-              <td style="padding:.6rem .8rem;text-align:right;color:#047857;font-weight:700">52</td>
-              <td style="padding:.6rem .8rem;text-align:right;color:#a16207;font-weight:700">5</td>
-              <td style="padding:.6rem .8rem;text-align:right">2</td>
-              <td style="padding:.6rem .8rem;text-align:right">1</td>
-              <td style="padding:.6rem .8rem;text-align:right">6</td>
-              <td style="padding:.6rem .8rem;text-align:right">1</td>
-              <td style="padding:.6rem .8rem;text-align:right">—</td>
-              <td style="padding:.6rem .8rem;text-align:right;font-weight:700">67</td>
-            </tr>
-            <tr style="background:#f7f7f5;font-weight:700">
-              <td style="padding:.6rem .8rem;color:#2c2621">TOTAL</td>
-              <td style="padding:.6rem .8rem;text-align:right;color:#047857">560</td>
-              <td style="padding:.6rem .8rem;text-align:right;color:#a16207">126</td>
-              <td style="padding:.6rem .8rem;text-align:right">21</td>
-              <td style="padding:.6rem .8rem;text-align:right">16</td>
-              <td style="padding:.6rem .8rem;text-align:right">16</td>
-              <td style="padding:.6rem .8rem;text-align:right">10</td>
-              <td style="padding:.6rem .8rem;text-align:right;color:#c1121f">14</td>
-              <td style="padding:.6rem .8rem;text-align:right;color:#2c2621">761</td>
-            </tr>
+            <tr style="border-bottom:1px solid #eee4d9"><td style="padding:.55rem .75rem;font-weight:600">Comercial | Finanças | Supply</td><td style="padding:.55rem .75rem;text-align:right;color:#047857;font-weight:700">197</td><td style="padding:.55rem .75rem;text-align:right;color:#a16207;font-weight:700">63</td><td style="padding:.55rem .75rem;text-align:right">10</td><td style="padding:.55rem .75rem;text-align:right">7</td><td style="padding:.55rem .75rem;text-align:right">10</td><td style="padding:.55rem .75rem;text-align:right">4</td><td style="padding:.55rem .75rem;text-align:right">—</td><td style="padding:.55rem .75rem;text-align:right;font-weight:700">291</td></tr>
+            <tr style="border-bottom:1px solid #eee4d9;background:#fffcf7"><td style="padding:.55rem .75rem;font-weight:600">Operações | Prevenção e Perdas</td><td style="padding:.55rem .75rem;text-align:right;color:#047857;font-weight:700">214</td><td style="padding:.55rem .75rem;text-align:right;color:#a16207;font-weight:700">15</td><td style="padding:.55rem .75rem;text-align:right">8</td><td style="padding:.55rem .75rem;text-align:right">4</td><td style="padding:.55rem .75rem;text-align:right">—</td><td style="padding:.55rem .75rem;text-align:right">5</td><td style="padding:.55rem .75rem;text-align:right">—</td><td style="padding:.55rem .75rem;text-align:right;font-weight:700">247</td></tr>
+            <tr style="border-bottom:1px solid #eee4d9"><td style="padding:.55rem .75rem;font-weight:600">Finanças</td><td style="padding:.55rem .75rem;text-align:right;color:#047857;font-weight:700">63</td><td style="padding:.55rem .75rem;text-align:right;color:#a16207;font-weight:700">4</td><td style="padding:.55rem .75rem;text-align:right">1</td><td style="padding:.55rem .75rem;text-align:right">3</td><td style="padding:.55rem .75rem;text-align:right">—</td><td style="padding:.55rem .75rem;text-align:right">—</td><td style="padding:.55rem .75rem;text-align:right;color:#c1121f;font-weight:700">9</td><td style="padding:.55rem .75rem;text-align:right;font-weight:700">80</td></tr>
+            <tr style="border-bottom:1px solid #eee4d9;background:#fffcf7"><td style="padding:.55rem .75rem;font-weight:600">RH</td><td style="padding:.55rem .75rem;text-align:right;color:#047857;font-weight:700">33</td><td style="padding:.55rem .75rem;text-align:right;color:#a16207;font-weight:700">38</td><td style="padding:.55rem .75rem;text-align:right">—</td><td style="padding:.55rem .75rem;text-align:right">—</td><td style="padding:.55rem .75rem;text-align:right">—</td><td style="padding:.55rem .75rem;text-align:right">—</td><td style="padding:.55rem .75rem;text-align:right;color:#c1121f;font-weight:700">5</td><td style="padding:.55rem .75rem;text-align:right;font-weight:700">76</td></tr>
+            <tr style="border-bottom:1px solid #eee4d9"><td style="padding:.55rem .75rem;font-weight:600">Comercial</td><td style="padding:.55rem .75rem;text-align:right;color:#047857;font-weight:700">52</td><td style="padding:.55rem .75rem;text-align:right;color:#a16207;font-weight:700">5</td><td style="padding:.55rem .75rem;text-align:right">2</td><td style="padding:.55rem .75rem;text-align:right">1</td><td style="padding:.55rem .75rem;text-align:right">6</td><td style="padding:.55rem .75rem;text-align:right">1</td><td style="padding:.55rem .75rem;text-align:right">—</td><td style="padding:.55rem .75rem;text-align:right;font-weight:700">67</td></tr>
+            <tr style="background:#f7f7f5;font-weight:700"><td style="padding:.55rem .75rem;color:#2c2621">TOTAL</td><td style="padding:.55rem .75rem;text-align:right;color:#047857">560</td><td style="padding:.55rem .75rem;text-align:right;color:#a16207">126</td><td style="padding:.55rem .75rem;text-align:right">21</td><td style="padding:.55rem .75rem;text-align:right">16</td><td style="padding:.55rem .75rem;text-align:right">16</td><td style="padding:.55rem .75rem;text-align:right">10</td><td style="padding:.55rem .75rem;text-align:right;color:#c1121f">14</td><td style="padding:.55rem .75rem;text-align:right">761</td></tr>
           </tbody>
         </table>
       </div>
     </div>
   </div>
 
-</div><!-- /page melhorias -->
-
-
-<!-- ══════════════════════════════════
-     SUSTENTAÇÃO
-══════════════════════════════════ -->
-<div id="page-sustentacao" class="page">
-
-  <div class="section white">
-    <div class="section-inner">
-      <div class="kpi-row">
-        <div class="kpi-card"><div><strong class="red">2.847</strong><span>Chamados recebidos</span></div><div class="mini-bar"><i style="width:85%;background:var(--red)"></i></div></div>
-        <div class="kpi-card"><div><strong class="green">94%</strong><span>Taxa resolução N1/N2</span></div><div class="mini-bar"><i style="width:94%;background:#047857"></i></div></div>
-        <div class="kpi-card"><div><strong class="blue">57</strong><span>Causas raiz resolvidas</span></div><div class="mini-bar"><i style="width:60%;background:#2563eb"></i></div></div>
-        <div class="kpi-card"><div><strong class="amber">-22%</strong><span>Redução de volume YoY</span></div><div class="mini-bar"><i style="width:22%;background:#b45309"></i></div></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="section white" style="padding-top:0;border-top:none">
-    <div class="section-inner">
-      <div class="section-head"><div><h2>Volume Mensal de Chamados</h2><p>Chamados abertos vs. resolvidos N1/N2 e evolução das causas raiz ao longo de 2024.</p></div></div>
-      <div style="display:flex;gap:1rem;margin-bottom:1rem;flex-wrap:wrap;font-size:.82rem;color:var(--muted)">
-        <span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#c1121f;margin-right:4px;vertical-align:middle"></span>Chamados abertos</span>
-        <span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#2563eb;margin-right:4px;vertical-align:middle"></span>Resolvidos N1/N2</span>
-        <span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#047857;margin-right:4px;vertical-align:middle"></span>Causas raiz (eixo direito)</span>
-      </div>
-      <div class="chart-wrap" style="height:clamp(200px,35vw,280px)"><canvas id="chartSustentacao"></canvas></div>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="section-inner">
-      <div class="section-head"><div><h2>Análise de Ofensores e Causas Raiz</h2><p>Sistemas com maior volume de incidentes e impacto das soluções aplicadas.</p></div></div>
-      <div class="chart-row">
-        <div class="chart-panel">
-          <div class="cp-title" style="margin-bottom:1rem">Principais sistemas ofensores</div>
-          <div class="off-list">
-            <div class="off-item"><span class="off-label">Integração PDV</span><div class="off-track"><div class="off-fill" style="width:78%;background:#c1121f"></div></div><span class="off-val">312</span></div>
-            <div class="off-item"><span class="off-label">Fiscal / SPED</span><div class="off-track"><div class="off-fill" style="width:62%;background:#c1121f"></div></div><span class="off-val">248</span></div>
-            <div class="off-item"><span class="off-label">ERP Estoque</span><div class="off-track"><div class="off-fill" style="width:48%;background:#f59e0b"></div></div><span class="off-val">192</span></div>
-            <div class="off-item"><span class="off-label">Logística</span><div class="off-track"><div class="off-fill" style="width:35%;background:#f59e0b"></div></div><span class="off-val">138</span></div>
-            <div class="off-item"><span class="off-label">BI / Relatórios</span><div class="off-track"><div class="off-fill" style="width:22%;background:#2563eb"></div></div><span class="off-val">87</span></div>
-          </div>
-        </div>
-        <div class="chart-panel">
-          <div class="cp-title" style="margin-bottom:1rem">Causas raiz resolvidas vs. redução de chamados</div>
-          <div class="chart-wrap" style="height:200px"><canvas id="chartCausas"></canvas></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="section dark">
-    <div class="section-inner">
-      <div class="section-head"><div><h2>Análise do Ano</h2><p>Principais eventos e conquistas da frente de sustentação em 2024.</p></div></div>
-      <div class="lanes">
-        <div class="lane green"><h3>Conquistas</h3><p>Resultados positivos alcançados no ano.</p><ul><li>94% de resolução no primeiro ou segundo nível</li><li>57 causas raiz eliminadas, evitando reincidência</li><li>Redução de 22% no volume vs. 2023</li></ul></div>
-        <div class="lane red"><h3>Pico de Incidentes</h3><p>Meses com maior volume: Fev, Jul e Ago.</p><ul><li>Fev: falha de integração PDV (312 chamados)</li><li>Ago: instabilidade SPED após atualização fiscal</li><li>Jul: indisponibilidade do módulo de logística</li></ul></div>
-        <div class="lane blue"><h3>Ações N3 / JIRA</h3><p>Problemas abertos e resolvidos via squad N3.</p><ul><li>31 problemas abertos no JIRA ao longo do ano</li><li>28 encerrados com solução definitiva</li><li>3 em acompanhamento no final do período</li></ul></div>
-        <div class="lane amber"><h3>Próximos Passos</h3><p>Iniciativas de melhoria contínua para 2025.</p><ul><li>Monitoramento proativo (Zabbix + alertas)</li><li>Runbook para top 10 ofensores recorrentes</li><li>Revisão do SLA de atendimento N2</li></ul></div>
-      </div>
-    </div>
-  </div>
-
-</div><!-- /page sustentacao -->
+</div><!-- /melhorias -->
 
 <div class="evidence">
   <div class="evidence-inner">
-    <span>OXXO · Gerência de Tecnologia da Informação · Relatório Executivo 2024</span>
-    <span>Fontes: Relatório Gerencial Sistemas (JIRA) · Service Now · Registros internos de TI</span>
+    <span>OXXO · Gerência de Tecnologia da Informação · Portfólio Estratégico 2025·26</span>
+    <span>Fontes: Portfolio_Estrategico_Projetos_GN_25_26_OFICIAL.xlsm · Relatório Gerencial Sistemas (JIRA)</span>
   </div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <script>
-/* ── HERO CONTENT PER TAB ── */
-const HERO = {
-  projetos: {
-    title:'Projetos Estratégicos',
-    lead:'Visão consolidada dos projetos entregues, em andamento e cancelados durante o ano de 2024.',
-    kpis:[{v:'5',l:'Projetos'},{v:'2',l:'Entregues'},{v:'2',l:'Em andamento'},{v:'1',l:'Cancelado'}]
-  },
-  melhorias: {
-    title:'Melhorias de Sistemas',
-    lead:'764 demandas registradas no JIRA por 5 diretorias de negócio. Dados extraídos do Relatório Gerencial de Sistemas.',
-    kpis:[{v:'764',l:'Demandas'},{v:'560',l:'Concluídas'},{v:'73,3%',l:'Taxa conclusão'},{v:'4',l:'Sistemas'}]
-  },
-  sustentacao: {
-    title:'Sustentação dos Sistemas',
-    lead:'Gestão de incidentes via Service Now e resolução de causas raiz pelo squad N3 com acompanhamento no JIRA.',
-    kpis:[{v:'2.847',l:'Chamados'},{v:'94%',l:'Resolução N1/N2'},{v:'57',l:'Causas raiz'},{v:'-22%',l:'Redução YoY'}]
-  }
-};
+/* ── DATA — por Código_inic, indicadores da própria aba ── */
+/* Projetos DUAL aparecem nos dois grupos com os indicadores de cada aba */
+const P2526 = [
+  {cod:"PROJ-001_1", nome:"Reforma Tributária",                         fase:"Encerramento", situacao:"Finalizado",            condicao:"Concluído",  inicio:"2025-07-07", conclusao:"2026-01-30", previsto:100,  realizado:100,  igp:null, resumo:""},
+  {cod:"PROJ-001_3", nome:"NFC-e",                                       fase:"Encerramento", situacao:"Finalizado",            condicao:"Concluído",  inicio:"2025-04-01", conclusao:"2025-12-12", previsto:100,  realizado:100,  igp:null, resumo:""},
+  {cod:"PROJ-003_3", nome:"IntegraNós",                                  fase:"Execução",     situacao:"Em andamento",          condicao:"Atrasado",   inicio:"2025-04-01", conclusao:"2025-09-05", previsto:100,  realizado:88,   igp:null, resumo:""},
+  {cod:"PROJ-004_7", nome:"App Recebimento – 1ª e 2ª parte (REMA)",     fase:"Execução",     situacao:"Em andamento",          condicao:"Atrasado",   inicio:"2024-11-16", conclusao:"2026-02-28", previsto:99,   realizado:77,   igp:null, resumo:""},
+  {cod:"PROJ-009_1", nome:"TMS",                                         fase:"Execução",     situacao:"Em andamento",          condicao:"Atrasado",   inicio:"2025-04-07", conclusao:"2026-06-12", previsto:84,   realizado:83,   igp:null, resumo:""},
+  {cod:"PROJ-009_2", nome:"CEDIS – WMS",                                 fase:"Encerramento", situacao:"Finalizado",            condicao:"Concluído",  inicio:"2025-04-01", conclusao:"2026-04-15", previsto:100,  realizado:100,  igp:null, resumo:""},
+  {cod:"PROJ-009_3", nome:"RDF/LIP",                                     fase:"Encerramento", situacao:"Finalizado",            condicao:"Concluído",  inicio:"2025-04-01", conclusao:"2026-04-15", previsto:100,  realizado:100,  igp:null, resumo:""},
+  {cod:"PROJ-011_1", nome:"Gestão Promo Ponta a Ponta",                  fase:"Execução",     situacao:"Em andamento",          condicao:"Atrasado",   inicio:"2025-07-28", conclusao:"2026-06-30", previsto:99,   realizado:74,   igp:null, resumo:""},
+  {cod:"PROJ-011_2", nome:"Zona de Preço",                               fase:"Encerramento", situacao:"Finalizado com atraso", condicao:"Concluído",  inicio:"2025-02-25", conclusao:"2025-09-19", previsto:100,  realizado:88,   igp:null, resumo:""},
+  {cod:"PROJ-015_1", nome:"Picking-Store (OMS) – Fase 1",                fase:"Execução",     situacao:"Em andamento",          condicao:"Atrasado",   inicio:"2024-07-14", conclusao:"2026-05-05", previsto:88,   realizado:66,   igp:null, resumo:""},
+  {cod:"PROJ-015_2", nome:"Serviços Financeiros – Fase 1",               fase:"Encerramento", situacao:"Finalizado",            condicao:"Concluído",  inicio:"2024-11-14", conclusao:"2025-11-04", previsto:100,  realizado:100,  igp:null, resumo:""},
+  {cod:"PROJ-015_3", nome:"Picking-Store (OMS) – Fase 2",                fase:"Encerramento", situacao:"Cancelado",             condicao:"Cancelado",  inicio:"2025-07-15", conclusao:"2026-06-05", previsto:1,    realizado:1,    igp:null, resumo:""},
+  {cod:"PROJ-015_4", nome:"Serviços Financeiros – Fase 2",               fase:"Execução",     situacao:"Em andamento",          condicao:"Atrasado",   inicio:"2025-06-26", conclusao:"2026-05-04", previsto:78,   realizado:72,   igp:null, resumo:""},
+  {cod:"PROJ-DEM_FISC", nome:"Squad Oracle",                             fase:"Encerramento", situacao:"Finalizado",            condicao:"Concluído",  inicio:"2025-06-26", conclusao:"2026-03-31", previsto:100,  realizado:100,  igp:null, resumo:""}
+];
 
-function showTab(id, btn) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+const P26 = [
+  /* Projetos exclusivos 2026 */
+  {cod:"PROJ-001_4", nome:"Reforma Tributária – Frente Sistêmica",            fase:"Execução", situacao:"Em andamento", condicao:"Com Risco", inicio:"2026-01-01", conclusao:"2026-12-31", previsto:65,  realizado:63,  igp:0.98, resumo:""},
+  {cod:"PROJ-001_5", nome:"Reforma Tributária – Modelo Econômico/Operacional", fase:"Execução", situacao:"Em andamento", condicao:"No Prazo",  inicio:"2026-01-01", conclusao:"2026-12-31", previsto:85,  realizado:84,  igp:0.99, resumo:""},
+  {cod:"PROJ-001_6", nome:"Mudança de Calendário Contábil",                    fase:"Execução", situacao:"Em andamento", condicao:"No Prazo",  inicio:"2026-04-01", conclusao:"2026-06-15", previsto:85,  realizado:84,  igp:0.99, resumo:"Projeto em homologação."},
+  /* Projetos DUAL — indicadores da aba 2026 */
+  {cod:"PROJ-009_1", nome:"TMS",                                               fase:"Execução", situacao:"Em andamento", condicao:"Com Risco", inicio:"2025-04-07", conclusao:"2026-06-12", previsto:94,  realizado:88,  igp:0.94, resumo:"Projeto em Homologação, sem erros impeditivos para Go-Live."},
+  {cod:"PROJ-011_1", nome:"Gestão Promo Ponta a Ponta",                        fase:"Execução", situacao:"Em andamento", condicao:"Atrasado",  inicio:"2025-07-28", conclusao:"2026-06-30", previsto:99,  realizado:74,  igp:0.75, resumo:"Aguardando conclusão das correções da Pricefy para início do Rollout. Data de retorno Pricefy: 14/05/26."},
+  {cod:"PROJ-015_1", nome:"Picking-Store (OMS) – Fase 1",                      fase:"Execução", situacao:"Em andamento", condicao:"Atrasado",  inicio:"2024-07-14", conclusao:"2026-05-05", previsto:64,  realizado:61,  igp:0.97, resumo:"Projeto em fase de Rollout com 35 lojas migradas para o OMS. Aguardando treinamento do time de operações para concluir o Rollout."},
+  {cod:"PROJ-015_4", nome:"Serviços Financeiros – Fase 2",                     fase:"Execução", situacao:"Em andamento", condicao:"Atrasado",  inicio:"2025-06-26", conclusao:"2026-05-04", previsto:89,  realizado:86,  igp:0.97, resumo:"Venda realizada na loja do escritório. Aguardando ajuste na conciliação para iniciar o piloto."},
+  {cod:"PROJ-004_7", nome:"App de Recebimento de Lojas",                       fase:"Execução", situacao:"Em andamento", condicao:"Atrasado",  inicio:"2024-11-16", conclusao:"2026-08-31", previsto:60,  realizado:50,  igp:0.88, resumo:"Projeto em fase de Rollout com 303 lojas migradas para o APP. Treinando mais 167 lojas na semana de 11/05."},
+  {cod:"PROJ-003_3", nome:"Integra OXXO",                                      fase:"Execução", situacao:"Em andamento", condicao:"No Prazo",  inicio:"2025-04-01", conclusao:"2026-05-15", previsto:60,  realizado:60,  igp:1.0,  resumo:""}
+];
+
+/* ── HELPERS ── */
+function fmtDate(s){ if(!s) return '—'; const d=new Date(s); return d.toLocaleDateString('pt-BR',{month:'short',year:'numeric'}); }
+function condClass(c){
+  const m={'Concluído':'p-done','Finalizado':'p-done','Em andamento':'p-andamento','Atrasado':'p-atraso','Com Risco':'p-risco','No Prazo':'p-prazo','Cancelado':'p-cancel'};
+  return m[c]||'p-andamento';
+}
+function sitClass(s){
+  if(/finalizado/i.test(s)&&!/atraso/i.test(s)&&!/cancel/i.test(s)) return 'border-done';
+  if(/atraso/i.test(s)) return 'border-atraso';
+  if(/cancel/i.test(s)) return 'border-cancel';
+  return 'border-andamento';
+}
+function igpClass(v){
+  if(v===null) return '';
+  if(v>=0.98) return 'igp-good';
+  if(v>=0.90) return 'igp-risk';
+  return 'igp-bad';
+}
+function sitPill(s){
+  if(/finalizado.*atraso/i.test(s)) return '<span class="pill p-atraso">Finalizado c/ atraso</span>';
+  if(/finalizado/i.test(s)) return '<span class="pill p-done">Finalizado</span>';
+  if(/cancel/i.test(s)) return '<span class="pill p-cancel">Cancelado</span>';
+  return '<span class="pill p-andamento">Em andamento</span>';
+}
+
+function renderCard(p, showResumo){
+  const gap = p.previsto != null ? p.previsto - p.realizado : 0;
+  const fillReal = p.realizado != null ? p.realizado : 0;
+  const fillPrev = p.previsto != null ? p.previsto : 0;
+  const realColor = gap > 15 ? '#c1121f' : gap > 5 ? '#f59e0b' : '#047857';
+
+  const igpHTML = p.igp != null
+    ? `<div class="${igpClass(p.igp)} igp-badge"><div>${p.igp.toFixed(2)}</div><div class="igp-label">IGP</div></div>`
+    : '';
+
+  const resumoHTML = (showResumo && p.resumo)
+    ? `<div class="resumo-box"><div class="resumo-label">Resumo Executivo</div>${p.resumo}</div>`
+    : '';
+
+  return `
+    <div class="proj-card ${sitClass(p.situacao)}">
+      <div>
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:.5rem;margin-bottom:.25rem">
+          <div class="proj-name">${p.nome}</div>
+          <span style="font-size:.65rem;font-weight:700;color:var(--muted);white-space:nowrap;padding-top:2px">${p.cod}</span>
+        </div>
+        <div class="proj-meta">
+          <span>${sitPill(p.situacao)}</span>
+          <span class="pill pill-sm ${condClass(p.condicao)}">${p.condicao}</span>
+          <span style="color:var(--muted);font-size:.76rem">📅 ${fmtDate(p.inicio)} → ${fmtDate(p.conclusao)}</span>
+          <span style="color:var(--muted);font-size:.76rem">Fase: <strong>${p.fase}</strong></span>
+        </div>
+        <div class="prog-group">
+          <div class="prog-row">
+            <span class="prog-label">Previsto</span>
+            <div class="prog-track"><div class="prog-fill" style="width:${fillPrev}%;background:#94a3b8"></div></div>
+            <span class="prog-pct" style="color:#64748b">${fillPrev}%</span>
+          </div>
+          <div class="prog-row">
+            <span class="prog-label">Realizado</span>
+            <div class="prog-track"><div class="prog-fill" style="width:${fillReal}%;background:${realColor}"></div></div>
+            <span class="prog-pct" style="color:${realColor}">${fillReal}%</span>
+          </div>
+        </div>
+        ${resumoHTML}
+      </div>
+      ${igpHTML}
+    </div>`;
+}
+
+document.getElementById('grid2526').innerHTML = P2526.map(p => renderCard(p, false)).join('');
+document.getElementById('grid26').innerHTML   = P26.map(p => renderCard(p, true)).join('');
+
+/* ── TAB SWITCH ── */
+const HERO = {
+  projetos:{title:'Projetos Estratégicos',lead:'Portfólio TI consolidado: 14 projetos Safra 25·26 e 9 projetos 2026.',kpis:[{v:'17',l:'Projetos únicos'},{v:'7',l:'Finalizados'},{v:'9',l:'Em andamento'},{v:'1',l:'Cancelado'}]},
+  melhorias:{title:'Melhorias de Sistemas',lead:'764 demandas de melhoria, distribuídas por 5 diretorias de negócio e 4 sistemas.',kpis:[{v:'764',l:'Demandas'},{v:'560',l:'Concluídas'},{v:'73,3%',l:'Taxa conclusão'},{v:'4',l:'Sistemas'}]}
+};
+function showTab(id,btn){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
   document.getElementById('page-'+id).classList.add('active');
   btn.classList.add('active');
-  const h = HERO[id];
-  document.getElementById('heroTitle').textContent = h.title;
-  document.getElementById('heroLead').textContent = h.lead;
-  document.getElementById('heroKpis').innerHTML = h.kpis.map(k=>`<div class="hkpi"><strong>${k.v}</strong><span>${k.l}</span></div>`).join('');
+  const h=HERO[id];
+  document.getElementById('heroTitle').textContent=h.title;
+  document.getElementById('heroLead').textContent=h.lead;
+  document.getElementById('heroKpis').innerHTML=h.kpis.map(k=>`<div class="hkpi"><strong>${k.v}</strong><span>${k.l}</span></div>`).join('');
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
-const mob = window.innerWidth <= 600;
+const mob = window.innerWidth<=600;
 
-/* ══ MELHORIAS CHARTS ══ */
-
-/* Gráfico 2 — Entregas por Diretoria (barras horizontais) */
-new Chart(document.getElementById('chartDiretoria'), {
-  type: 'bar',
-  data: {
-    labels: ['Comercial | Finanças | Supply','Operações | Prevenção e Perdas','Finanças','RH','Comercial'],
-    datasets: [{
-      label: 'Demandas',
-      data: [291, 247, 80, 76, 67],
-      backgroundColor: ['#c1121f','#2563eb','#047857','#b45309','#7c3aed'],
-      borderRadius: 5,
-      borderSkipped: false
-    }]
-  },
-  options: {
-    indexAxis: 'y',
-    responsive: true,
-    maintainAspectRatio: false,
-    plugins: {
-      legend: { display: false },
-      tooltip: {
-        callbacks: {
-          label: ctx => ` ${ctx.raw} demandas (${((ctx.raw/764)*100).toFixed(1)}%)`
-        }
-      }
-    },
-    scales: {
-      x: { grid:{ color:'rgba(0,0,0,0.05)' }, ticks:{ font:{size:11} } },
-      y: { grid:{ display:false }, ticks:{ font:{size:mob?9:11} } }
-    }
-  }
-});
-
-/* Gráfico 3 — Entregas por Sistema (doughnut) */
-new Chart(document.getElementById('chartSistema'), {
-  type: 'doughnut',
-  data: {
-    labels: ['Oracle Retail','PDV','SAP','Canais Digitais'],
-    datasets: [{
-      data: [291, 247, 80, 67],
-      backgroundColor: ['#c1121f','#2563eb','#047857','#7c3aed'],
-      borderWidth: 3,
-      borderColor: '#fff',
-      hoverOffset: 8
-    }]
-  },
-  options: {
-    responsive: true,
-    maintainAspectRatio: false,
-    cutout: '60%',
-    plugins: {
-      legend: {
-        position: mob ? 'bottom' : 'right',
-        labels: { font:{size:12}, boxWidth:13, padding:13 }
-      },
-      tooltip: {
-        callbacks: {
-          label: ctx => ` ${ctx.label}: ${ctx.raw} (${((ctx.raw/685)*100).toFixed(1)}%)`
-        }
-      }
-    }
-  }
-});
-
-/* Gráfico 4 — Torre: Diretoria x Status (barras empilhadas) */
-const torreLabels = ['Comercial | Finanças | Supply','Operações | Prevenção e Perdas','Finanças','RH','Comercial'];
-const torreLabelsShort = ['Com. | Fin. | Supply','Operações | PP','Finanças','RH','Comercial'];
-
-new Chart(document.getElementById('chartTorre'), {
-  type: 'bar',
-  data: {
-    labels: mob ? torreLabelsShort : torreLabels,
-    datasets: [
-      { label:'Concluído',         data:[197,214,63,33,52],  backgroundColor:'#047857', borderRadius:0 },
-      { label:'Backlog',           data:[63,15,4,38,5],       backgroundColor:'#a16207', borderRadius:0 },
-      { label:'Planejamento',      data:[10,8,1,0,2],          backgroundColor:'#2563eb', borderRadius:0 },
-      { label:'Desenvolvimento',   data:[7,4,3,0,1],           backgroundColor:'#7c3aed', borderRadius:0 },
-      { label:'Teste',             data:[10,0,0,0,6],           backgroundColor:'#0891b2', borderRadius:0 },
-      { label:'Pronto para PRD',   data:[4,5,0,0,1],            backgroundColor:'#0f766e', borderRadius:0 },
-      { label:'Congelado/Bloq.',   data:[0,0,9,5,0],            backgroundColor:'#c1121f', borderRadius:0 }
-    ]
-  },
-  options: {
-    responsive: true,
-    maintainAspectRatio: false,
-    plugins: {
-      legend: { display: false },
-      tooltip: {
-        mode: 'index',
-        intersect: false,
-        callbacks: {
-          footer: items => {
-            const total = items.reduce((s,i) => s + i.raw, 0);
-            return `Total: ${total}`;
-          }
-        }
-      }
-    },
-    scales: {
-      x: {
-        stacked: true,
-        grid: { display: false },
-        ticks: {
-          font: { size: mob ? 8 : 11 },
-          maxRotation: mob ? 35 : 0,
-          autoSkip: false
-        }
-      },
-      y: {
-        stacked: true,
-        grid: { color: 'rgba(0,0,0,0.05)' },
-        ticks: { font: { size: 11 } },
-        title: { display: !mob, text: 'Quantidade de demandas', font: { size: 11 }, color: '#5b5651' }
-      }
-    }
-  }
-});
-
-/* ══ SUSTENTAÇÃO CHARTS ══ */
-const meses = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
-
-new Chart(document.getElementById('chartSustentacao'), {
-  type: 'bar',
-  data: {
-    labels: meses,
-    datasets: [
-      { label:'Chamados abertos', data:[285,312,198,241,268,195,310,340,275,220,185,218], backgroundColor:'rgba(193,18,31,0.8)', borderRadius:3, order:1 },
-      { label:'Resolvidos N1/N2', data:[261,290,188,230,255,185,285,310,258,208,175,205], backgroundColor:'rgba(37,99,235,0.6)', borderRadius:3, order:2 },
-      { label:'Causas raiz', data:[2,3,5,4,6,4,7,8,5,6,4,3], type:'line', borderColor:'#047857', backgroundColor:'rgba(4,120,87,0.08)', borderWidth:2.5, pointRadius:mob?3:5, pointBackgroundColor:'#047857', pointBorderColor:'#fff', pointBorderWidth:2, yAxisID:'y2', tension:0.35, fill:true, order:0 }
-    ]
-  },
-  options: {
-    responsive:true, maintainAspectRatio:false,
-    plugins:{ legend:{display:false}, tooltip:{mode:'index',intersect:false} },
-    scales:{
-      x:{ grid:{display:false}, ticks:{font:{size:mob?9:11},maxRotation:mob?45:0} },
-      y:{ grid:{color:'rgba(0,0,0,0.05)'}, ticks:{font:{size:10}}, title:{display:!mob,text:'Chamados',font:{size:10},color:'#5b5651'} },
-      y2:{ position:'right', grid:{display:false}, ticks:{font:{size:10},stepSize:2}, title:{display:!mob,text:'Causas raiz',font:{size:10},color:'#047857'} }
-    }
-  }
-});
-
-new Chart(document.getElementById('chartCausas'), {
+/* ── MELHORIAS CHARTS ── */
+new Chart(document.getElementById('chartDiretoria'),{
   type:'bar',
   data:{
-    labels:['PDV','Fiscal','ERP','Logística','BI'],
+    labels:['Comercial | Fin. | Supply','Operações | PP','Finanças','RH','Comercial'],
+    datasets:[{label:'Demandas',data:[291,247,80,76,67],backgroundColor:['#c1121f','#2563eb','#047857','#b45309','#7c3aed'],borderRadius:5,borderSkipped:false}]
+  },
+  options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.raw} (${((c.raw/764)*100).toFixed(1)}%)`}}},scales:{x:{grid:{color:'rgba(0,0,0,0.05)'},ticks:{font:{size:10}}},y:{grid:{display:false},ticks:{font:{size:mob?9:11}}}}}
+});
+
+new Chart(document.getElementById('chartSistema'),{
+  type:'doughnut',
+  data:{labels:['Oracle Retail','PDV','SAP','Canais Digitais'],datasets:[{data:[291,247,80,67],backgroundColor:['#c1121f','#2563eb','#047857','#7c3aed'],borderWidth:3,borderColor:'#fff',hoverOffset:8}]},
+  options:{responsive:true,maintainAspectRatio:false,cutout:'60%',plugins:{legend:{position:mob?'bottom':'right',labels:{font:{size:11},boxWidth:12,padding:12}}}}
+});
+
+/* ══ GANTT ══ */
+(function(){
+  const P2526 = [
+    {nome:"Reforma Tributária",              situacao:"Finalizado",            condicao:"Concluído",  inicio:"2025-07-07", conclusao:"2026-01-30", previsto:100, realizado:100},
+    {nome:"NFC-e",                           situacao:"Finalizado",            condicao:"Concluído",  inicio:"2025-04-01", conclusao:"2025-12-12", previsto:100, realizado:100},
+    {nome:"IntegraNós",                      situacao:"Em andamento",          condicao:"Atrasado",   inicio:"2025-04-01", conclusao:"2025-09-05", previsto:100, realizado:88},
+    {nome:"App Recebimento – REMA",          situacao:"Em andamento",          condicao:"Atrasado",   inicio:"2024-11-16", conclusao:"2026-02-28", previsto:99,  realizado:77},
+    {nome:"TMS",                             situacao:"Em andamento",          condicao:"Atrasado",   inicio:"2025-04-07", conclusao:"2026-06-12", previsto:84,  realizado:83},
+    {nome:"CEDIS – WMS",                     situacao:"Finalizado",            condicao:"Concluído",  inicio:"2025-04-01", conclusao:"2026-04-15", previsto:100, realizado:100},
+    {nome:"RDF/LIP",                         situacao:"Finalizado",            condicao:"Concluído",  inicio:"2025-04-01", conclusao:"2026-04-15", previsto:100, realizado:100},
+    {nome:"Gestão Promo Ponta a Ponta",      situacao:"Em andamento",          condicao:"Atrasado",   inicio:"2025-07-28", conclusao:"2026-06-30", previsto:99,  realizado:74},
+    {nome:"Zona de Preço",                   situacao:"Finalizado com atraso", condicao:"Concluído",  inicio:"2025-02-25", conclusao:"2025-09-19", previsto:100, realizado:88},
+    {nome:"Picking-Store (OMS) – Fase 1",   situacao:"Em andamento",          condicao:"Atrasado",   inicio:"2024-07-14", conclusao:"2026-05-05", previsto:88,  realizado:66},
+    {nome:"Serviços Financeiros – Fase 1",  situacao:"Finalizado",            condicao:"Concluído",  inicio:"2024-11-14", conclusao:"2025-11-04", previsto:100, realizado:100},
+    {nome:"Picking-Store (OMS) – Fase 2",  situacao:"Cancelado",             condicao:"Cancelado",  inicio:"2025-07-15", conclusao:"2026-06-05", previsto:1,   realizado:1},
+    {nome:"Serviços Financeiros – Fase 2", situacao:"Em andamento",          condicao:"Atrasado",   inicio:"2025-06-26", conclusao:"2026-05-04", previsto:78,  realizado:72},
+    {nome:"Squad Oracle",                   situacao:"Finalizado",            condicao:"Concluído",  inicio:"2025-06-26", conclusao:"2026-03-31", previsto:100, realizado:100}
+  ];
+
+  const P26 = [
+    {nome:"Ref. Tributária – Sistêmica",       situacao:"Em andamento", condicao:"Com Risco", inicio:"2026-01-01", conclusao:"2026-12-31", previsto:65,  realizado:63,  igp:0.98},
+    {nome:"Ref. Tributária – Econômico",       situacao:"Em andamento", condicao:"No Prazo",  inicio:"2026-01-01", conclusao:"2026-12-31", previsto:85,  realizado:84,  igp:0.99},
+    {nome:"Mudança Calendário Contábil",       situacao:"Em andamento", condicao:"No Prazo",  inicio:"2026-04-01", conclusao:"2026-06-15", previsto:85,  realizado:84,  igp:0.99},
+    {nome:"TMS",                               situacao:"Em andamento", condicao:"Com Risco", inicio:"2025-04-07", conclusao:"2026-06-12", previsto:94,  realizado:88,  igp:0.94},
+    {nome:"Gestão Promo Ponta a Ponta",        situacao:"Em andamento", condicao:"Atrasado",  inicio:"2025-07-28", conclusao:"2026-06-30", previsto:99,  realizado:74,  igp:0.75},
+    {nome:"Picking-Store (OMS) – Fase 1",     situacao:"Em andamento", condicao:"Atrasado",  inicio:"2024-07-14", conclusao:"2026-05-05", previsto:64,  realizado:61,  igp:0.97},
+    {nome:"Serviços Financeiros – Fase 2",    situacao:"Em andamento", condicao:"Atrasado",  inicio:"2025-06-26", conclusao:"2026-05-04", previsto:89,  realizado:86,  igp:0.97},
+    {nome:"App de Recebimento de Lojas",       situacao:"Em andamento", condicao:"Atrasado",  inicio:"2024-11-16", conclusao:"2026-08-31", previsto:60,  realizado:50,  igp:0.88},
+    {nome:"Integra OXXO",                      situacao:"Em andamento", condicao:"No Prazo",  inicio:"2025-04-01", conclusao:"2026-05-15", previsto:60,  realizado:60,  igp:1.0}
+  ];
+
+  const today = new Date();
+
+  function pd(s){ if(!s) return null; const d=new Date(s+'T00:00:00'); return isNaN(d)?null:d; }
+
+  function barColor(p){
+    const s=p.situacao.toLowerCase(), c=(p.condicao||'').toLowerCase();
+    if(s.includes('cancel')) return '#c1121f';
+    if(s.includes('finalizado')&&s.includes('atraso')) return '#f59e0b';
+    if(s.includes('finalizado')) return '#047857';
+    if(c==='atrasado') return '#c1121f';
+    if(c==='com risco') return '#f97316';
+    return '#2563eb';
+  }
+
+  // Clean Mês/Ano format: "mai/25"
+  function fmtMonthYear(d){
+    const mes = d.toLocaleDateString('pt-BR',{month:'short'}).replace('.','');
+    const ano = String(d.getFullYear()).slice(2);
+    return `${mes}/${ano}`;
+  }
+
+  function fmtDateLong(s){
+    if(!s) return '—';
+    return new Date(s+'T00:00:00').toLocaleDateString('pt-BR',{day:'2-digit',month:'short',year:'numeric'});
+  }
+
+  function buildRange(projects){
+    let minD = new Date('2099-01-01'), maxD = new Date('2000-01-01');
+    projects.forEach(p=>{
+      const s=pd(p.inicio), e=pd(p.conclusao);
+      if(s && s<minD) minD=s;
+      if(e && e>maxD) maxD=e;
+    });
+    // snap to month start/end
+    minD = new Date(minD.getFullYear(), minD.getMonth(), 1);
+    maxD = new Date(maxD.getFullYear(), maxD.getMonth()+1, 0);
+    return {minD, maxD};
+  }
+
+  function buildMonths(minD, maxD){
+    const months = [];
+    let cur = new Date(minD.getFullYear(), minD.getMonth(), 1);
+    while(cur <= maxD){
+      months.push(new Date(cur));
+      cur = new Date(cur.getFullYear(), cur.getMonth()+1, 1);
+    }
+    return months;
+  }
+
+  // Store all projects for tooltip lookup (indexed across both sets)
+  const ALL_TIP = [];
+
+  function renderGantt(containerId, projects, tipOffset){
+    const {minD, maxD} = buildRange(projects);
+    const totalMs = maxD - minD;
+    const months = buildMonths(minD, maxD);
+
+    function pct(d){ return Math.max(0,Math.min(100,(d-minD)/totalMs*100)); }
+
+    const todayPct = pct(today);
+    const todayLine = (todayPct>=0&&todayPct<=100)
+      ? `<div class="gantt-today-line" style="left:${todayPct.toFixed(2)}%"></div>` : '';
+
+    const LABEL_W = 220;
+    const gridStyle = `display:grid;grid-template-columns:${LABEL_W}px 1fr`;
+
+    // Header — clean month/year cells
+    const monthCells = months.map(m =>
+      `<div class="gantt-month">${fmtMonthYear(m)}</div>`
+    ).join('');
+
+    let html = `
+      <div style="background:#1d1917;border-radius:7px 7px 0 0;overflow:hidden">
+        <div style="${gridStyle}">
+          <div style="padding:.55rem .9rem;font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:rgba(255,255,255,.55)">Projeto</div>
+          <div style="display:flex;border-left:1px solid rgba(255,255,255,.08)">
+            ${months.map(m=>`<div style="flex:1;text-align:center;padding:.55rem .1rem;font-size:.68rem;font-weight:700;color:rgba(255,255,255,.7);border-left:1px solid rgba(255,255,255,.06);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${fmtMonthYear(m)}</div>`).join('')}
+          </div>
+        </div>
+      </div>
+      <div style="border:1px solid #e4ddd5;border-top:none;border-radius:0 0 8px 8px;overflow:hidden;background:#fff">`;
+
+    projects.forEach((p, i)=>{
+      const globalIdx = tipOffset + i;
+      ALL_TIP.push(p);
+
+      const s = pd(p.inicio), e = pd(p.conclusao);
+      if(!s||!e){ html += ''; return; }
+      const endFixed = e < s ? new Date(s.getTime()+60*24*60*60*1000) : e;
+
+      const left  = pct(s).toFixed(2);
+      const barW  = Math.max(1, pct(endFixed)-pct(s)).toFixed(2);
+      const realW = (parseFloat(barW) * Math.min(p.realizado,100)/100).toFixed(2);
+      const color = barColor(p);
+
+      const igpBadge = p.igp != null
+        ? `<span style="font-size:.63rem;font-weight:800;padding:.1rem .35rem;border-radius:3px;background:#1e40af22;color:#1e40af;margin-left:.3rem">IGP ${p.igp.toFixed(2)}</span>` : '';
+
+      const condColor = color;
+      const condBadge = `<span style="font-size:.63rem;font-weight:800;padding:.1rem .3rem;border-radius:3px;background:${condColor}18;color:${condColor}">${p.condicao}</span>`;
+
+      const rowBg = i%2===0 ? '#fff' : '#fdfaf6';
+
+      html += `
+        <div class="gantt-row" style="${gridStyle};background:${rowBg}"
+             onmouseenter="showGanttTip(event,${globalIdx})"
+             onmousemove="moveGanttTip(event)"
+             onmouseleave="hideGanttTip()">
+          <div class="gantt-row-label" style="border-right:1px solid #eee4d9">
+            <div class="gantt-row-name" title="${p.nome}">${p.nome}</div>
+            <div class="gantt-row-sub">${condBadge}${igpBadge}</div>
+          </div>
+          <div class="gantt-timeline" style="position:relative;background:${rowBg}">
+            ${todayLine}
+            <!-- Previsto background -->
+            <div style="position:absolute;top:50%;transform:translateY(-50%);left:${left}%;width:${barW}%;height:16px;border-radius:3px;background:${color}1a;border:1.5px dashed ${color}60;z-index:1;pointer-events:none"></div>
+            <!-- Realizado fill -->
+            <div style="position:absolute;top:50%;transform:translateY(-50%);left:${left}%;width:${realW}%;height:16px;border-radius:3px;background:${color};z-index:2;display:flex;align-items:center;overflow:hidden;cursor:default">
+              <span style="font-size:.62rem;font-weight:800;color:#fff;padding:0 5px;white-space:nowrap;text-shadow:0 1px 2px rgba(0,0,0,.35)">${p.realizado}%</span>
+            </div>
+          </div>
+        </div>`;
+    });
+
+    html += `</div>`;
+    document.getElementById(containerId).innerHTML = html;
+  }
+
+  renderGantt('gantt2526', P2526, 0);
+  renderGantt('gantt26',   P26,   P2526.length);
+
+  // ── Tooltip ──
+  const tip = document.getElementById('ganttTooltip');
+  window.showGanttTip = function(e, idx){
+    const p = ALL_TIP[idx];
+    if(!p) return;
+    const gap = (p.previsto||0) - (p.realizado||0);
+    const gapHtml = gap>0 ? `<div class="gantt-tooltip-row"><span>Gap Prev.→Real.</span><span style="color:#fca5a5">−${gap.toFixed(0)}%</span></div>` : '';
+    const igpHtml = p.igp!=null ? `<div class="gantt-tooltip-row"><span>IGP</span><span>${p.igp.toFixed(2)}</span></div>` : '';
+    tip.innerHTML = `
+      <strong>${p.nome}</strong>
+      <div class="gantt-tooltip-row"><span>Situação</span><span>${p.situacao}</span></div>
+      <div class="gantt-tooltip-row"><span>Condição</span><span>${p.condicao}</span></div>
+      <div class="gantt-tooltip-row"><span>Início</span><span>${fmtDateLong(p.inicio)}</span></div>
+      <div class="gantt-tooltip-row"><span>Conclusão</span><span>${fmtDateLong(p.conclusao)}</span></div>
+      <div class="gantt-tooltip-row"><span>% Previsto</span><span>${p.previsto}%</span></div>
+      <div class="gantt-tooltip-row"><span>% Realizado</span><span>${p.realizado}%</span></div>
+      ${gapHtml}${igpHtml}`;
+    tip.style.opacity='1';
+    moveGanttTip(e);
+  };
+  window.moveGanttTip = function(e){
+    const x=e.clientX,y=e.clientY,w=tip.offsetWidth||260,h=tip.offsetHeight||140;
+    tip.style.left=(x+14+w>window.innerWidth?x-w-14:x+14)+'px';
+    tip.style.top=(y+14+h>window.innerHeight?y-h-14:y+14)+'px';
+  };
+  window.hideGanttTip=function(){ tip.style.opacity='0'; };
+})();
+
+new Chart(document.getElementById('chartTorre'),{
+  type:'bar',
+  data:{
+    labels:['Com. | Fin. | Supply','Operações | PP','Finanças','RH','Comercial'],
     datasets:[
-      { label:'Causas resolvidas', data:[8,5,6,4,3], backgroundColor:'rgba(4,120,87,0.8)', borderRadius:4 },
-      { label:'Redução (%)', data:[31,24,18,15,9], type:'line', borderColor:'#c1121f', backgroundColor:'transparent', borderWidth:2, pointRadius:4, pointBackgroundColor:'#c1121f', pointBorderColor:'#fff', pointBorderWidth:2, yAxisID:'y2', tension:0.3 }
+      {label:'Concluído',data:[197,214,63,33,52],backgroundColor:'#047857'},
+      {label:'Backlog',data:[63,15,4,38,5],backgroundColor:'#a16207'},
+      {label:'Planejamento',data:[10,8,1,0,2],backgroundColor:'#2563eb'},
+      {label:'Desenvolvimento',data:[7,4,3,0,1],backgroundColor:'#7c3aed'},
+      {label:'Teste',data:[10,0,0,0,6],backgroundColor:'#0891b2'},
+      {label:'Pronto PRD',data:[4,5,0,0,1],backgroundColor:'#0f766e'},
+      {label:'Bloqueado',data:[0,0,9,5,0],backgroundColor:'#c1121f'}
     ]
   },
-  options:{
-    responsive:true, maintainAspectRatio:false,
-    plugins:{legend:{display:false}},
-    scales:{
-      x:{grid:{display:false},ticks:{font:{size:10}}},
-      y:{grid:{color:'rgba(0,0,0,0.05)'},ticks:{font:{size:10}}},
-      y2:{position:'right',grid:{display:false},ticks:{font:{size:10},callback:v=>v+'%'}}
-    }
-  }
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{mode:'index',intersect:false,callbacks:{footer:items=>`Total: ${items.reduce((s,i)=>s+i.raw,0)}`}}},scales:{x:{stacked:true,grid:{display:false},ticks:{font:{size:mob?9:11}}},y:{stacked:true,grid:{color:'rgba(0,0,0,0.05)'},ticks:{font:{size:11}}}}}
 });
 </script>
 </body>
