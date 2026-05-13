@@ -646,14 +646,13 @@ new Chart(document.getElementById('chartSistema'),{
   }
 
   function buildRange(projects){
-    let minD = new Date('2099-01-01'), maxD = new Date('2000-01-01');
+    let maxD = new Date('2000-01-01');
     projects.forEach(p=>{
-      const s=pd(p.inicio), e=pd(p.conclusao);
-      if(s && s<minD) minD=s;
+      const e=pd(p.conclusao);
       if(e && e>maxD) maxD=e;
     });
-    // snap to month start/end
-    minD = new Date(minD.getFullYear(), minD.getMonth(), 1);
+    // Always start from March 2025
+    const minD = new Date(2025, 2, 1); // March 2025
     maxD = new Date(maxD.getFullYear(), maxD.getMonth()+1, 0);
     return {minD, maxD};
   }
